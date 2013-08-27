@@ -555,6 +555,11 @@ a:focus {
   src: local('Idealist Bold'), local('Idealist-Bold'), url(../typos/idealist_sans-webfont.ttf) format('truetype');
   src: local('Idealist Bold'), local('Idealist-Bold'), url(../typos/idealist_sans-webfont.woff) format('woff');
 }
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+}
 p {
   margin: 0 0 10px;
 }
@@ -630,6 +635,7 @@ h6 {
   font-family: Vollkorn, Georgia, "Times New Roman", Times, serif;
   font-weight: normal;
   line-height: 20px;
+  letter-spacing: 0.1em;
   font-style: italic;
   color: #1a1a1a;
   text-rendering: optimizelegibility;
