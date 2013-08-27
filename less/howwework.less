@@ -1,0 +1,528 @@
+// Core variables and mixins
+@import "variables.less"; // Modify this for custom colors, font-sizes, etc
+@import "mixins.less";
+
+
+
+
+.row{
+	margin-top:0;
+//	background-color:pink;
+	padding-top:100px;
+	
+}
+[class*="span"]{
+	// background-color:purple;
+}
+
+#someotherstuff {
+	height:900px;
+	background-color:silver;
+}
+#howwework {
+	width:1440px;
+	position:relative;
+	
+	.illus{
+		background-color:transparent;
+		background-repeat: no-repeat;
+		background-position: top left;
+		background-attachment: scroll;
+		position: absolute;
+		span{
+			display:none;
+		}
+		/// generic
+		&.yes{
+			background-image: url(../images/_badges/yes.png);
+			width:135px;
+			height:120px;
+			&.small{
+				background-image: url(../images/_badges/yes-small.png);
+				width:94px;
+				height:81px;
+			}
+		}
+		&.no{
+			background-image: url(../images/_badges/no.png);
+			width:125px;
+			height:120px;
+			&.small{
+				background-image: url(../images/_badges/no-small.png);
+				width:82px;
+				height:81px;
+			}
+		}
+		&.ab{ // arrow black
+			background-image: url(../images/_arrows/arrow-black.png);
+			width:40px;
+			height:40px;
+		}
+		&.aw{ // arrow white
+			background-image: url(../images/_arrows/arrow-white.png);
+			width:40px;
+			height:40px;
+		}
+
+		// #########################
+		// # path02
+		//
+
+
+		// arrows
+		//   white
+		&.arrow00{ 
+			left:595px;
+			top:650px;
+			.rotate(200deg); 
+		}
+		//   black
+		&.arrow01{ 
+			left:789px;
+			top:211px;
+			.rotate(305deg); 
+		}
+		&.arrow02{ 
+			left:465px;
+			top:470px;
+			.rotate(30deg); 
+		}
+		&.arrow03{ 
+			left:765px;
+			top:948px;
+			.rotate(180deg); 
+		}
+		&.arrow04{ 
+			left:126px;
+			top:1000px;
+			.rotate(260deg); 
+		}
+		&.arrow05{ 
+			left:435px;
+			top:1230px;
+			.rotate(90deg); 
+		}
+		&.arrow06{ 
+			left:255px;
+			top:2085px;
+			.rotate(231deg); 
+		}
+		
+		&.welcome{
+			background-image: url(../images/_badges/welcome.png);
+			width:210px;
+			height:210px;
+			left:960px;
+			top:70px;
+			&.fixed{
+				visibility:hidden;
+			}
+		}
+		&.coffee{
+			background-image: url(../images/_illustrations/cup-of-coffe-01.png);
+			width:200px;
+			height:200px;
+			left:900px;
+			top:290px;
+		}
+		&.coffeeribbon{
+			background-image: url(../images/_ribbons/ribbon-01.png);
+			width:320px;
+			height:110px;
+			left:830px;
+			top:460px;
+		}
+		&.coffeeyes{
+			left:700px;
+			top:630px;
+			.rotate(-10deg); 
+		}
+		&.coffeeno{
+			left:865px;
+			top:830px;
+			.rotate(30deg); 
+		}
+		&.sugar{
+			background-image: url(../images/_illustrations/sugar.png);
+			width:310px;
+			height:120px;
+			left:240px;
+			top:530px;
+		}
+		&.sugarribbon{
+			background-image: url(../images/_ribbons/ribbon-02.png);
+			width:350px;
+			height:55px;
+			left:223px;
+			top:630px;
+		}
+		&.sugarwith{
+			background-image: url(../images/_badges/with.png);
+			width:100px;
+			height:100px;
+			left:315px;
+			top:770px;
+		}
+		&.sugarwithout{
+			background-image: url(../images/_badges/without.png);
+			width:100px;
+			height:100px;
+			left:450px;
+			top:770px;
+		}
+
+
+		&.visionribbon{
+			background-image: url(../images/_ribbons/ribbon-03.png);
+			width:381px;
+			height:105px;
+			left:310px;
+			top:1100px;
+		}
+
+		&.visionyes{
+			left:800px;
+			top:1230px;
+			.rotate(-20deg); 
+		}
+		
+
+		// look .water too
+		&.boat{
+			background-image: url(../images/_illustrations/boat.png);
+			width:322px;
+			height:213px;
+			left:355px;
+			top:1300px;
+			.fil.peche{
+				position:absolute;
+				background-color:#333;
+				width:1px;
+				height:(300 + 213 - 73px);
+				left:320px;
+				top:73px;
+
+			}
+			
+		}
+		// birds
+		&.birds{
+			background-image: url(../images/_illustrations/birds.png);
+			width:73px;
+			height:60px;
+			left:210px;
+			top:1250px;
+		}
+		&.strategyno{
+			left:328px;
+			top:2220px;
+			.rotate(27deg); 
+		}
+
+		// #########################
+		// # path02
+		// c'est reparti
+
+		&.coffre{
+			width:100px;
+			height:100px;
+			top:2400px;
+			left:320px;
+			background-color:cyan;
+			z-index:101; // let this object be over the water, not under
+		}
+		&.usfindoutribbon{
+			background-image: url(../images/_ribbons/ribbon-05.png);
+			width:306px;
+			height:91px;
+			top:2436px;
+			left:368px;
+			z-index:102; // let this object be over the water, not under
+		}
+		&.hookno{
+			top:2436px;
+			left:595px;
+			.rotate(30deg);
+			z-index:103; // let this object be over the water, not under
+		}
+		&.couldfindoutribbon{
+			background-image: url(../images/_ribbons/ribbon-06.png);
+			width:309px;
+			height:84px;
+			top:2447px;
+			left:697px;
+			z-index:104; // let this object be over the water, not under
+		}
+		// arrows under cristals
+		//   white
+		&.arrow07{ 
+			left:635px;
+			top:2570px;
+			.rotate(136deg); 
+		}
+		&.arrow08{ 
+			left:235px;
+			top:2580px;
+			.rotate(100deg); 
+		}
+		&.arrow09{ 
+			left:800px;
+			top:2718px;
+			.rotate(177deg); 
+		}
+		&.arrow10{ 
+			left:235px;
+			top:3050px;
+			.rotate(55deg); 
+		}
+		&.arrow11{ 
+			left:127px;
+			top:3205px;
+			.rotate(269deg); 
+		}
+		&.arrow12{ 
+			left:920px;
+			top:3395px;
+			.rotate(110deg); 
+		}
+		&.arrow13{ 
+			left:415px;
+			top:3683px;
+			.rotate(202deg); 
+		}
+		&.arrow14{ 
+			left:915px;
+			top:3867px;
+			.rotate(46deg); 
+		}
+		&.arrow15{ 
+			left:1035px;
+			top:4110px;
+			.rotate(24deg); 
+		}
+		&.arrow16{ 
+			left:890px;
+			top:4700px;
+			.rotate(136deg); 
+		}
+		&.arrow17{ 
+			left:190px;
+			top:5900px;
+			.rotate(36deg); 
+		}
+		//   black
+		&.arrow18{ 
+			left:96px;
+			top:3155px;
+			.rotate(283deg); 
+		}
+		&.arrow19{ 
+			left:168px;
+			top:3168px;
+			.rotate(253deg); 
+		}
+		&.arrow20{ 
+			left:375px;
+			top:3615px;
+			.rotate(88deg); 
+		}
+		&.arrow21{ 
+			left:69px;
+			top:3858px;
+			.rotate(255deg); 
+		}
+		&.arrow22{ 
+			left:177px;
+			top:3850px;
+			.rotate(97deg); 
+		}
+		&.arrow23{ 
+			left:1364px;
+			top:3970px;
+			.rotate(267deg); 
+		}
+		&.arrow24{ 
+			left:1290px;
+			top:4250px;
+			.rotate(129deg); 
+		}
+		&.arrow25{ 
+			left:1118px;
+			top:4336px;
+			.rotate(78deg); 
+		}
+		&.arrow26{ 
+			left:1362px;
+			top:4636px;
+			.rotate(84deg); 
+		}
+		&.arrow27{ 
+			left:800px;
+			top:4657px;
+			.rotate(173deg); 
+		}
+		&.arrow28{ 
+			left:1090px;
+			top:4732px;
+			.rotate(122deg); 
+		}
+		&.arrow29{ 
+			left:1280px;
+			top:5545px;
+			.rotate(298deg); 
+		}
+		// "no" under cristals
+		// todo, à placer, paskeu sa flotte
+		&.understandno{
+			top:3000px;
+			left:595px;
+			.rotate(30deg);
+		}
+	}
+	.water{
+		background-image: url(../images/howwework/water.png),url(../images/howwework/cristal.png); 
+		background-attachment: scroll,scroll;
+		background-repeat:repeat-x,no-repeat;
+		background-position:top left,bottom left;
+		z-index:100;
+		width:100%;
+		height:(1020px + 150px);
+		top:1700px;
+		left:0;
+		position:absolute;
+		.fil.peche{
+			position:absolute;
+			background-color:#333;
+			width:1px;
+			height:1030px;
+			left:675px;
+			top:0;
+
+		}
+		.illus{
+			&.doyouknowribbon{
+				background-image: url(../images/_ribbons/ribbon-04.png);
+				width:250px;
+				height:55px;
+				left:650px;
+				top:50px;
+			}
+			&.bubblebig{
+				background-image: url(../images/_illustrations/bubble-big.png);
+				width:226px;
+				height:461px;
+				left:53px;
+				top:125px;
+			}
+			&.bubblemed{
+				background-image: url(../images/_illustrations/bubble-med.png);
+				width:62px;
+				height:132px;
+				left:904px;
+				top:688px;
+			}
+			&.bubblesmall01{
+				background-image: url(../images/_illustrations/bubble-small.png);
+				width:41px;
+				height:88px;
+				left:903px;
+				top:170px;
+			}
+			&.bubblesmall02{
+				background-image: url(../images/_illustrations/bubble-small.png);
+				width:41px;
+				height:88px;
+				left:624px;
+				top:392px;
+			}
+			&.bubblesmall03{
+				background-image: url(../images/_illustrations/bubble-small.png);
+				width:41px;
+				height:88px;
+				left:553px;
+				top:773px;
+			}
+			&.fish01{
+				background-image: url(../images/_fishes/fish-01.png);
+				width:164px;
+				height:106px;
+				left:540px;
+				top:120px;
+			}	
+			&.fish02{
+				background-image: url(../images/_fishes/fish-02.png);
+				width:223px;
+				height:143px;
+				left:580px;
+				top:260px;
+			}
+			&.fish03{
+				background-image: url(../images/_fishes/fish-03.png);
+				width:103px;
+				height:68px;
+				left:675px;
+				top:370px;
+			}
+			&.fish04{
+				background-image: url(../images/_fishes/fish-04.png);
+				width:176px;
+				height:114px;
+				left:740px;
+				top:370px;
+			}
+			&.fish05{
+				background-image: url(../images/_fishes/fish-05.png);
+				width:199px;
+				height:128px;
+				left:365px;
+				top:357px;
+			}
+			&.fish06{
+				background-image: url(../images/_fishes/fish-06.png);
+				width:199px;
+				height:128px;
+				left:432px;
+				top:515px;
+			}
+			&.fish07{
+				background-image: url(../images/_fishes/fish-07.png);
+				width:103px;
+				height:68px;
+				left:425px;
+				top:620px;
+			}
+			&.fish08{
+				background-image: url(../images/_fishes/fish-08.png);
+				width:176px;
+				height:114px;
+				left:495px;
+				top:636px;
+			}
+			&.fishred{
+				background-image: url(../images/_fishes/red-fish.png);
+				width:199px;
+				height:128px;
+				left:635px;
+				top:780px;
+			}
+			&.fishark{
+				background-image: url(../images/_fishes/shark.png);
+				width:548px;
+				height:196px;
+				left:703px;
+				top:485px;
+			}
+		}
+	}
+	
+	
+	.path01{
+		height:2500px;
+		background: transparent url(../images/howwework/path01.gif) no-repeat scroll top left;
+	}
+	.path02{
+		height:3400px;
+		background: transparent url(../images/howwework/path02.gif) no-repeat scroll top left;
+	}
+}
+

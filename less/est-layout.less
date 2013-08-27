@@ -1,0 +1,79 @@
+body{
+	margin:0;
+	padding:0;
+}
+section{
+	position:relative;
+}
+section.sec0{
+// set by est-home.less	background-color:#444;
+}
+section.sec1{
+	background-color:#f2f2f2;
+}
+section.sec2{
+	background-color:#dadada;
+}
+section.sec3{
+	background-color:fff;
+}
+section.sec4{
+	background-color:#ccc;
+	color:#fff;
+}
+section.sec5{
+	background-color:#000;
+	color:#fff;
+}
+section h1{
+	margin:0;
+}
+
+.floating{
+	z-index:1000;
+	position:fixed;
+//	width:200px;
+//	height:50px;
+	width:60px;
+	height:50px;
+	padding:0;
+
+	background:yellow;
+	right:10px;
+	cursor:move;
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	background:transparent url(../images/menu/dragndrop.png) no-repeat scroll left -50px;
+
+//		visibility:hidden;
+
+		font: 14px @serifFontFamily;
+		color:@white;
+
+
+}
+.floating.active{
+	background-position:left top;
+	visibility:visible;
+
+	//	width:200px;
+	//	height:50px;
+	width: 140px;
+	padding-left:60px;
+	height:35px;
+	padding-top:15px;
+
+
+}
+.filconducteur{
+	position:absolute;
+	height:100%;
+	right:270px;
+	width:8px;
+	background: transparent url(../images/menu/fil.png) repeat-y scroll top left;
+	z-index:99;
+}

@@ -1,0 +1,57 @@
+section.sec2{
+	.mate{
+		text-align:center;
+		background-color:#dadada;
+		background-attachment:scroll;
+		background-repeat:no-repeat;
+		background-position:center bottom;
+		
+		.top, .bottom{
+			position:absolute;
+			background-color:rgba(0,0,0,0.75);
+			color:#fff;
+		}
+		.top {
+			border-bottom:5px @red solid;
+			
+			.fname{
+				font-family:@serifFontFamily;
+				font-size:30px;
+				line-height:1em;
+				font-style:italic;
+				font-weight:normal;
+				color:@white;
+			}
+			.job{
+				font-size:14px;
+			}
+			
+		}
+		.bottom {
+			border-top:5px @red solid;
+			.quote{
+
+				background-image:url(../images/team/guillemet-01.png),url(../images/team/guillemet-02.png);
+				background-position: top left, bottom right;
+				background-repeat:no-repeat,no-repeat;
+				
+				font-family:@serifFontFamily;
+				font-size:1.6em;
+				line-height:1em;
+				font-style:italic;
+				font-weight:normal;
+				padding:.5em;
+				margin:.5em;
+				
+				opacity:.7;
+			}
+		}
+		
+		.eyes{
+			position:absolute;
+			background-repeat:no-repeat;
+			border-top:1px solid #fff;
+			border-bottom:1px solid #fff;
+		}
+	}
+}
