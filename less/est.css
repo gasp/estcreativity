@@ -962,6 +962,8 @@ section.sec5 .maps {
   z-index: 1;
   top: 0;
   left: 0;
+  cursor: pointer;
+  background-color: #fff;
 }
 section.sec5 .maps .q0 {
   background: #000000 url(../images/contact/neighborhood-00.jpg) no-repeat fixed bottom left;
