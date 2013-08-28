@@ -78,13 +78,13 @@
 		}
 		//   black
 		&.arrow01{ 
-			left:789px;
+			left:795px;
 			top:211px;
 			.rotate(305deg); 
 		}
 		&.arrow02{ 
 			left:465px;
-			top:470px;
+			top:472px;
 			.rotate(30deg); 
 		}
 		&.arrow03{ 
@@ -130,7 +130,7 @@
 			width:320px;
 			height:110px;
 			left:830px;
-			top:460px;
+			top:464px;
 		}
 		&.coffeeyes{
 			left:700px;
@@ -213,7 +213,7 @@
 			left:210px;
 			top:1250px;
 		}
-		&.strategyno{
+		&.agencyno{
 			left:328px;
 			top:2220px;
 			.rotate(27deg); 
@@ -224,13 +224,26 @@
 		// c'est reparti
 
 		&.coffre{
-			width:100px;
-			height:100px;
-			top:2400px;
-			left:320px;
-			background-color:cyan;
+      background-image: url(../images/_illustrations/coffre.png);
+			width:185px;
+			height:177px;
+			top:2355px;
+			left:95px;
 			z-index:101; // let this object be over the water, not under
 		}
+		&.bubblecoffre{
+			background-image: url(../images/_illustrations/bubble-small.png);
+			width:41px;
+			height:88px;
+			left:148px;
+			top:2359px;
+      z-index:107; // let this object be over the water, not under
+		}
+		&.coffreyes{
+			top:2526px;
+			left:182px;
+			.rotate(5deg);
+    }
 		&.usfindoutribbon{
 			background-image: url(../images/_ribbons/ribbon-05.png);
 			width:306px;
@@ -253,6 +266,22 @@
 			left:697px;
 			z-index:104; // let this object be over the water, not under
 		}
+    &.notebook{
+			background-image: url(../images/_illustrations/notebook.png);
+			width:576px;
+			height:448px;
+			left:110px;
+			top:2617px;
+      z-index:105; // let this object be over the water, not under
+    }
+    &.paper{
+			background-image: url(../images/_illustrations/paper.png);
+			width:591px;
+			height:487px;
+			left:401px;
+			top:2763px;
+      z-index:106; // let this object be over the water, not under
+    }
 		// arrows under cristals
 		//   white
 		&.arrow07{ 
@@ -262,8 +291,8 @@
 		}
 		&.arrow08{ 
 			left:235px;
-			top:2580px;
-			.rotate(100deg); 
+			top:2600px;
+			.rotate(94deg); 
 		}
 		&.arrow09{ 
 			left:800px;
@@ -306,9 +335,9 @@
 			.rotate(136deg); 
 		}
 		&.arrow17{ 
-			left:190px;
-			top:5900px;
-			.rotate(36deg); 
+			left:233px;
+			top:5987px;
+			.rotate(41deg); 
 		}
 		//   black
 		&.arrow18{ 
@@ -322,8 +351,8 @@
 			.rotate(253deg); 
 		}
 		&.arrow20{ 
-			left:375px;
-			top:3615px;
+			left:315px;
+			top:3590px;
 			.rotate(88deg); 
 		}
 		&.arrow21{ 
@@ -374,10 +403,216 @@
 		// "no" under cristals
 		// todo, à placer, paskeu sa flotte
 		&.understandno{
-			top:3000px;
-			left:595px;
-			.rotate(30deg);
+			top:3078px;
+			left:558px;
+			.rotate(-13deg);
 		}
+		&.understandyes{
+			top:3090px;
+			left:873px;
+			.rotate(-10deg);
+		}
+		&.budgetno{
+			top:3430px;
+			left:300px;
+			.rotate(16deg);
+		}
+		&.bag{
+			background-image: url(../images/_illustrations/bag.png);
+			width:191px;
+			height:280px;
+			top:3375px;
+			left:450px;
+		}
+		&.money{
+			background-image: url(../images/_illustrations/money.png);
+			width:217px;
+			height:69px;
+			top:3608px;
+			left:372px;
+		}
+		&.budgetribbon{
+			background-image: url(../images/_ribbons/ribbon-07.png);
+			width:246px;
+			height:127px;
+			top:3480px;
+			left:455px;
+		}
+		&.budgetyes{
+			top:3580px;
+			left:728px;
+			.rotate(13deg);
+		}
+		&.maybe{
+      background-image: url(../images/_badges/maybe.png);
+			width:133px;
+			height:116px;
+			top:3677px;
+			left:523px;
+			.rotate(-12deg);
+		}
+		&.futureribbon{
+      background-image: url(../images/_ribbons/ribbon-08.png);
+			width:251px;
+			height:133px;
+			top:3717px;
+			left:253px;
+		}
+		&.futureno{
+			top:3710px;
+			left:105px;
+			.rotate(16deg);
+    }
+		&.out{
+      background-image: url(../images/_badges/out.png);
+			width:214px;
+			height:213px;
+			top:3899px;
+			left:67px;
+    }
+    &.coffemaker{
+      background-image: url(../images/_illustrations/coffe-maker.png);
+			width:226px;
+			height:300px;
+			top:3713px;
+			left:1040px;
+    }
+    &.morecoffeeribbon{
+      background-image: url(../images/_ribbons/ribbon-10.png);
+			width:225px;
+			height:59px;
+			top:3862px;
+			left:1025px;
+    }
+		&.morecoffeeno{
+			top:3935px;
+			left:1205px;
+			.rotate(16deg);
+    }
+		&.morecoffeeyes{
+			top:3950px;
+			left:871px;
+			.rotate(-5deg);
+		}
+    &.coffeesmall{
+      background-image: url(../images/_illustrations/cup-of-coffe-02.png);
+			width:132px;
+			height:140px;
+			top:4090px;
+			left:1155px;
+    }
+    &.blurwhitechess{
+      background-image: url(../images/_illustrations/chess-02.png);
+			width:165px;
+			height:330px;
+			top:4115px;
+			left:972px;
+    }
+    &.strategyribbon{
+      background-image: url(../images/_ribbons/ribbon-11.png);
+			width:385px;
+			height:115px;
+			top:4200px;
+			left:795px;
+    }
+    &.whitechess{
+      background-image: url(../images/_illustrations/chess-01.png);
+			width:246px;
+			height:497px;
+			top:3948px;
+			left:663px;
+    }
+    &.blackchess{
+      background-image: url(../images/_illustrations/chess-03.png);
+			width:171px;
+			height:352px;
+			top:4204px;
+			left:357px;
+      .rotate(-98deg);
+    }
+    &.exclamation{
+      background-image: url(../images/_illustrations/exclamation.png);
+			width:125px;
+			height:240px;
+			top:4347px;
+			left:502px;
+    }
+		&.strategyno{
+			top:4591px;
+			left:583px;
+			.rotate(-18deg);
+    }
+		&.strategyes{
+			top:4569px;
+			left:937px;
+			.rotate(-4deg);
+    }
+		&.designo{
+			top:4791px;
+			left:1009px;
+			.rotate(13deg);
+    }
+		&.designribbon{
+      background-image: url(../images/_ribbons/ribbon-09.png);
+			width:399px;
+			height:52px;
+			top:4842px;
+			left:524px;
+    }
+		&.color{
+      background-image: url(../images/_illustrations/all_color.png);
+			width:375px;
+			height:275px;
+			top:4950px;
+			left:539px;
+    }
+		&.box{
+      background-image: url(../images/_illustrations/est-box.png);
+			width:566px;
+			height:574px;
+			top:5312px;
+			left:444px;
+    }
+		&.boxshadow{
+      background-image: url(../images/_illustrations/est-box-shadow.png);
+			width:1242px;
+			height:567px;
+			top:5668px;
+			left:151px;
+    }
+		&.leftglass{
+      background-image: url(../images/_illustrations/verre.png);
+			width:105px;
+			height:364px;
+			top:5249px;
+			left:1030px;
+    }
+		&.rightglass{
+      background-image: url(../images/_illustrations/verre.png);
+			width:105px;
+			height:364px;
+			top:5196px;
+			left:1134px;
+      .rotate(-16deg);
+    }
+		&.readyno{
+			top:5618px;
+			left:1159px;
+			.rotate(34deg);
+    }
+		&.readyes{
+			top:5812px;
+			left:252px;
+			.rotate(-7deg);
+    }
+    &.ruler{
+      background-image: url(../images/_illustrations/ruler.png);
+			width:698px;
+			height:148px;
+			top:6054px;
+			left:435px;
+      .rotate(-7deg);
+    }
 	}
 	.water{
 		background-image: url(../images/howwework/water.png),url(../images/howwework/cristal.png); 
@@ -521,7 +756,7 @@
 		background: transparent url(../images/howwework/path01.gif) no-repeat scroll top left;
 	}
 	.path02{
-		height:3400px;
+		height:3900px;
 		background: transparent url(../images/howwework/path02.gif) no-repeat scroll top left;
 	}
 }
