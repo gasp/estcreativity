@@ -928,6 +928,9 @@ section.sec4 .colonne,
 section.sec4 .colonnes {
   text-align: center;
 }
+section.sec4 .logos {
+  background: yellow;
+}
 section.sec4 .shadow {
   background: transparent url(../images/clients/shadow.png) no-repeat scroll top center;
 }
