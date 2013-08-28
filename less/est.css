@@ -78,12 +78,6 @@ body {
 section {
   position: relative;
 }
-section.sec1 {
-  background-color: #f2f2f2;
-}
-section.sec2 {
-  background-color: #dadada;
-}
 section.sec3,
 section.sec4,
 section.sec5 {
@@ -204,6 +198,9 @@ section.sec0 .intro .baseline {
 section.sec0 .intro .social {
   margin: -50px auto 0 auto;
 }
+section.sec1 {
+  background-color: #f2f2f2;
+}
 section.sec1 .colonne,
 section.sec1 .colonnes {
   background-color: #fff;
@@ -221,6 +218,9 @@ section.sec1 .tweet .description {
 }
 section.sec1 .tweet .date {
   display: none;
+}
+section.sec2 {
+  background-color: #dadada;
 }
 section.sec2 .mate {
   text-align: center;
