@@ -21,9 +21,8 @@ contacts.init = function(){
 		var eh = $(".encart",contacts.$obj).height();
 		var mh = app.wh - eh;
 
-		$(".m0",contacts.$mi).height(mh);
-		$(".q0",contacts.$mi).height(mh/2);
-		$(".q1",contacts.$mi).height(mh/2);
+		$(".map",contacts.$mi).height(mh);
+		$(".qua",contacts.$mi).height(mh);
 
 		var mih = contacts.$mi.height();
 		contacts.$mi.css({paddingTop:app.wh - mih})
