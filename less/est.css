@@ -78,22 +78,10 @@ body {
 section {
   position: relative;
 }
-section.sec1 {
-  background-color: #f2f2f2;
-}
-section.sec2 {
-  background-color: #dadada;
-}
-section.sec3 {
-  background-color: fff;
-}
-section.sec4 {
-  background-color: #ccc;
-  color: #fff;
-}
+section.sec3,
+section.sec4,
 section.sec5 {
-  background-color: #000;
-  color: #fff;
+  background-color: #fff;
 }
 section h1 {
   margin: 0;
@@ -132,6 +120,9 @@ section h1 {
   width: 8px;
   background: transparent url(../images/menu/fil.png) repeat-y scroll top left;
   z-index: 99;
+}
+.grille .ligne {
+  clear: both;
 }
 .grille .colonne,
 .grille .colonnes {
@@ -174,7 +165,7 @@ section.sec0 .cover {
   width: 100%;
   height: 100%;
   position: relative;
-  background: transparent url(../images/home/bg.jpg) repeat scroll top left;
+  background: transparent url(../images/home/bg-1200.jpg) repeat scroll top left;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -194,7 +185,11 @@ section.sec0 .intro {
 }
 section.sec0 .intro .logo {
   margin: auto;
-  background: transparent url(../images/home/logo-est.png) no-repeat scroll top left;
+  background: transparent url(../images/home/logo-est-white.svg) no-repeat scroll top left;
+  -webkit-background-size: 150px;
+  -moz-background-size: 150px;
+  -o-background-size: 150px;
+  background-size: 150px;
   width: 150px;
   height: 85px;
 }
@@ -207,8 +202,8 @@ section.sec0 .intro .baseline {
 section.sec0 .intro .social {
   margin: -50px auto 0 auto;
 }
-section.sec1 .dix.colonnes {
-  background-color: #9d261d;
+section.sec1 {
+  background-color: #f2f2f2;
 }
 section.sec1 .colonne,
 section.sec1 .colonnes {
@@ -227,6 +222,9 @@ section.sec1 .tweet .description {
 }
 section.sec1 .tweet .date {
   display: none;
+}
+section.sec2 {
+  background-color: #dadada;
 }
 section.sec2 .mate {
   text-align: center;
@@ -926,7 +924,66 @@ section.sec2 .mate .eyes {
   height: 3400px;
   background: transparent url(../images/howwework/path02.gif) no-repeat scroll top left;
 }
-hidden {
+section.sec4 {
+  background: transparent url(../images/_textures/dust.png) repeat scroll top center;
+}
+section.sec4 .colonne,
+section.sec4 .colonnes {
+  text-align: center;
+}
+section.sec4 .shadow {
+  background: transparent url(../images/clients/shadow.png) no-repeat scroll top center;
+}
+section.sec4 .cinquante {
+  height: 50%;
+}
+section.sec5 .encart {
+  background: pink;
+  position: absolute;
+  z-index: 2;
+  width: 100%;
+  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+  -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+  -webkit-background-size: 5px;
+  -moz-background-size: 5px;
+  -o-background-size: 5px;
+  background-size: 5px;
+}
+section.sec5 .encart .address,
+section.sec5 .encart .instant,
+section.sec5 .encart .copy {
+  margin: 1em 0;
+}
+section.sec5 .encart .address {
+  font-size: 12px;
+}
+section.sec5 .encart .instant,
+section.sec5 .encart .instant a {
+  color: #9d261d;
+}
+section.sec5 .encart .copy {
+  font-size: 12px;
+}
+section.sec5 .maps {
+  height: 100%;
+  width: 10px;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  cursor: pointer;
+  background-color: #fff;
+}
+section.sec5 .maps .qua {
+  background: #000000 url(../images/contact/agence-from-outdoor-03.jpg) no-repeat fixed bottom left;
+  height: 150px;
+  border-right: 10px solid #fff;
+}
+section.sec5 .maps .map {
+  background: #000000 url(../images/contact/map-level02.jpg) no-repeat fixed center 30%;
+  height: 300px;
+}
+.hidden {
   display: none;
   visibility: hidden;
 }

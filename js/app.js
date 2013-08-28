@@ -13,7 +13,7 @@ $(function(){
 			$(".illus.welcome",this).css({'visibility':'visible'});
 			$(".illus.welcome.fixed",this).css({'visibility':'hidden'});
 		}
-		
+
 		console.log('Direction example triggered scrolling ' + direction);
 		if(direction == "down") parallax.current = "howwework";
 	});
@@ -22,11 +22,15 @@ $(function(){
 
 app = {
 	wh : 0, // screen/window height;
+	ww : 0, // screen/window width
 	dh : 0, // body/document height
-	
+
+
 	refresh: function(){
 		this.wh = $(window).height();
+		this.ww = $(window).width();
 		this.dh = $(document).height();
+
 		console.log("app>refreshed",app);
 	}
 }

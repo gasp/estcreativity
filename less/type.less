@@ -1,7 +1,11 @@
 //
 // Typography
 // --------------------------------------------------
-
+html{
+	-webkit-font-smoothing: antialiased;
+	-moz-font-smoothing: antialiased;
+	font-smoothing: antialiased;
+}
 
 // Body text
 // -------------------------
@@ -61,6 +65,7 @@ h1, h2, h3, h4, h5, h6 {
   font-family: @headingsFontFamily;
   font-weight: @headingsFontWeight;
   line-height: @baseLineHeight;
+  letter-spacing: @headingsLetterSpacing;
   font-style:italic;
   color: @headingsColor;
   text-rendering: optimizelegibility; // Fix the character spacing for headings
