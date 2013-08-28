@@ -165,7 +165,7 @@ section.sec0 .cover {
   width: 100%;
   height: 100%;
   position: relative;
-  background: transparent url(../images/home/bg.jpg) repeat scroll top left;
+  background: transparent url(../images/home/bg-1200.jpg) repeat scroll top left;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -185,7 +185,11 @@ section.sec0 .intro {
 }
 section.sec0 .intro .logo {
   margin: auto;
-  background: transparent url(../images/home/logo-est.png) no-repeat scroll top left;
+  background: transparent url(../images/home/logo-est-white.svg) no-repeat scroll top left;
+  -webkit-background-size: 150px;
+  -moz-background-size: 150px;
+  -o-background-size: 150px;
+  background-size: 150px;
   width: 150px;
   height: 85px;
 }
