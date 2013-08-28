@@ -85,12 +85,9 @@ section.sec2 {
   background-color: #dadada;
 }
 section.sec3,
-section.sec4 {
-  background-color: #fff;
-}
+section.sec4,
 section.sec5 {
-  background-color: #000;
-  color: #fff;
+  background-color: #fff;
 }
 section h1 {
   margin: 0;
@@ -933,7 +930,55 @@ section.sec4 .shadow {
 section.sec4 .cinquante {
   height: 50%;
 }
-hidden {
+section.sec5 .encart {
+  background-color: #ccc;
+  position: absolute;
+  z-index: 2;
+  width: 100%;
+  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+  -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+  -webkit-background-size: 5px;
+  -moz-background-size: 5px;
+  -o-background-size: 5px;
+  background-size: 5px;
+}
+section.sec5 .encart .address,
+section.sec5 .encart .instant,
+section.sec5 .encart .copy {
+  font-size: .8em;
+  margin: 1em 0;
+}
+section.sec5 .encart .instant,
+section.sec5 .encart .instant a {
+  color: #9d261d;
+}
+section.sec5 .encart .copy {
+  font-size: .6em;
+}
+section.sec5 .maps {
+  height: 100%;
+  width: 10px;
+  z-index: 1;
+  top: 0;
+  left: 0;
+}
+section.sec5 .maps .q0 {
+  background: #000000 url(../images/contact/neighborhood-00.jpg) no-repeat fixed bottom left;
+  height: 150px;
+}
+section.sec5 .maps .q1 {
+  background: #000000 url(../images/contact/neighborhood-01.jpg) no-repeat fixed bottom left;
+  height: 150px;
+  border-top: 10px solid #fff;
+}
+section.sec5 .maps .m0 {
+  background: #000000 url(../images/contact/map-level01.jpg) no-repeat fixed bottom left;
+  height: 300px;
+  border-left: 10px solid #fff;
+  border-top: 10px solid #fff;
+}
+.hidden {
   display: none;
   visibility: hidden;
 }
