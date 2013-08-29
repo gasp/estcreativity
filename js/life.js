@@ -3,15 +3,21 @@ $(function(){
 	life.$section = $("section.sec1");
 	life.gridheight = $(".une.colonne",life.$section).width();
 	life.init = function(){
+		// set column height
 		$(".colonne, .colonnes", life.$section).css({"height": life.gridheight});
 		$(".double, .doubles", life.$section).css({"height": life.gridheight*2});
-		
+
+		// center article
+		$("article", life.$section).css({
+			'margin-top': (life.gridheight - $("article", life.$section).height()/2)
+		});
+
 		life.tweets();
 	}
 	life.tweets = function(){
 		$(".colonne, .colonnes", life.$section).each(function(){
 
-			// i don'ty want headers
+			// i don't want headers
 			if($(this).hasClass("double"))
 				return;
 
