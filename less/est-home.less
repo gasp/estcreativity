@@ -20,7 +20,7 @@ section.sec0{
 		text-align:center;
 		font-size:72px;
 		line-height:64px;
-		font: normal normal bold 72px Arial, sans-serif;
+//		font: normal normal bold 72px Arial, sans-serif;
 		color:#fff;
 		text-align:center;
 
@@ -39,6 +39,76 @@ section.sec0{
 		}
 		.social{
 			margin:-50px auto 0 auto;
+			width:240px;
+			.sbadge{
+				float:left;
+				margin-left:30px;
+				padding-top:60px;
+
+				.slogo{
+
+					position:absolute;
+					width:50px;
+					height:50px;
+					cursor:pointer;
+
+					&:hover .side{
+						transform: rotate3d(0,1,0,-180deg);
+					}
+
+					.side{
+						position:absolute;
+						width:50px;
+						height:50px;
+						background-repeat:no-repeat;
+						background-position:center center;
+						-webkit-transition: all 0.4s ease-in-out;
+						transition: all 0.4s ease-in-out;
+						-webkit-transform-style: preserve-3d;
+						transform-style: preserve-3d;
+					}
+					.side.front{
+						-webkit-backface-visibility: hidden;
+						backface-visibility: hidden;
+						z-index:2;
+					}
+					.side.back{
+						-webkit-backface-visibility: visible;
+						backface-visibility: visible;
+						z-index:1;
+					}
+
+					&.behance {
+						.side.front{
+							background-image:url(../images/home/behance-white.svg);
+						}
+						.side.back{
+							background-image:url(../images/home/behance-blue.svg);
+						}
+					}
+
+					&.twitter {
+						.side.front{
+							background-image:url(../images/home/twitter-white.svg);
+						}
+						.side.back{
+							background-image:url(../images/home/twitter-blue.svg);
+						}
+					}
+					&.pinterest {
+						.side.front{
+							background-image:url(../images/home/pinterest-white.svg);
+						}
+						.side.back{
+							background-image:url(../images/home/pinterest-red.svg);
+						}
+					}
+				}
+				.slabel{
+					padding-top:30px;
+					font-size:10px;
+				}
+			}
 		}
 	}
 

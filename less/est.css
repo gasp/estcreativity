@@ -179,7 +179,6 @@ section.sec0 .intro {
   width: 100%;
   font-size: 72px;
   line-height: 64px;
-  font: normal normal bold 72px Arial, sans-serif;
   color: #fff;
   text-align: center;
 }
@@ -201,6 +200,64 @@ section.sec0 .intro .baseline {
 }
 section.sec0 .intro .social {
   margin: -50px auto 0 auto;
+  width: 240px;
+}
+section.sec0 .intro .social .sbadge {
+  float: left;
+  margin-left: 30px;
+  padding-top: 60px;
+}
+section.sec0 .intro .social .sbadge .slogo {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+}
+section.sec0 .intro .social .sbadge .slogo:hover .side {
+  transform: rotate3d(0, 1, 0, -180deg);
+}
+section.sec0 .intro .social .sbadge .slogo .side {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+}
+section.sec0 .intro .social .sbadge .slogo .side.front {
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  z-index: 2;
+}
+section.sec0 .intro .social .sbadge .slogo .side.back {
+  -webkit-backface-visibility: visible;
+  backface-visibility: visible;
+  z-index: 1;
+}
+section.sec0 .intro .social .sbadge .slogo.behance .side.front {
+  background-image: url(../images/home/behance-white.svg);
+}
+section.sec0 .intro .social .sbadge .slogo.behance .side.back {
+  background-image: url(../images/home/behance-blue.svg);
+}
+section.sec0 .intro .social .sbadge .slogo.twitter .side.front {
+  background-image: url(../images/home/twitter-white.svg);
+}
+section.sec0 .intro .social .sbadge .slogo.twitter .side.back {
+  background-image: url(../images/home/twitter-blue.svg);
+}
+section.sec0 .intro .social .sbadge .slogo.pinterest .side.front {
+  background-image: url(../images/home/pinterest-white.svg);
+}
+section.sec0 .intro .social .sbadge .slogo.pinterest .side.back {
+  background-image: url(../images/home/pinterest-red.svg);
+}
+section.sec0 .intro .social .sbadge .slabel {
+  padding-top: 30px;
+  font-size: 10px;
 }
 section.sec1 {
   background-color: #f2f2f2;

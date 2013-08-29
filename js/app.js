@@ -36,6 +36,18 @@ app = {
 }
 app.refresh();
 
+home = {};
+
+home.init = function(){
+	$(".sec0 .social .sbadge").each(function(i){
+		$(this).click(function(){
+			window.location.href = $(this).data("link");
+		})
+	});
+}
+home.init();
+
+
 
 var parallax = {
 	$w : $(window),
