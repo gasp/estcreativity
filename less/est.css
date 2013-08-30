@@ -444,7 +444,7 @@ section.sec2 .mate .eyes {
 }
 #howwework .illus.arrow03 {
   left: 765px;
-  top: 948px;
+  top: 952px;
   -webkit-transform: rotate(180deg);
   -moz-transform: rotate(180deg);
   -ms-transform: rotate(180deg);
@@ -452,7 +452,7 @@ section.sec2 .mate .eyes {
   transform: rotate(180deg);
 }
 #howwework .illus.arrow04 {
-  left: 126px;
+  left: 130px;
   top: 1000px;
   -webkit-transform: rotate(260deg);
   -moz-transform: rotate(260deg);
@@ -463,6 +463,15 @@ section.sec2 .mate .eyes {
 #howwework .illus.arrow05 {
   left: 435px;
   top: 1230px;
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  -o-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+#howwework .illus.arrow05bis {
+  left: 657px;
+  top: 1404px;
   -webkit-transform: rotate(90deg);
   -moz-transform: rotate(90deg);
   -ms-transform: rotate(90deg);
@@ -512,13 +521,13 @@ section.sec2 .mate .eyes {
   transform: rotate(-10deg);
 }
 #howwework .illus.coffeeno {
-  left: 865px;
-  top: 830px;
-  -webkit-transform: rotate(30deg);
-  -moz-transform: rotate(30deg);
-  -ms-transform: rotate(30deg);
-  -o-transform: rotate(30deg);
-  transform: rotate(30deg);
+  left: 873px;
+  top: 840px;
+  -webkit-transform: rotate(23deg);
+  -moz-transform: rotate(23deg);
+  -ms-transform: rotate(23deg);
+  -o-transform: rotate(23deg);
+  transform: rotate(23deg);
 }
 #howwework .illus.sugar {
   background-image: url(../images/_illustrations/sugar.png);
@@ -568,8 +577,8 @@ section.sec2 .mate .eyes {
   background-image: url(../images/_illustrations/boat.png);
   width: 322px;
   height: 213px;
-  left: 355px;
-  top: 1300px;
+  left: 356px;
+  top: 1297px;
 }
 #howwework .illus.boat .fil.peche {
   position: absolute;
@@ -646,6 +655,15 @@ section.sec2 .mate .eyes {
   left: 697px;
   z-index: 104;
 }
+#howwework .illus.couldfindoutyes {
+  top: 2554px;
+  left: 747px;
+  -webkit-transform: rotate(5deg);
+  -moz-transform: rotate(5deg);
+  -ms-transform: rotate(5deg);
+  -o-transform: rotate(5deg);
+  transform: rotate(5deg);
+}
 #howwework .illus.notebook {
   background-image: url(../images/_illustrations/notebook.png);
   width: 576px;
@@ -661,6 +679,22 @@ section.sec2 .mate .eyes {
   left: 401px;
   top: 2763px;
   z-index: 106;
+}
+#howwework .illus.filetpaper {
+  background-image: url(../images/_illustrations/filet_paper.png);
+  width: 690px;
+  height: 420px;
+  left: 231px;
+  top: 2805px;
+  z-index: 107;
+}
+#howwework .illus.questionmark {
+  background-image: url(../images/_badges/clock.png);
+  width: 105px;
+  height: 105px;
+  left: 740px;
+  top: 3010px;
+  z-index: 108;
 }
 #howwework .illus.arrow07 {
   left: 635px;
@@ -753,13 +787,13 @@ section.sec2 .mate .eyes {
   transform: rotate(136deg);
 }
 #howwework .illus.arrow17 {
-  left: 233px;
-  top: 5987px;
-  -webkit-transform: rotate(41deg);
-  -moz-transform: rotate(41deg);
-  -ms-transform: rotate(41deg);
-  -o-transform: rotate(41deg);
-  transform: rotate(41deg);
+  left: 272px;
+  top: 5996px;
+  -webkit-transform: rotate(59deg);
+  -moz-transform: rotate(59deg);
+  -ms-transform: rotate(59deg);
+  -o-transform: rotate(59deg);
+  transform: rotate(59deg);
 }
 #howwework .illus.arrow18 {
   left: 96px;
@@ -968,6 +1002,13 @@ section.sec2 .mate .eyes {
   top: 3713px;
   left: 1040px;
 }
+#howwework .illus.smoke {
+  background-image: url(../images/_illustrations/smoke.png);
+  width: 23px;
+  height: 113px;
+  top: 3634px;
+  left: 1046px;
+}
 #howwework .illus.morecoffeeribbon {
   background-image: url(../images/_ribbons/ribbon-10.png);
   width: 225px;
@@ -1081,6 +1122,13 @@ section.sec2 .mate .eyes {
   top: 4950px;
   left: 539px;
 }
+#howwework .illus.filetcouleurs {
+  background-image: url(../images/_illustrations/filet_couleurs.png);
+  width: 155px;
+  height: 760px;
+  top: 4657px;
+  left: 789px;
+}
 #howwework .illus.box {
   background-image: url(../images/_illustrations/est-box.png);
   width: 566px;
@@ -1133,16 +1181,16 @@ section.sec2 .mate .eyes {
   transform: rotate(-7deg);
 }
 #howwework .illus.ruler {
-  background-image: url(../images/_illustrations/ruler.png);
-  width: 698px;
-  height: 148px;
-  top: 6054px;
-  left: 435px;
-  -webkit-transform: rotate(-7deg);
-  -moz-transform: rotate(-7deg);
-  -ms-transform: rotate(-7deg);
-  -o-transform: rotate(-7deg);
-  transform: rotate(-7deg);
+  background-image: url(../images/_illustrations/rulerfull.png);
+  width: 952px;
+  height: 260px;
+  top: 5892px;
+  left: 274px;
+  -webkit-transform: rotate(1deg);
+  -moz-transform: rotate(1deg);
+  -ms-transform: rotate(1deg);
+  -o-transform: rotate(1deg);
+  transform: rotate(1deg);
 }
 #howwework .water {
   background-image: url(../images/howwework/water.png), url(../images/howwework/cristal.png);
