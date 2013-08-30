@@ -363,17 +363,20 @@ section.sec2 .mate .eyes {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
-.row {
-  margin-top: 0;
-  padding-top: 100px;
+.sec3 {
+  text-align: center;
 }
-#someotherstuff {
-  height: 900px;
-  background-color: silver;
+.sec3 .encart {
+  text-align: left;
+  position: absolute;
+  width: 100%;
+  z-index: 40;
 }
 #howwework {
+  margin: 0 auto;
   width: 1440px;
   position: relative;
+  text-align: left;
 }
 #howwework .illus {
   background-color: transparent;
