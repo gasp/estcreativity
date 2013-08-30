@@ -372,6 +372,13 @@ section.sec2 .mate .eyes {
   width: 100%;
   z-index: 40;
 }
+.sec3 .encart article {
+  padding-top: 50px;
+}
+.sec3 .encart article h2 {
+  padding: 15px 0 20px 0;
+  background: transparent url(../images/_coutures/couture-red.png) repeat-x scroll top left;
+}
 .sec3 .sea {
   background-image: url(../images/howwework/water.png), url(../images/howwework/cristal.png);
   background-attachment: scroll,scroll;
@@ -404,6 +411,7 @@ section.sec2 .mate .eyes {
   background-image: url(../images/_badges/yes.png);
   width: 135px;
   height: 120px;
+  z-index: 199;
 }
 #howwework .illus.yes.small {
   background-image: url(../images/_badges/yes-small.png);
@@ -414,6 +422,7 @@ section.sec2 .mate .eyes {
   background-image: url(../images/_badges/no.png);
   width: 125px;
   height: 120px;
+  z-index: 199;
 }
 #howwework .illus.no.small {
   background-image: url(../images/_badges/no-small.png);
@@ -424,11 +433,13 @@ section.sec2 .mate .eyes {
   background-image: url(../images/_arrows/arrow-black.png);
   width: 40px;
   height: 40px;
+  z-index: 200;
 }
 #howwework .illus.aw {
   background-image: url(../images/_arrows/arrow-white.png);
   width: 40px;
   height: 40px;
+  z-index: 200;
 }
 #howwework .illus.arrow00 {
   left: 595px;
@@ -572,6 +583,27 @@ section.sec2 .mate .eyes {
   left: 450px;
   top: 770px;
 }
+#howwework .illus.cloud01 {
+  background-image: url(../images/_illustrations/cloud-01.png);
+  width: 133px;
+  height: 87px;
+  left: 300px;
+  top: 900px;
+}
+#howwework .illus.cloud02 {
+  background-image: url(../images/_illustrations/cloud-02.png);
+  width: 85px;
+  height: 59px;
+  left: 450px;
+  top: 970px;
+}
+#howwework .illus.cloud03 {
+  background-image: url(../images/_illustrations/cloud-03.png);
+  width: 111px;
+  height: 67px;
+  left: 600px;
+  top: 900px;
+}
 #howwework .illus.visionribbon {
   background-image: url(../images/_ribbons/ribbon-03.png);
   width: 381px;
@@ -587,6 +619,58 @@ section.sec2 .mate .eyes {
   -ms-transform: rotate(-20deg);
   -o-transform: rotate(-20deg);
   transform: rotate(-20deg);
+}
+#howwework .illus.ascenceur {
+  width: 155px;
+  height: 291px;
+  left: 1000px;
+  top: 1140px;
+  overflow: hidden;
+}
+#howwework .illus.ascenceur .illus.aiguille {
+  background-image: url(../images/_ascenceur/aiguille.png);
+  width: 70px;
+  height: 7px;
+  left: 43px;
+  top: 45px;
+  transform: rotate(0.5turn);
+}
+#howwework .illus.ascenceur .illus.interior {
+  background-image: url(../images/_ascenceur/interior.png);
+  width: 142px;
+  height: 228px;
+  left: 7px;
+  top: 57px;
+}
+#howwework .illus.ascenceur .illus.contour {
+  background-image: url(../images/_ascenceur/contour.png);
+  width: 155px;
+  height: 291px;
+  left: 0px;
+  top: 0px;
+}
+#howwework .illus.ascenceur .illus.doors {
+  width: 130px;
+  height: 211px;
+  left: 17px;
+  top: 68px;
+  overflow: hidden;
+}
+#howwework .illus.ascenceur .illus.doors .illus {
+  width: 61px;
+  height: 207px;
+  background-size: 61px;
+}
+#howwework .illus.ascenceur .illus.doors .illus.dleft {
+  background-image: url(../images/_ascenceur/left-door.png);
+  left: 0;
+}
+#howwework .illus.ascenceur .illus.doors .illus.dright {
+  background-image: url(../images/_ascenceur/right-door.png);
+  left: 61px;
+}
+#howwework .illus.ascenceur.asc2 {
+  top: 2565px;
 }
 #howwework .illus.boat {
   background-image: url(../images/_illustrations/boat.png);
@@ -1136,6 +1220,7 @@ section.sec2 .mate .eyes {
   height: 275px;
   top: 4950px;
   left: 539px;
+  z-index: 122;
 }
 #howwework .illus.filetcouleurs {
   background-image: url(../images/_illustrations/filet_couleurs.png);
@@ -1219,9 +1304,16 @@ section.sec2 .mate .eyes {
   position: absolute;
   background-color: #333;
   width: 1px;
-  height: 1030px;
-  left: 675px;
+  height: 1130px;
+  left: 676px;
   top: 0;
+}
+#howwework .water .illus.hamecon.peche {
+  background-image: url(../images/howwework/hamecon.png);
+  width: 15px;
+  height: 30px;
+  top: 1129px;
+  left: 665px;
 }
 #howwework .water .illus.doyouknowribbon {
   background-image: url(../images/_ribbons/ribbon-04.png);

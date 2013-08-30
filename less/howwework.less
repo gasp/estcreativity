@@ -9,6 +9,13 @@
 		position:absolute;
 		width:100%;
 		z-index:40;
+		article{
+			padding-top:50px;
+			h2{
+				padding:15px 0 20px 0;
+				background: transparent url(../images/_coutures/couture-red.png) repeat-x scroll top left;
+			}
+		}
 	}
 
 	.sea{
@@ -45,6 +52,7 @@
 			background-image: url(../images/_badges/yes.png);
 			width:135px;
 			height:120px;
+			z-index:199;
 			&.small{
 				background-image: url(../images/_badges/yes-small.png);
 				width:94px;
@@ -55,6 +63,7 @@
 			background-image: url(../images/_badges/no.png);
 			width:125px;
 			height:120px;
+			z-index:199;
 			&.small{
 				background-image: url(../images/_badges/no-small.png);
 				width:82px;
@@ -65,11 +74,13 @@
 			background-image: url(../images/_arrows/arrow-black.png);
 			width:40px;
 			height:40px;
+			z-index:200;
 		}
 		&.aw{ // arrow white
 			background-image: url(../images/_arrows/arrow-white.png);
 			width:40px;
 			height:40px;
+			z-index:200;
 		}
 
 		// #########################
@@ -184,6 +195,27 @@
 			top:770px;
 		}
 
+		&.cloud01{
+			background-image: url(../images/_illustrations/cloud-01.png);
+			width:133px;
+			height:87px;
+			left:300px;
+			top:900px;
+		}
+		&.cloud02{
+			background-image: url(../images/_illustrations/cloud-02.png);
+			width:85px;
+			height:59px;
+			left:450px;
+			top:970px;
+		}
+		&.cloud03{
+			background-image: url(../images/_illustrations/cloud-03.png);
+			width:111px;
+			height:67px;
+			left:600px;
+			top:900px;
+		}
 
 		&.visionribbon{
 			background-image: url(../images/_ribbons/ribbon-03.png);
@@ -198,7 +230,62 @@
 			top:1230px;
 			.rotate(-20deg); 
 		}
-		
+
+		&.ascenceur{
+			width:155px;
+			height:291px;
+			left:1000px;
+			top:1140px;
+			overflow:hidden;
+
+			.illus.aiguille{
+				background-image: url(../images/_ascenceur/aiguille.png);
+				width:70px;
+				height:7px;
+				left:43px;
+				top:45px;
+				transform: rotate(0.5turn);
+			}
+
+			.illus.interior{
+				background-image: url(../images/_ascenceur/interior.png);
+				width:142px;
+				height:228px;
+				left:7px;
+				top:57px;
+			}
+			.illus.contour{
+				background-image: url(../images/_ascenceur/contour.png);
+				width:155px;
+				height:291px;
+				left:0px;
+				top:0px;
+			}
+			.illus.doors{
+//				background-color:rgba(255,0,0,.2);
+				width:130px;
+				height:211px;
+				left:17px;
+				top:68px;
+				overflow:hidden;
+				.illus{
+					width:61px;
+					height:207px;
+					background-size:61px;
+				}
+				.illus.dleft{
+					background-image:url(../images/_ascenceur/left-door.png);
+					left:0;
+				}
+				.illus.dright{
+					background-image:url(../images/_ascenceur/right-door.png);
+					left:61px;
+				}
+			}
+			&.asc2{
+				top:2565px;
+			}
+		}
 
 		// look .water too
 		&.boat{
@@ -214,7 +301,6 @@
 				height:(300 + 213 - 73px);
 				left:320px;
 				top:73px;
-
 			}
 			
 		}
@@ -237,7 +323,7 @@
 		// c'est reparti
 
 		&.coffre{
-      background-image: url(../images/_illustrations/coffre.png);
+			background-image: url(../images/_illustrations/coffre.png);
 			width:185px;
 			height:177px;
 			top:2355px;
@@ -250,13 +336,13 @@
 			height:88px;
 			left:148px;
 			top:2359px;
-      z-index:107; // let this object be over the water, not under
+			z-index:107; // let this object be over the water, not under
 		}
 		&.coffreyes{
 			top:2526px;
 			left:182px;
 			.rotate(5deg);
-    }
+		}
 		&.usfindoutribbon{
 			background-image: url(../images/_ribbons/ribbon-05.png);
 			width:306px;
@@ -283,8 +369,8 @@
 			top:2554px;
 			left:747px;
 			.rotate(5deg);
-    }
-    &.notebook{
+		}
+		&.notebook{
 			background-image: url(../images/_illustrations/notebook.png);
 			width:576px;
 			height:448px;
@@ -478,7 +564,7 @@
 			.rotate(13deg);
 		}
 		&.maybe{
-      background-image: url(../images/_badges/maybe.png);
+			background-image: url(../images/_badges/maybe.png);
 			width:133px;
 			height:116px;
 			top:3677px;
@@ -486,7 +572,7 @@
 			.rotate(-12deg);
 		}
 		&.futureribbon{
-      background-image: url(../images/_ribbons/ribbon-08.png);
+			background-image: url(../images/_ribbons/ribbon-08.png);
 			width:251px;
 			height:133px;
 			top:3717px;
@@ -496,172 +582,175 @@
 			top:3710px;
 			left:105px;
 			.rotate(16deg);
-    }
+    	}
 		&.out{
-      background-image: url(../images/_badges/out.png);
+			background-image: url(../images/_badges/out.png);
 			width:214px;
 			height:213px;
 			top:3899px;
 			left:67px;
-    }
-    &.coffemaker{
-      background-image: url(../images/_illustrations/coffe-maker.png);
+		}
+		&.coffemaker{
+			background-image: url(../images/_illustrations/coffe-maker.png);
 			width:226px;
 			height:300px;
 			top:3713px;
 			left:1040px;
-    }
-    &.smoke{
-      background-image: url(../images/_illustrations/smoke.png);
+		}
+		&.smoke{
+			background-image: url(../images/_illustrations/smoke.png);
 			width:23px;
 			height:113px;
 			top:3634px;
 			left:1046px;
-    }
-    &.morecoffeeribbon{
-      background-image: url(../images/_ribbons/ribbon-10.png);
+		}
+		&.morecoffeeribbon{
+			background-image: url(../images/_ribbons/ribbon-10.png);
 			width:225px;
 			height:59px;
 			top:3862px;
 			left:1025px;
-    }
+		}
 		&.morecoffeeno{
 			top:3935px;
 			left:1205px;
 			.rotate(16deg);
-    }
+		}
 		&.morecoffeeyes{
 			top:3950px;
 			left:871px;
 			.rotate(-5deg);
 		}
-    &.coffeesmall{
-      background-image: url(../images/_illustrations/cup-of-coffe-02.png);
+		&.coffeesmall{
+			background-image: url(../images/_illustrations/cup-of-coffe-02.png);
 			width:132px;
 			height:140px;
 			top:4090px;
 			left:1155px;
-    }
-    &.blurwhitechess{
-      background-image: url(../images/_illustrations/chess-02.png);
+		}
+		&.blurwhitechess{
+			background-image: url(../images/_illustrations/chess-02.png);
 			width:165px;
 			height:330px;
 			top:4115px;
 			left:972px;
-    }
-    &.strategyribbon{
-      background-image: url(../images/_ribbons/ribbon-11.png);
+		}
+		&.strategyribbon{
+			background-image: url(../images/_ribbons/ribbon-11.png);
 			width:385px;
 			height:115px;
 			top:4200px;
 			left:795px;
-    }
-    &.whitechess{
-      background-image: url(../images/_illustrations/chess-01.png);
+    	}
+		&.whitechess{
+			background-image: url(../images/_illustrations/chess-01.png);
 			width:246px;
 			height:497px;
 			top:3948px;
 			left:663px;
-    }
-    &.blackchess{
-      background-image: url(../images/_illustrations/chess-03.png);
+		}
+		&.blackchess{
+			background-image: url(../images/_illustrations/chess-03.png);
 			width:171px;
 			height:352px;
 			top:4204px;
 			left:357px;
-      .rotate(-98deg);
-    }
-    &.exclamation{
-      background-image: url(../images/_illustrations/exclamation.png);
+			.rotate(-98deg);
+		}
+		&.exclamation{
+			background-image: url(../images/_illustrations/exclamation.png);
 			width:125px;
 			height:240px;
 			top:4347px;
 			left:502px;
-    }
+//			transform: rotate(30deg);
+//			transform-origin: -130px 0em;
+		}
 		&.strategyno{
 			top:4591px;
 			left:583px;
 			.rotate(-18deg);
-    }
+		}
 		&.strategyes{
 			top:4569px;
 			left:937px;
 			.rotate(-4deg);
-    }
+		}
 		&.designo{
 			top:4791px;
 			left:1009px;
 			.rotate(13deg);
-    }
+		}
 		&.designribbon{
-      background-image: url(../images/_ribbons/ribbon-09.png);
+			background-image: url(../images/_ribbons/ribbon-09.png);
 			width:399px;
 			height:52px;
 			top:4842px;
 			left:524px;
-    }
+		}
 		&.color{
-      background-image: url(../images/_illustrations/all_color.png);
+			background-image: url(../images/_illustrations/all_color.png);
 			width:375px;
 			height:275px;
 			top:4950px;
 			left:539px;
-    }
+			z-index:122;
+		}
 		&.filetcouleurs{
-      background-image: url(../images/_illustrations/filet_couleurs.png);
+			background-image: url(../images/_illustrations/filet_couleurs.png);
 			width:155px;
 			height:760px;
 			top:4657px;
 			left:789px;
-    }
+		}
 		&.box{
-      background-image: url(../images/_illustrations/est-box.png);
+			background-image: url(../images/_illustrations/est-box.png);
 			width:566px;
 			height:574px;
 			top:5312px;
 			left:444px;
-    }
+		}
 		&.boxshadow{
-      background-image: url(../images/_illustrations/est-box-shadow.png);
+			background-image: url(../images/_illustrations/est-box-shadow.png);
 			width:1242px;
 			height:567px;
 			top:5668px;
 			left:151px;
-    }
+		}
 		&.leftglass{
-      background-image: url(../images/_illustrations/verre.png);
+			background-image: url(../images/_illustrations/verre.png);
 			width:105px;
 			height:364px;
 			top:5249px;
 			left:1030px;
-    }
+		}
 		&.rightglass{
-      background-image: url(../images/_illustrations/verre.png);
+			background-image: url(../images/_illustrations/verre.png);
 			width:105px;
 			height:364px;
 			top:5196px;
 			left:1134px;
-      .rotate(-16deg);
-    }
+			.rotate(-16deg);
+		}
 		&.readyno{
 			top:5618px;
 			left:1159px;
 			.rotate(34deg);
-    }
+		}
 		&.readyes{
 			top:5812px;
 			left:252px;
 			.rotate(-7deg);
-    }
-    &.ruler{
-      background-image: url(../images/_illustrations/rulerfull.png);
+		}
+		&.ruler{
+			background-image: url(../images/_illustrations/rulerfull.png);
 			width:952px;
 			height:260px;
 			top:5892px;
 			left:274px;
-      .rotate(1deg);
-    }
-	}
+			.rotate(1deg);
+		}
+	} // .illus
 	.water{
 //		background-image: url(../images/howwework/water.png),url(../images/howwework/cristal.png); 
 //		background-attachment: scroll,scroll;
@@ -677,10 +766,16 @@
 			position:absolute;
 			background-color:#333;
 			width:1px;
-			height:1030px;
-			left:675px;
+			height:1130px;
+			left:676px;
 			top:0;
-
+		}
+		.illus.hamecon.peche{
+			background-image: url(../images/howwework/hamecon.png);
+			width:15px;
+			height:30px;
+			top:1129px;
+			left:665px;
 		}
 		.illus{
 			&.doyouknowribbon{
@@ -795,8 +890,8 @@
 				left:703px;
 				top:485px;
 			}
-		}
-	}
+		} // .water .illus
+	} // .water
 	
 	
 	.path01{
