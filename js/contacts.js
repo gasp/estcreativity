@@ -16,22 +16,16 @@ contacts.init = function(){
 		}
 	);
 
-	window.setTimeout(function(){
 
-		var eh = $(".encart",contacts.$obj).height();
-		var mh = app.wh - eh;
+	var eh = $(".encart",contacts.$obj).height();
+	var mh = app.wh - eh;
 
-		$(".map",contacts.$mi).height(mh);
-		$(".qua",contacts.$mi).height(mh);
+	$(".map",contacts.$mi).height(mh);
+	$(".qua",contacts.$mi).height(mh);
 
-		var mih = contacts.$mi.height();
-		contacts.$mi.css({paddingTop:app.wh - mih})
-		$(".maps",contacts.$obj).height(app.wh).width(app.ww).show();
+	var mih = contacts.$mi.height();
+	contacts.$mi.css({paddingTop:app.wh - mih})
+	$(".maps",contacts.$obj).height(app.wh).width(app.ww).show();
 
-	}.bind(this),1200);
 
 }
-
-$(function(){
-	contacts.init();
-})

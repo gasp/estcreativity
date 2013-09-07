@@ -43,6 +43,7 @@ app = {
 		
 		window.setTimeout(function(){
 			app.stellar();
+			contacts.init();
 		},120)
 	}
 	
