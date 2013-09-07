@@ -49,7 +49,7 @@
 		this._name = pluginName;
 		$drag = $(this.options.grabber)
 
-		console.log('global var g',window.g = this)
+//		console.log('global var g',window.g = this)
 		this.init();
 	}
 
@@ -75,7 +75,7 @@
 					cursor.free = false;
 					cursor.dragged = true; // we will be listening to mouse events
 					$drag = $(e.target).addClass('active');
-					console.log('grabbed');
+//					console.log('grabbed');
 				}
 				else console.log('already animated') // debug
 			})
@@ -89,11 +89,11 @@
 			$(document).on("mouseup", function (e) {
 				if(cursor.dragged == true){
 					// dragged = false; // i wll cheat here
-					console.log('released');
-					console.log('let\'s go to ',target)
+//					console.log('released');
+//					console.log('let\'s go to ',target)
 					
 					that._animateTo(target, function(){
-						console.log('callback from mouseup')
+//						console.log('callback from mouseup')
 //this should undrag the cursor
 // but pergaps after animating it
 						cursor.dragged = false;
@@ -174,7 +174,7 @@
 			}.bind(this,s),100);
 		},
 		_hasItBeenScrolling : function(previousScrollTop){
-			console.log(previousScrollTop)
+//			console.log(previousScrollTop)
 			return previousScrollTop != $w.scrollTop();
 		},
 		_snapSection : function(){
@@ -198,7 +198,7 @@
 				){ 
 					$("html, body").scrollTop(offset[i].top);
 					
-					console.log('I immediately sticked !, not animated (',animated,')');
+//					console.log('I immediately sticked !, not animated (',animated,')');
 					current = i;
 					return;
 				}
@@ -208,7 +208,7 @@
 					
 					// cache this section
 					var currentSection = this;
-					console.log('I should animate',options.snapSpeed)
+//					console.log('I should animate',options.snapSpeed)
 					that._animateTo(i,function(){
 						console.log('callback works from snap')
 					})
@@ -270,7 +270,7 @@
 		_onResize: function(){
 			this._setSectionHeight();
 			this._setOffset();
-			console.log($(window).height(),offset);
+//			console.log($(window).height(),offset);
 			// snap ?
 		},
 		_getCursorPos: function(){
@@ -330,12 +330,12 @@
 		_setCurrent: function(i){
 			current = Math.min(i,offset.length-1);
 			this.options.onCurrent(i);
-			console.log('current',i)
+//			console.log('current',i)
 		},
 		_setTarget: function(i){
 			target = Math.min(i,offset.length-1);
 			this.options.onTarget(i);
-			console.log('target',i);
+//			console.log('target',i);
 		}
 
 	};
