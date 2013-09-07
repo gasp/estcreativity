@@ -1,53 +1,56 @@
-$(function(){
-	$.stellar({
-		responsive:true,
-		horizontalScrolling: false,
-	});
-	$("#howwework").waypoint(function(direction) {
-		if(direction == "down"){
-			$(".illus.welcome",this).css({'visibility':'hidden'});
-			$(".illus.welcome.fixed",this).css({'visibility':'visible'});
-			
-		}	
-		else{
-			$(".illus.welcome",this).css({'visibility':'visible'});
-			$(".illus.welcome.fixed",this).css({'visibility':'hidden'});
-		}
-
-		console.log('Direction example triggered scrolling ' + direction);
-		if(direction == "down") parallax.current = "howwework";
-	});
-	
-})
-
 app = {
+	$w : {},
 	wh : 0, // screen/window height;
 	ww : 0, // screen/window width
 	dh : 0, // body/document height
 
 
 	refresh: function(){
-		this.wh = $(window).height();
-		this.ww = $(window).width();
+		this.$w = $(window);
+		this.wh = this.$w.height();
+		this.ww = this.$w.width();
 		this.dh = $(document).height();
 
 		console.log("app>refreshed",app);
+	},
+
+	stellar: function(){
+		$.stellar({
+			responsive:true,
+			horizontalScrolling: false
+		});
 	}
+
+	init: function(){
+		console.log('app>initialized');
+		app.refresh();
+		
+		// unhide sections
+		// cf est-layout.less
+		// mus be done _before_ initializing other elemnets
+		$('section').show();
+		
+		// here init all elements
+
+		home.init()
+		
+		parallax.init();
+		
+		window.setTimeout(function(){
+			app.stellar();
+		},120)
+	}
+	
 }
-app.refresh();
-
-home = {};
-
-home.init = function(){
-	$(".sec0 .social .sbadge").each(function(i){
-		$(this).click(function(){
-			window.location.href = $(this).data("link");
-		})
-	});
-}
-home.init();
 
 
+$(window).on("load", function(){
+	app.init();
+})
+
+
+
+/*
 
 var parallax = {
 	$w : $(window),
@@ -79,13 +82,13 @@ var parallax = {
 		if(Math.abs(parallax.s + app.wh - 200 - parallax.objects.sugar.offset.top) < 50){
 			var delta = Math.abs(parallax.s + app.wh - 200 - parallax.objects.sugar.offset.top);
 			$sugar.css({top: parallax.objects.sugar.position.top + delta / 2});
-			/*
 			
-			console.log(
-				Math.abs(parallax.s + app.wh - 200 - $sugar.offset().top) ,
-				parallax.s,
-				$sugar.offset().top
-			)*/
+//			console.log(
+//				Math.abs(parallax.s + app.wh - 200 - $sugar.offset().top) ,
+//				parallax.s,
+//				$sugar.offset().top
+
+
 		}
 		
 		if(Math.abs(parallax.s + app.wh - 200 - parallax.objects.fish01.offset.top) < 50){

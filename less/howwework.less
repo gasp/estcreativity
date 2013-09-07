@@ -2,8 +2,10 @@
 @import "variables.less"; // Modify this for custom colors, font-sizes, etc
 @import "mixins.less";
 
+
 .sec3{
 	text-align:center;
+//	overflow:hidden; ? do i need this for webkit?
 	.encart{
 		text-align:left;
 		position:absolute;
@@ -355,7 +357,6 @@
 			top:2436px;
 			left:595px;
 			.rotate(30deg);
-			z-index:103; // let this object be over the water, not under
 		}
 		&.couldfindoutribbon{
 			background-image: url(../images/_ribbons/ribbon-06.png);
