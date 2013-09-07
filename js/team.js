@@ -21,7 +21,7 @@ team.init = function(){
 	*/
 	
 	team.$mates.each(function(i){
-		console.log(this,i)
+//		console.log(this,i)
 		$(this).css({
 			'background-image':'url(images/team/'+that.members[i]+'-'+team.height+'.jpg)'
 		})
@@ -33,7 +33,6 @@ team.init = function(){
 
 team.place = function(){
 
-	wh = $(window).height();
 	var w = $(team.$mates.get(0)).width(),
 	spacers = [
 		{top:300,bottom:100},
@@ -48,15 +47,15 @@ team.place = function(){
 
 	$(".top",this.$mate).css({
 		'top': 0,
-		'height': wh - spacers[team.i].top,
+		'height': app.wh - spacers[team.i].top,
 		'width' : w
 	});
 	$(".top .fname",this.$mate).css({
-		'margin-top': (wh - spacers[team.i].top) -120 
+		'margin-top': (app.wh - spacers[team.i].top) -120 
 	});
 
 	$(".bottom",this.$mate).css({
-		'top': wh - spacers[team.i].bottom,
+		'top': app.wh - spacers[team.i].bottom,
 		'height': spacers[team.i].bottom,
 		'width' : w
 	});
@@ -99,7 +98,7 @@ eyes.init = function(){
 	team.$mates.each(function(i){
 		var $ey = $(d).clone();
 
-		console.log(" eyes: ",team.i,positions[team.i],team.resolutions[team.i])
+//		console.log(" eyes: ",team.i,positions[team.i],team.resolutions[team.i])
 
 		$ey.css({
 			'background-image':'url(images/team/'+team.members[j[i]]+'-'+team.height+'.jpg)',
@@ -109,7 +108,7 @@ eyes.init = function(){
 			'top': wh - positions[team.i].top
 		})
 		$(this).append($ey)
-		console.log($ey,this)
+//		console.log($ey,this)
 /*
 		$ey.css({
 			'background-image':'url(images/team/'+team.members[j[i]]+'-'+team.height+'.jpg)',
@@ -148,6 +147,3 @@ eyes.animate = function(){
 eyes.freeze = function(){
 	window.clearTimeout(eyes.time)
 }
-
-team.init();
-eyes.init();
