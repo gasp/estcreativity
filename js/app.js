@@ -19,7 +19,7 @@ app = {
 			responsive:true,
 			horizontalScrolling: false
 		});
-	}
+	},
 
 	init: function(){
 		console.log('app>initialized');
@@ -32,7 +32,12 @@ app = {
 		
 		// here init all elements
 
-		home.init()
+		$(document).grabScroll();
+		home.init();
+
+		team.init();
+		eyes.init();
+		
 		
 		parallax.init();
 		
@@ -49,7 +54,16 @@ $(window).on("load", function(){
 })
 
 
+/*
+	TODO delete this
+		app.refresh is still needed because all isn't properly wired
+		but eventually, it shall come
+*/
 
+$(function(){
+	app.refresh();
+});
+app.refresh();
 /*
 
 var parallax = {
