@@ -4,7 +4,6 @@ app = {
 	ww : 0, // screen/window width
 	dh : 0, // body/document height
 
-
 	refresh: function(){
 		this.$w = $(window);
 		this.wh = this.$w.height();
@@ -24,15 +23,14 @@ app = {
 	init: function(){
 		console.log('app>initialized');
 
-		
 		// unhide sections
 		// cf est-layout.less
 		// mus be done _before_ initializing other elemnets
 		$('section').show();
-		app.refresh();
-		
+
 		// here init main elements
 		$(document).grabScroll();
+		app.refresh();
 		menu.init();
 
 		team.init();
@@ -59,10 +57,14 @@ app = {
 	}
 }
 
+// on first read : activate home
+
 $(function(){
 	app.refresh();
 	home.init();
 });
+
+// on load, load all the application
 $(window).on("load", function(){
 	app.init();
 })
