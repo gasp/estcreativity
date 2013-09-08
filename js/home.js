@@ -31,10 +31,8 @@ home.setCover = function(){
 }
 
 home.parallax = function(s){
-	if (s < app.wh){
-		var r = s/app.wh;
-		home.$cover.stop().fadeTo( 30, 1-r)
-	}
+	var r = s/app.wh;
+	home.$cover.stop().fadeTo( 30, 1-r)
 }
 
 home.init = function(){

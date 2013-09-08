@@ -78,6 +78,16 @@ body {
 section {
   position: relative;
 }
+/*
+// hide sections on load
+section.sec1, 
+section.sec2, 
+section.sec3, 
+section.sec4, 
+section.sec5 {
+	display:none;
+}
+*/
 section.sec3,
 section.sec4,
 section.sec5 {
@@ -716,7 +726,7 @@ section.sec2 .mate .eyes {
   width: 41px;
   height: 88px;
   left: 148px;
-  top: 2359px;
+  top: 2259px;
   z-index: 107;
 }
 #howwework .illus.coffreyes {
@@ -744,7 +754,6 @@ section.sec2 .mate .eyes {
   -ms-transform: rotate(30deg);
   -o-transform: rotate(30deg);
   transform: rotate(30deg);
-  z-index: 103;
 }
 #howwework .illus.couldfindoutribbon {
   background-image: url(../images/_ribbons/ribbon-06.png);
@@ -1160,18 +1169,17 @@ section.sec2 .mate .eyes {
   height: 497px;
   top: 3948px;
   left: 663px;
+  z-index: 105;
 }
 #howwework .illus.blackchess {
   background-image: url(../images/_illustrations/chess-03.png);
   width: 171px;
   height: 352px;
-  top: 4204px;
-  left: 357px;
-  -webkit-transform: rotate(-98deg);
-  -moz-transform: rotate(-98deg);
-  -ms-transform: rotate(-98deg);
-  -o-transform: rotate(-98deg);
-  transform: rotate(-98deg);
+  top: 4000px;
+  left: 530px;
+  -moz-transform-origin: bottom right;
+  -webkit-transform-origin: bottom right;
+  transform-origin: bottom right;
 }
 #howwework .illus.exclamation {
   background-image: url(../images/_illustrations/exclamation.png);
@@ -1255,7 +1263,7 @@ section.sec2 .mate .eyes {
   width: 105px;
   height: 364px;
   top: 5196px;
-  left: 1134px;
+  left: 1174px;
   -webkit-transform: rotate(-16deg);
   -moz-transform: rotate(-16deg);
   -ms-transform: rotate(-16deg);

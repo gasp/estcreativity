@@ -23,7 +23,7 @@ app = {
 
 	init: function(){
 		console.log('app>initialized');
-		app.refresh();
+//		app.refresh();
 		
 		// unhide sections
 		// cf est-layout.less
@@ -37,12 +37,21 @@ app = {
 
 		team.init();
 		eyes.init();
-		
-		
-		parallax.init();
+		how.init();
+
+
 		
 		window.setTimeout(function(){
+			// parallax for home, how
+			// listeners
+			// requires home, how
+			parallax.init();
+
+			// parallax for elements in how
+			// listeners
 			app.stellar();
+
+			// 1 time elements placing (quick dom manipulation)
 			contacts.init();
 		},120)
 	}
@@ -61,9 +70,6 @@ $(window).on("load", function(){
 		but eventually, it shall come
 */
 
-$(function(){
-	app.refresh();
-});
 app.refresh();
 /*
 
