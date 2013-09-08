@@ -1,0 +1,57 @@
+module.exports = function(grunt) {
+
+	// Project configuration.
+	grunt.initConfig({
+		pkg: grunt.file.readJSON('package.json'),
+		concat: {
+			options: {
+				separator: ';',
+				stripBanners: true,
+				banner: '/*! <%= pkg.name %> - v<%= pkg.version %> - ' +
+				'<%= grunt.template.today("yyyy-mm-dd") %> */',
+			},
+			dist: {
+				src: [
+					'js/app.js',
+					'js/parallax.js',
+					'js/home.js',
+					'js/menu.js',
+					'js/fil.js',
+					'js/howwework.js',
+					'js/life.js',
+					'js/team.js',
+					'js/clients.js',
+					'js/contacts.js'
+				],
+				dest: 'js/est.js',
+			},
+		},
+		uglify: {
+			options: {
+				banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n'
+			},
+			build: {
+				src: 'js/est.js',
+				dest: 'js/est.min.js'
+			}
+		},
+		watch: {
+			custom : {
+				files: ['js/*', '!js/vendo/**','!js/est.**'],
+				tasks: ['concat:dist','uglify:build']
+			},
+		}
+	}); // /initConfig
+
+
+	grunt.loadNpmTasks('grunt-contrib-concat');
+	grunt.loadNpmTasks('grunt-contrib-uglify');
+	grunt.loadNpmTasks('grunt-contrib-watch');
+
+	grunt.registerTask('dry', ['uglify:build','concat:dist']);
+
+	grunt.registerTask('default', ['dry','watch:custom']);
+
+};
+
+
