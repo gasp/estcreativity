@@ -29,10 +29,10 @@ app = {
 		// cf est-layout.less
 		// mus be done _before_ initializing other elemnets
 		$('section').show();
-		app.refresh();
 		
 		// here init main elements
 		$(document).grabScroll();
+		app.refresh();
 		menu.init();
 
 		team.init();
