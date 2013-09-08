@@ -16,6 +16,3 @@ clients.init = function(){
 	}
 }
 
-$(function(){
-	clients.init();
-})

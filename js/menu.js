@@ -12,6 +12,11 @@ var menu = {
 			else m.open('fast');
 			e.preventDefault()
 		});
+		
+		$(".sec1").waypoint(function(direction){
+			if(direction == "down") menu.$navbar.stop().fadeIn()
+			else menu.$navbar.stop().fadeOut();
+		})
 	},
 	place : function(){
 		this.$brand = $(".brand",this.$navnar);
@@ -33,16 +38,3 @@ var menu = {
 	}
 };
 
-
-/*
-	TODO integrate this into the init and specify the right name of the slide
-*/
-$(function(){
-	$(".sec1").waypoint(function(direction){
-		if(direction == "down") menu.$navbar.stop().fadeIn()
-		else menu.$navbar.stop().fadeOut();
-	})
-
-})
-
-menu.init()

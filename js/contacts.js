@@ -27,5 +27,4 @@ contacts.init = function(){
 	contacts.$mi.css({paddingTop:app.wh - mih})
 	$(".maps",contacts.$obj).height(app.wh).width(app.ww).show();
 
-
 }
