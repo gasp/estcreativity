@@ -25,14 +25,28 @@ module.exports = function(grunt) {
 				],
 				dest: 'js/est.js',
 			},
+			vendors: {
+				src: [
+					'js/vendor/jquery-1.10.1.js',
+					'js/vendor/waypoints.js',
+					'js/vendor/jquery.easing-1.3.js',
+					'js/vendor/jquery.grabscroll.js',
+					'js/vendor/jquery.stellar.js'
+				],
+				dest: 'js/vendors.js'
+			}
 		},
 		uglify: {
 			options: {
 				banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n'
 			},
-			build: {
+			dist: {
 				src: 'js/est.js',
 				dest: 'js/est.min.js'
+			},
+			vendors: {
+				src: 'js/vendors.js',
+				dest: 'js/vendors.min.js'
 			}
 		},
 		watch: {
@@ -48,7 +62,9 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-uglify');
 	grunt.loadNpmTasks('grunt-contrib-watch');
 
-	grunt.registerTask('dry', ['uglify:build','concat:dist']);
+	grunt.registerTask('vendors', ['concat:vendors','uglify:vendors']);
+
+	grunt.registerTask('dry', ['concat:dist','uglify:dist']);
 
 	grunt.registerTask('default', ['dry','watch:custom']);
 
