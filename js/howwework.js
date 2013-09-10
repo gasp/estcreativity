@@ -161,8 +161,5 @@ how.welcome = function(){
 			$(".illus.welcome",this).css({'visibility':'visible'});
 			$(".illus.welcome.fixed",this).css({'visibility':'hidden'});
 		}
-
-		console.log('Direction example triggered scrolling ' + direction);
-//		if(direction == "down") parallax.current = "howwework";
 	});
 }
