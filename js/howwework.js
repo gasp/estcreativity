@@ -215,6 +215,31 @@ how.animate = {
 		return {top:t,left:0,r:0};
 	},
 	lift2 : function(s, alea, delta, top){
+		// dleft & dright open
+
+		var distance = top-s,
+			closingpoint = 10; // when should the closing point start
+
+		var closing = ((distance-closingpoint)-10);
+		if(closing < 10) closing = 0;
+
+		if(distance > closingpoint && distance < (closingpoint+200)){
+			$('.dleft',how.objects[0].el).css({left: -(200-closing)/4+'px'})
+			$('.dright',how.objects[0].el).css({left: 60+(200-closing)/4+'px'})
+		}
+		else{
+			// opposite of lift1
+			if(distance > closingpoint){
+				// close
+				$('.dleft',how.objects[0].el).css({left: '0px'})
+				$('.dright',how.objects[0].el).css({left: '61px'})
+			}
+			if(distance < (closingpoint+200)){
+				// open
+				$('.dleft',how.objects[0].el).css({left: '-61px'})
+				$('.dright',how.objects[0].el).css({left: '122px'})
+			}
+		}
 		return {top:0,left:0,r:0};
 	}
 	
