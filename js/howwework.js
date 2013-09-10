@@ -4,6 +4,11 @@ how.cache = {};
 how.loaded = false;
 
 how.objects = [
+
+	{ name : 'ascenceur.asc1' , behavior : 'lift1', alea: null, delta : null}, // stays at 0
+	{ name : 'ascenceur.asc2' , behavior : 'lift2', alea: null, delta : null}, // stays at 1
+
+	{ name : 'coffee' , behavior : 'goup', alea: 100, delta : 70},
 	{ name : 'sugar' , behavior : 'jiggle', alea: 100, delta : 20},
 	
 /*	{ name : 'cloud01' , behavior : 'goup', alea: 100, delta : 20},
@@ -152,6 +157,65 @@ how.animate = {
 		return {
 			top:0,left:0, r: 1-how.animate.rotateleft(s, alea, delta, top).r
 		}
+	},
+	lift1 : function(s, alea, delta, top){
+
+		// dleft & dright close
+		// aiguille rolls
+		// asc1 follows scroll
+		// asc1 fades
+
+		var distance = top-s,
+			closingpoint = 100, // when should the closing point start
+			rollingpoint = 100, // when should the lift should start rolling
+			t = 0;				// initial top distance
+
+		var closing = ((distance-closingpoint)-10);
+		if(closing < 10) closing = 0;
+
+		if(distance > closingpoint && distance < (closingpoint+200)){
+			$('.dleft',how.objects[0].el).css({left:'-'+closing+'px'})
+			$('.dright',how.objects[0].el).css({left: 60+closing+'px'})
+		}
+		else{
+			if(distance > closingpoint){
+				// open
+				$('.dleft',how.objects[0].el).css({left: '-61px'})
+				$('.dright',how.objects[0].el).css({left: '122px'})
+			}
+			if(distance < (closingpoint+200)){
+				// close
+				$('.dleft',how.objects[0].el).css({left: '0px'})
+				$('.dright',how.objects[0].el).css({left: '61px'})
+			}
+		}
+
+		if(closing==0){
+			$('.aiguille',how.objects[0].$el).css({
+				// making the aiguille roll
+				// /2 because if not it rolls too much
+				transform:'rotate('+(220-distance-closingpoint)/2+'deg)'
+			});
+		}
+
+		// when doors are close, asc1 follows the scroll
+		// and fades
+		if(distance > -200 && distance < 0){
+
+			// follow the scroll
+			t = -distance;
+
+			// fade
+			opacity = (200+distance)/200;
+			if(opacity < .1) opacity = 0;
+			if(opacity > .9) opacity = 1;
+			how.objects[0].$el.css({opacity: opacity })
+		}
+
+		return {top:t,left:0,r:0};
+	},
+	lift2 : function(s, alea, delta, top){
+		return {top:0,left:0,r:0};
 	}
 	
 }
