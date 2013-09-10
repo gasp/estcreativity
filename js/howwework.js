@@ -33,14 +33,20 @@ how.objects = [
 	
 
 	{ name : 'fishark' , behavior : 'goleft', alea: null, delta : 30},
-	
+
+	{ name : 'bag' , behavior : 'jiggle', alea: 70, delta : 20},
 	{ name : 'money' , behavior : 'jiggle', alea: 70, delta : 10},
 	
-	{ name : 'strategyribbon' , behavior : 'goright', alea: null, delta : 30},
 	{ name : 'rightglass' , behavior : 'waggle', alea: 100, delta : 10},
 
 	{ name : 'questionmark' , behavior : 'rotateright', alea: 0, delta : 100},
+
+	{ name : 'strategyribbon' , behavior : 'goright', alea: null, delta : 30},
+	{ name : 'whitechess' , behavior : 'goleft', alea: null, delta : 50},
+	{ name : 'blurwhitechess' , behavior : 'goright', alea: null, delta : 20},
+	{ name : 'coffeesmall' , behavior : 'goright', alea: null, delta : 40},
 	{ name : 'blackchess' , behavior : 'rotateright', alea: 10, delta : 1000},
+
 ]
 
 how.load = function(){
