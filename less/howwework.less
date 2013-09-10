@@ -387,15 +387,23 @@
 			height:487px;
 			left:401px;
 			top:2763px;
-			z-index:106; // let this object be over the water, not under
+			z-index:100;
 		}
-		&.filetpaper{
-			background-image: url(../images/_illustrations/filet_paper.png);
-			width:690px;
-			height:420px;
-			left:231px;
-			top:2805px;
-			z-index:107; // let this object be over the water, not under
+		&.clock{
+			background-image: url(../images/_clock/bg-clock.png);
+			width:100px;
+			height:102px;
+			left:315px;
+			top:3121px;
+			z-index:100;
+		}
+		&.clock.hour{
+			background-image: url(../images/_clock/hour.png);
+			z-index:101;
+		}
+		&.clock.minute{
+			background-image: url(../images/_clock/minute.png);
+			z-index:102;
 		}
 		&.questionmark{
 			background-image: url(../images/_badges/questionmark.png);
