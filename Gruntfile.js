@@ -52,7 +52,7 @@ module.exports = function(grunt) {
 		watch: {
 			custom : {
 				files: ['js/*', '!js/vendo/**','!js/est.**'],
-				tasks: ['concat:dist','uglify:build']
+				tasks: ['concat:dist','uglify:dist']
 			},
 		}
 	}); // /initConfig
