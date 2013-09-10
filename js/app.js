@@ -1,3 +1,11 @@
+// 
+//  app.js
+//  estcreativity
+//  
+//  Created by gaspard on 2013-08-01.
+//  Copyright 2013 gaspard. All rights reserved.
+// 
+
 app = {
 	$w : {},
 	wh : 0, // screen/window height;
