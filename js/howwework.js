@@ -20,6 +20,8 @@ how.objects = [
 	{ name : 'cloud02' , behavior : 'jiggle', alea: 70, delta : 10},
 	{ name : 'cloud03' , behavior : 'goup', alea: 100, delta : 50},
 
+	{ name : 'birds' , behavior : 'godown', alea: 100, delta : 150},
+
 	{ name : 'fish01' , behavior : 'goright', alea: null, delta : 150},
 	{ name : 'fish02' , behavior : 'goleft', alea: null, delta : 50},
 	{ name : 'fish03' , behavior : 'goleft', alea: null, delta : 20},
