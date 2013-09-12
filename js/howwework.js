@@ -50,7 +50,7 @@ how.objects = [
 	
 	{ name : 'rightglass' , behavior : 'waggle', alea: 100, delta : 10},
 
-	{ name : 'questionmark' , behavior : 'rotateright', alea: 0, delta : 100},
+	{ name : 'questionmark' , behavior : 'rotateright', alea: 50, delta : 100},
 	{ name : 'clock.minute' , behavior : 'rotateleft', alea: 0, delta : 50},
 	{ name : 'clock.hour' , behavior : 'rotateleft', alea: 0, delta : 500},
 
@@ -160,7 +160,7 @@ how.animate = {
 	},
 	rotateleft : function(s, alea, delta, top){
 		return {
-			top:0,left:0, r:(s-top)/app.wh * (100/delta)  + 1/100 * alea
+			top:0,left:0, r:(s-top)/app.wh * (100/delta)  + alea/100
 		}
 	},
 	rotateright : function(s, alea, delta, top){
