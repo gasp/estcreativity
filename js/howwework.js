@@ -73,7 +73,6 @@ how.unload = function(){} // nada
 how.init = function(){
 	how.$el = $("#howwework");
 	how.load();
-	how.welcome();
 
 }
 
@@ -246,19 +245,4 @@ how.animate = {
 		}
 		return {top:0,left:0,r:0};
 	}
-	
-}
-
-how.welcome = function(){
-	$("#howwework").waypoint(function(direction) {
-		if(direction == "down"){
-			$(".illus.welcome",this).css({'visibility':'hidden'});
-			$(".illus.welcome.fixed",this).css({'visibility':'visible'});
-			
-		}	
-		else{
-			$(".illus.welcome",this).css({'visibility':'visible'});
-			$(".illus.welcome.fixed",this).css({'visibility':'hidden'});
-		}
-	});
 }

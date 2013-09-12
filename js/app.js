@@ -21,13 +21,6 @@ app = {
 		console.log("app>refreshed",app);
 	},
 
-	stellar: function(){
-		$.stellar({
-			responsive:true,
-			horizontalScrolling: false
-		});
-	},
-
 	init: function(){
 		console.log('app>initialized');
 
@@ -51,10 +44,6 @@ app = {
 			// listeners
 			// requires home, how
 			parallax.init();
-
-			// parallax for elements in how
-			// listeners
-			app.stellar();
 
 			// 1 time elements placing (quick dom manipulation)
 			contacts.init();
