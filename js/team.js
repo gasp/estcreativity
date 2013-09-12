@@ -16,10 +16,8 @@ team.init = function(){
 	}
 	team.i = i-1;
 
-	team.$mates.css({"height": $(window).height()}) /*
-		TODO wh is cached somewhere
-	*/
-	
+	team.$mates.css({"height": app.wh});
+
 	team.$mates.each(function(i){
 //		console.log(this,i)
 		$(this).css({
