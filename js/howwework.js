@@ -47,8 +47,8 @@ how.objects = [
 	{ name : 'rightglass' , behavior : 'waggle', alea: 100, delta : 10},
 
 	{ name : 'questionmark' , behavior : 'rotateright', alea: 0, delta : 100},
-	{ name : 'clock.minute' , behavior : 'rotateright', alea: 0, delta : 50},
-	{ name : 'clock.hour' , behavior : 'rotateright', alea: 0, delta : 500},
+	{ name : 'clock.minute' , behavior : 'rotateleft', alea: 0, delta : 50},
+	{ name : 'clock.hour' , behavior : 'rotateleft', alea: 0, delta : 500},
 
 	{ name : 'strategyribbon' , behavior : 'goright', alea: null, delta : 30},
 	{ name : 'whitechess' , behavior : 'goleft', alea: null, delta : 50},
