@@ -8,6 +8,11 @@ how.objects = [
 	{ name : 'ascenceur.asc1' , behavior : 'lift1', alea: null, delta : null}, // stays at 0
 	{ name : 'ascenceur.asc2' , behavior : 'lift2', alea: null, delta : null}, // stays at 1
 
+	// water is a big container, it contains fish, bubbles...
+	{ name : 'water' , behavior : 'goup', alea : 100, delta : 100},
+
+	{ name : 'welcome' , behavior : 'scaleup', alea : null, delta : 110},
+
 	{ name : 'coffee' , behavior : 'goup', alea: 100, delta : 70},
 	{ name : 'sugar' , behavior : 'jiggle', alea: 100, delta : 20},
 	
@@ -19,6 +24,8 @@ how.objects = [
 	{ name : 'cloud01' , behavior : 'goup', alea: 100, delta : 20},
 	{ name : 'cloud02' , behavior : 'jiggle', alea: 70, delta : 10},
 	{ name : 'cloud03' , behavior : 'goup', alea: 100, delta : 50},
+
+	{ name : 'birds' , behavior : 'godown', alea: 100, delta : 150},
 
 	{ name : 'fish01' , behavior : 'goright', alea: null, delta : 150},
 	{ name : 'fish02' , behavior : 'goleft', alea: null, delta : 50},
@@ -35,7 +42,6 @@ how.objects = [
 	{ name : 'bubblesmall03' , behavior : 'goup', alea: null, delta : 300},
 	{ name : 'bubblemed' , behavior : 'goup', alea: null, delta : 200},
 	{ name : 'bubblecoffre' , behavior : 'goup', alea: null, delta : 100},
-	
 
 	{ name : 'fishark' , behavior : 'goleft', alea: null, delta : 30},
 
@@ -44,9 +50,9 @@ how.objects = [
 	
 	{ name : 'rightglass' , behavior : 'waggle', alea: 100, delta : 10},
 
-	{ name : 'questionmark' , behavior : 'rotateright', alea: 0, delta : 100},
-	{ name : 'clock.minute' , behavior : 'rotateright', alea: 0, delta : 50},
-	{ name : 'clock.hour' , behavior : 'rotateright', alea: 0, delta : 500},
+	{ name : 'questionmark' , behavior : 'rotateleft', alea: 50, delta : 100},
+	{ name : 'clock.minute' , behavior : 'rotateright', alea: 100, delta : 50},
+	{ name : 'clock.hour' , behavior : 'rotateright', alea: 100, delta : 500},
 
 	{ name : 'strategyribbon' , behavior : 'goright', alea: null, delta : 30},
 	{ name : 'whitechess' , behavior : 'goleft', alea: null, delta : 50},
@@ -71,7 +77,6 @@ how.unload = function(){} // nada
 how.init = function(){
 	how.$el = $("#howwework");
 	how.load();
-	how.welcome();
 
 }
 
@@ -99,12 +104,15 @@ how.parallax = function(s){
 				left:  Math.floor(how.objects[i].position.left + d.left)
 			};
 
-
-			if(d.r > 0){
-				css.transform = 'rotate('+ Math.floor(d.r * 360) +'deg)';
+			// rotate
+			if(typeof d.rotate !== "undefined"){
+				css.transform = 'rotate('+ Math.floor(d.rotate * 360) +'deg)';
 			} 
 
-			
+			// scale
+			if(typeof d.scale !== "undefined"){
+				css.transform = 'scale('+ d.scale +')';
+			}
 
 			$(how.objects[i].$el).css(css)
 
@@ -118,46 +126,54 @@ how.parallax = function(s){
 
 how.animate = {
 	jiggle: function(s, alea, delta, top){ // top mvt
-		return {top: Math.floor((Math.cos(s/alea)*delta)), left:0, r:0};
+		return {top: Math.floor((Math.cos(s/alea)*delta)), left:0};
 	},
 	waggle: function(s, alea, delta, top){ // left mvt
-		return {top:0, left: Math.floor((Math.cos(s/alea)*delta)), r:0};
+		return {top:0, left: Math.floor((Math.cos(s/alea)*delta))};
 	},
 	goright: function(s, alea, delta, top){
 		//something between 0 and 1;
 		//var d = (s-top)/app.wh
 		//console.log(d);
-		return {top:0, left: 
-			(s-top)/app.wh * delta,
-			r:0
+		return {
+			top:0,
+			left: (s-top)/app.wh * delta
 		}
 	},
 	goleft: function(s, alea, delta, top){
-		return {top:0, left: 
-			1- how.animate.goright(s, alea, delta, top).left,
-			r:0
+		return {
+			top:0,
+			left: 1- how.animate.goright(s, alea, delta, top).left
 		}
 	},
 	godown : function(s, alea, delta, top){
 		return {
 			top: (s-top)/app.wh * delta,
-			left:0, r:0
+			left:0
 		}
 	},
 	goup : function(s, alea, delta, top){
 		return {
 			top: 1-how.animate.godown(s, alea, delta, top).top,
-			left:0, r:0
+			left:0
 		}
 	},
 	rotateleft : function(s, alea, delta, top){
 		return {
-			top:0,left:0, r:(s-top)/app.wh * (100/delta)  + 1/100 * alea
+			top:0,left:0,
+			rotate:(s-top)/app.wh * (-100/delta + alea/100)
 		}
 	},
 	rotateright : function(s, alea, delta, top){
 		return {
-			top:0,left:0, r: 1-how.animate.rotateleft(s, alea, delta, top).r
+			top:0,left:0,
+			rotate:(s-top)/app.wh * (100/delta + alea/100)
+		}
+	},
+	scaleup : function(s, alea, delta, top){
+		return {
+			top:0,left:0,
+			scale: (s-top+app.wh)/app.wh * (delta/100)
 		}
 	},
 	lift1 : function(s, alea, delta, top){
@@ -244,19 +260,4 @@ how.animate = {
 		}
 		return {top:0,left:0,r:0};
 	}
-	
-}
-
-how.welcome = function(){
-	$("#howwework").waypoint(function(direction) {
-		if(direction == "down"){
-			$(".illus.welcome",this).css({'visibility':'hidden'});
-			$(".illus.welcome.fixed",this).css({'visibility':'visible'});
-			
-		}	
-		else{
-			$(".illus.welcome",this).css({'visibility':'visible'});
-			$(".illus.welcome.fixed",this).css({'visibility':'hidden'});
-		}
-	});
 }
