@@ -8,7 +8,10 @@ how.objects = [
 	{ name : 'ascenceur.asc1' , behavior : 'lift1', alea: null, delta : null}, // stays at 0
 	{ name : 'ascenceur.asc2' , behavior : 'lift2', alea: null, delta : null}, // stays at 1
 
+	// water is a big container, it contains fish, bubbles...
 	{ name : 'water' , behavior : 'goup', alea : 100, delta : 100},
+
+	{ name : 'welcome' , behavior : 'scaleup', alea : 100, delta : 100},
 
 	{ name : 'coffee' , behavior : 'goup', alea: 100, delta : 70},
 	{ name : 'sugar' , behavior : 'jiggle', alea: 100, delta : 20},
@@ -39,7 +42,6 @@ how.objects = [
 	{ name : 'bubblesmall03' , behavior : 'goup', alea: null, delta : 300},
 	{ name : 'bubblemed' , behavior : 'goup', alea: null, delta : 200},
 	{ name : 'bubblecoffre' , behavior : 'goup', alea: null, delta : 100},
-	
 
 	{ name : 'fishark' , behavior : 'goleft', alea: null, delta : 30},
 
@@ -102,12 +104,15 @@ how.parallax = function(s){
 				left:  Math.floor(how.objects[i].position.left + d.left)
 			};
 
-
-			if(d.r > 0){
+			// rotate
+			if(typeof d.r !== "undefined" && d.r > 0){
 				css.transform = 'rotate('+ Math.floor(d.r * 360) +'deg)';
 			} 
 
-			
+			// scale
+			if(typeof d.s !== "undefined"){
+				css.transform = 'scale('+ d.s +')';
+			}
 
 			$(how.objects[i].$el).css(css)
 
@@ -161,6 +166,11 @@ how.animate = {
 	rotateright : function(s, alea, delta, top){
 		return {
 			top:0,left:0, r: 1-how.animate.rotateleft(s, alea, delta, top).r
+		}
+	},
+	scaleup : function(s, alea, delta, top){
+		return {
+			top:0,left:0, r: 0,  s: (s-top+app.wh)/app.wh
 		}
 	},
 	lift1 : function(s, alea, delta, top){
