@@ -30,22 +30,32 @@ section.sec2{
 		}
 		.bottom {
 			border-top:5px @red solid;
-			.quote{
+			text-align:center;
 
-				background-image:url(../images/team/guillemet-01.png),url(../images/team/guillemet-02.png);
-				background-position: top left, bottom right;
-				background-repeat:no-repeat,no-repeat;
-				
-				font-family:@serifFontFamily;
-				font-size:1.6em;
-				line-height:1em;
-				font-style:italic;
-				font-weight:normal;
-				padding:.5em;
-				margin:.5em;
-				
-				opacity:.7;
+			.inner{
+				margin:auto;
+				max-width:250px;
+				.quote{
+					height:100px;
+				}
+				.quote p{
+
+					background-image:url(../images/team/guillemet-01.png),url(../images/team/guillemet-02.png);
+					background-position: top left, bottom right;
+					background-repeat:no-repeat,no-repeat;
+
+					font-family:@serifFontFamily;
+					font-size:1.6em;
+					line-height:1em;
+					font-style:italic;
+					font-weight:normal;
+					padding:.5em;
+					margin:.5em;
+
+					opacity:.7;
+				}
 			}
+
 		}
 		
 		.eyes{
