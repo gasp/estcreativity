@@ -8,6 +8,8 @@ how.objects = [
 	{ name : 'ascenceur.asc1' , behavior : 'lift1', alea: null, delta : null}, // stays at 0
 	{ name : 'ascenceur.asc2' , behavior : 'lift2', alea: null, delta : null}, // stays at 1
 
+	{ name : 'water' , behavior : 'goup', alea : 100, delta : 100},
+
 	{ name : 'coffee' , behavior : 'goup', alea: 100, delta : 70},
 	{ name : 'sugar' , behavior : 'jiggle', alea: 100, delta : 20},
 	
