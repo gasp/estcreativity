@@ -142,7 +142,7 @@ eyes.time = {};
 eyes.animate = function(){
 	eyes.time = window.setInterval(function(){
 		eyes.swap();
-	},300)
+	},600)
 }
 eyes.freeze = function(){
 	window.clearTimeout(eyes.time)
