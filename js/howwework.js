@@ -11,7 +11,7 @@ how.objects = [
 	// water is a big container, it contains fish, bubbles...
 	{ name : 'water' , behavior : 'goup', alea : 100, delta : 100},
 
-	{ name : 'welcome' , behavior : 'scaleup', alea : 100, delta : 100},
+	{ name : 'welcome' , behavior : 'scaleup', alea : null, delta : 110},
 
 	{ name : 'coffee' , behavior : 'goup', alea: 100, delta : 70},
 	{ name : 'sugar' , behavior : 'jiggle', alea: 100, delta : 20},
@@ -170,7 +170,7 @@ how.animate = {
 	},
 	scaleup : function(s, alea, delta, top){
 		return {
-			top:0,left:0, r: 0,  s: (s-top+app.wh)/app.wh
+			top:0,left:0, r: 0,  s: (s-top+app.wh)/app.wh * (delta/100)
 		}
 	},
 	lift1 : function(s, alea, delta, top){
