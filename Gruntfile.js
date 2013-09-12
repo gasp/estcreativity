@@ -30,8 +30,7 @@ module.exports = function(grunt) {
 					'js/vendor/jquery-1.10.1.js',
 					'js/vendor/waypoints.js',
 					'js/vendor/jquery.easing-1.3.js',
-					'js/vendor/jquery.grabscroll.js',
-					'js/vendor/jquery.stellar.js'
+					'js/vendor/jquery.grabscroll.js'
 				],
 				dest: 'js/vendors.js'
 			}
