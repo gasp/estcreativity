@@ -12,6 +12,8 @@ app = {
 	ww : 0, // screen/window width
 	dh : 0, // body/document height
 
+	t : null,
+
 	refresh: function(){
 		this.$w = $(window);
 		this.wh = this.$w.height();
@@ -51,7 +53,12 @@ app = {
 			life.init();
 			fil.init()
 		},120)
+	},
+	resize: function(){
+		app.refresh();
+		console.log("resize still to be managed")
 	}
+	
 }
 
 // on first read : activate home
@@ -64,4 +71,12 @@ $(function(){
 // on load, load all the application
 $(window).on("load", function(){
 	app.init();
-})
+});
+$(window).on("resize", function(){
+	if(typeof app.t !== "null")
+		window.clearTimeout(app.t);
+	app.t = window.setTimeout(
+		function(){
+			app.resize();
+		},400)
+});
