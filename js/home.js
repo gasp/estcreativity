@@ -18,7 +18,8 @@ home.setEnv = function(){
 }
 
 home.setSocial = function(){
-	$(".sec0 .social .sbadge").each(function(i){
+	// works for home and menu
+	$(".social .sbadge").each(function(i){
 		$(this).click(function(){
 			window.location.href = $(this).data("link");
 		})
