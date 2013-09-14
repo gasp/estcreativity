@@ -51,15 +51,16 @@ how.objects = [
 	{ name : 'rightglass' , behavior : 'waggle', alea: 100, delta : 10},
 
 	{ name : 'questionmark' , behavior : 'rotateleft', alea: 50, delta : 100},
-	{ name : 'clock.minute' , behavior : 'rotateright', alea: 100, delta : 50},
-	{ name : 'clock.hour' , behavior : 'rotateright', alea: 100, delta : 500},
+	{ name : 'clock.minute' , behavior : 'rotateright', alea: 0, delta : 100},
+	{ name : 'clock.hour' , behavior : 'rotateright', alea: 5, delta : 8.3}, // 100/12 = 8.3
 
 	{ name : 'strategyribbon' , behavior : 'goright', alea: null, delta : 30},
 	{ name : 'whitechess' , behavior : 'goleft', alea: null, delta : 50},
 	{ name : 'blurwhitechess' , behavior : 'goright', alea: null, delta : 20},
 	{ name : 'coffeesmall' , behavior : 'goright', alea: null, delta : 40},
-	{ name : 'blackchess' , behavior : 'rotateright', alea: 10, delta : 1000},
+	{ name : 'blackchess' , behavior : 'rotateleft', alea: 10, delta : 5},
 
+	{ name : 'voteyes' , behavior : 'slidedown', alea: null, delta : 300},
 ]
 
 how.load = function(){
@@ -106,7 +107,7 @@ how.parallax = function(s){
 
 			// rotate
 			if(typeof d.rotate !== "undefined"){
-				css.transform = 'rotate('+ Math.floor(d.rotate * 360) +'deg)';
+				css.transform = 'rotate('+ Math.floor(d.rotate) +'deg)';
 			} 
 
 			// scale
@@ -163,16 +164,18 @@ how.animate = {
 			left:0
 		}
 	},
-	rotateleft : function(s, alea, delta, top){
+	rotateleft : function(s, alea, delta, top){ // to debug
 		return {
 			top:0,left:0,
-			rotate:(s-top)/app.wh * (-100/delta + alea/100)
+			rotate: -1 * how.animate.rotateright(s, alea, delta, top).rotate
+			//(s-top)/app.wh * (-delta/100 + alea/100)
 		}
 	},
-	rotateright : function(s, alea, delta, top){
+	rotateright : function(s, alea, delta, top){ // to debug
 		return {
 			top:0,left:0,
-			rotate:(s-top)/app.wh * (100/delta + alea/100)
+			rotate: ((s-top)/app.wh * delta/100 + alea/100) * 360
+			// (s-top)/app.wh * (100/delta + alea/100)
 		}
 	},
 	scaleup : function(s, alea, delta, top){
