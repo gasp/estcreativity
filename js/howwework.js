@@ -198,8 +198,7 @@ how.animate = {
 
 		var distance = top-s,
 			closingpoint = 100, // when should the closing point start
-			rollingpoint = 100, // when should the lift should start rolling
-			t = 0;				// initial top distance
+			rollingpoint = 100; // when should the lift should start rolling
 
 		var closing = ((distance-closingpoint)-10);
 		if(closing < 10) closing = 0;
@@ -229,21 +228,7 @@ how.animate = {
 			});
 		}
 
-		// when doors are close, asc1 follows the scroll
-		// and fades
-		if(distance > -200 && distance < 0){
-
-			// follow the scroll
-			t = -distance;
-
-			// fade
-			opacity = (200+distance)/200;
-			if(opacity < .1) opacity = 0;
-			if(opacity > .9) opacity = 1;
-			how.objects[0].$el.css({opacity: opacity })
-		}
-
-		return {top:t,left:0,r:0};
+		return {top:0,left:0,r:0};
 	},
 	lift2 : function(s, alea, delta, top){
 		// dleft & dright open
