@@ -11,6 +11,7 @@ app = {
 	wh : 0, // screen/window height;
 	ww : 0, // screen/window width
 	dh : 0, // body/document height
+	touch : false,
 
 	t : null,
 
@@ -36,28 +37,41 @@ app = {
 		app.refresh();
 		menu.init();
 
+		if($('html').hasClass('touch')){
+			app.touch = true;
+		}
+
 		team.init();
-		eyes.init();
-		how.init();
+		if(!app.touch){
+			eyes.init();
+			how.init();
+		}
+
+
 
 
 		window.setTimeout(function(){
 			// parallax for home, how
 			// listeners
 			// requires home, how
-			parallax.init();
+			if(!app.touch)
+				parallax.init();
 
 			// 1 time elements placing (quick dom manipulation)
 			contacts.init();
 			clients.init();
 			life.init();
-			fil.init()
+			if(app.touch)
+				$('.floating, .filconducteur').hide();
+			else
+				fil.init()
+
 		},120)
 	},
 	resize: function(){
 		app.refresh();
 		console.log("resize still to be managed");
-		window.location.reload();
+//		window.location.reload();
 	}
 	
 }

@@ -78,7 +78,6 @@ how.unload = function(){} // nada
 how.init = function(){
 	how.$el = $("#howwework");
 	how.load();
-
 }
 
 how.getCoords = function(){
@@ -97,8 +96,10 @@ how.parallax = function(s){
 		if(Math.abs(s - how.objects[i].offset.top) < app.wh + 200){
 			var b = how.objects[i].behavior;
 			var d = how.animate[b]( s, how.objects[i].alea, how.objects[i].delta, how.objects[i].offset.top);
-
-//			console.log(how.objects[i], d);
+/*
+			if(app.ww < 1440)
+				console.log('please redo animation for ipad');
+*/
 
 			var css = {
 				top:   Math.floor(how.objects[i].position.top + d.top),
