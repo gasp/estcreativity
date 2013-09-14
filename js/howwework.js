@@ -51,15 +51,16 @@ how.objects = [
 	{ name : 'rightglass' , behavior : 'waggle', alea: 100, delta : 10},
 
 	{ name : 'questionmark' , behavior : 'rotateleft', alea: 50, delta : 100},
-	{ name : 'clock.minute' , behavior : 'rotateright', alea: 100, delta : 50},
-	{ name : 'clock.hour' , behavior : 'rotateright', alea: 100, delta : 500},
+	{ name : 'clock.minute' , behavior : 'rotateright', alea: 0, delta : 100},
+	{ name : 'clock.hour' , behavior : 'rotateright', alea: 5, delta : 8.3}, // 100/12 = 8.3
 
 	{ name : 'strategyribbon' , behavior : 'goright', alea: null, delta : 30},
 	{ name : 'whitechess' , behavior : 'goleft', alea: null, delta : 50},
 	{ name : 'blurwhitechess' , behavior : 'goright', alea: null, delta : 20},
 	{ name : 'coffeesmall' , behavior : 'goright', alea: null, delta : 40},
-	{ name : 'blackchess' , behavior : 'rotateright', alea: 10, delta : 1000},
+	{ name : 'blackchess' , behavior : 'rotateleft', alea: 10, delta : 5},
 
+	{ name : 'voteyes' , behavior : 'slidedown', alea: null, delta : 300},
 ]
 
 how.load = function(){
@@ -106,12 +107,17 @@ how.parallax = function(s){
 
 			// rotate
 			if(typeof d.rotate !== "undefined"){
-				css.transform = 'rotate('+ Math.floor(d.rotate * 360) +'deg)';
+				css.transform = 'rotate('+ Math.floor(d.rotate) +'deg)';
 			} 
 
 			// scale
 			if(typeof d.scale !== "undefined"){
 				css.transform = 'scale('+ d.scale +')';
+			}
+
+			// slide
+			if(typeof d.bgtop !== "undefined"){
+				css['background-position'] = '0 '+d.bgtop+'px';
 			}
 
 			$(how.objects[i].$el).css(css)
@@ -158,22 +164,32 @@ how.animate = {
 			left:0
 		}
 	},
-	rotateleft : function(s, alea, delta, top){
+	rotateleft : function(s, alea, delta, top){ // to debug
 		return {
 			top:0,left:0,
-			rotate:(s-top)/app.wh * (-100/delta + alea/100)
+			rotate: -1 * how.animate.rotateright(s, alea, delta, top).rotate
+			//(s-top)/app.wh * (-delta/100 + alea/100)
 		}
 	},
-	rotateright : function(s, alea, delta, top){
+	rotateright : function(s, alea, delta, top){ // to debug
 		return {
 			top:0,left:0,
-			rotate:(s-top)/app.wh * (100/delta + alea/100)
+			rotate: ((s-top)/app.wh * delta/100 + alea/100) * 360
+			// (s-top)/app.wh * (100/delta + alea/100)
 		}
 	},
 	scaleup : function(s, alea, delta, top){
 		return {
 			top:0,left:0,
 			scale: (s-top+app.wh)/app.wh * (delta/100)
+		}
+	},
+	slidedown : function(s, alea, delta, top){
+		// slide to down
+		// alea = since when do we move, which distane between top and animation start
+		return {
+			top:0,left:0,
+			bgtop:  Math.max(delta-top+s, 0)
 		}
 	},
 	lift1 : function(s, alea, delta, top){
@@ -185,8 +201,7 @@ how.animate = {
 
 		var distance = top-s,
 			closingpoint = 100, // when should the closing point start
-			rollingpoint = 100, // when should the lift should start rolling
-			t = 0;				// initial top distance
+			rollingpoint = 100; // when should the lift should start rolling
 
 		var closing = ((distance-closingpoint)-10);
 		if(closing < 10) closing = 0;
@@ -216,21 +231,7 @@ how.animate = {
 			});
 		}
 
-		// when doors are close, asc1 follows the scroll
-		// and fades
-		if(distance > -200 && distance < 0){
-
-			// follow the scroll
-			t = -distance;
-
-			// fade
-			opacity = (200+distance)/200;
-			if(opacity < .1) opacity = 0;
-			if(opacity > .9) opacity = 1;
-			how.objects[0].$el.css({opacity: opacity })
-		}
-
-		return {top:t,left:0,r:0};
+		return {top:0,left:0,r:0};
 	},
 	lift2 : function(s, alea, delta, top){
 		// dleft & dright open
