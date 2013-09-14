@@ -56,7 +56,8 @@ app = {
 	},
 	resize: function(){
 		app.refresh();
-		console.log("resize still to be managed")
+		console.log("resize still to be managed");
+		window.location.reload();
 	}
 	
 }
