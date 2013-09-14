@@ -1,0 +1,983 @@
+@media (max-width: 1440px){
+	.sec3{
+		.sea{
+			// use smaller images
+			background-image: url(../images/howwework/water.png),url(../images/howwework/cristal.png);
+			background-attachment: scroll,scroll;
+			background-repeat:repeat-x,repeat-x;
+			background-position:top left,bottom center;
+			z-index:100;
+			width:100%;
+			height:(590px + 150px);
+			top:685px;
+			left:0;
+			position:absolute;
+		}
+	}
+	
+	#howwework {
+		width:768px;
+		position:relative;
+	
+		.illus{
+			background-color:transparent;
+			background-repeat: no-repeat;
+			background-position: top left;
+			background-attachment: scroll;
+			position: absolute;
+			span{
+				display:none;
+			}
+			/// generic
+			&.yes{
+				background-image: url(../images/_badges/yes.png);
+				width:67px;
+				height:60px;
+				background-size:67px;
+				&.small{
+					background-image: url(../images/_badges/yes-small.png);
+					width:47px;
+					height:41px;
+					background-size:47px;
+				}
+			}
+			&.no{
+				background-image: url(../images/_badges/no.png);
+				width:67px;
+				height:60px;
+				background-size:60px;
+				&.small{
+					background-image: url(../images/_badges/no-small.png);
+					width:40px;
+					height:40px;
+					background-size:40px;
+				}
+			}
+			&.ab{ // arrow black
+				background-image: url(../images/_arrows/arrow-black.png);
+				width:20px;
+				height:20px;
+				background-size:20px;
+			}
+			&.aw{ // arrow white
+				background-image: url(../images/_arrows/arrow-white.png);
+				width:20px;
+				height:20px;
+				background-size:20px;
+			}
+
+			// #########################
+			// # path02
+			//
+
+
+			// arrows
+			//	 white
+			&.arrow00{ 
+				left:316px;
+				top:346px;
+				.rotate(200deg); 
+			}
+			//	 black
+			&.arrow01{ 
+				left:415px;
+				top:128px;
+				.rotate(305deg); 
+			}
+			&.arrow02{ 
+				left:243px;
+				top:250px;
+				.rotate(30deg); 
+			}
+			&.arrow03{ 
+				left:405px;
+				top:505px;
+				.rotate(180deg); 
+			}
+			&.arrow04{ 
+				left:68px;
+				top:526px;
+				.rotate(260deg); 
+			}
+			&.arrow05{ 
+				left:233px;
+				top:653px;
+				.rotate(90deg); 
+			}
+			&.arrow05bis{ 
+				left:342px;
+				top:745px;
+				.rotate(90deg); 
+			}
+			&.arrow06{ 
+				left:137px;
+				top:1111px;
+				.rotate(231deg); 
+			}
+		
+			&.welcome{
+				background-image: url(../images/_badges/welcome.png);
+				width:105px;
+				height:105px;
+				left:525px;
+				background-size:105px;
+				top:50px;
+				&.fixed{
+					visibility:hidden;
+				}
+			}
+			&.coffee{
+				background-image: url(../images/_illustrations/cup-of-coffe-01.png);
+				width:100px;
+				height:100px;
+				background-size:100px; //= width
+				left:475px;
+				top:165px;
+			}
+			&.coffeeribbon{
+				background-image: url(../images/_ribbons/ribbon-01.png);
+				width:160px;
+				height:65px;
+				background-size:160px;
+				left:440px;
+				top:250px;
+			}
+			&.coffeeyes{
+				left:377px;
+				top:342px;
+				.rotate(-10deg); 
+			}
+			&.coffeeno{
+				left:465px;
+				top:448px;
+				.rotate(23deg); 
+			}
+			&.sugar{
+				background-image: url(../images/_illustrations/sugar.png);
+				width:155px;
+				height:60px;
+				left:139px;
+				top:294px;
+				background-size:155px; 
+			}
+			&.sugarribbon{
+				background-image: url(../images/_ribbons/ribbon-02.png);
+				width:175px;
+				height:28px;
+				left:127px;
+				top:341px;
+				background-size:175px;
+			}
+			&.sugarwith{
+				background-image: url(../images/_badges/with.png);
+				width:50px;
+				height:50px;
+				left:170px;
+				top:417px;
+				z-index:110;
+				background-size:50px;
+			}
+			&.sugarwithout{
+				background-image: url(../images/_badges/without.png);
+				width:50px;
+				height:50px;
+				left:235px;
+				top:417px;
+				background-size:50px;
+			}
+
+			&.cloud01{
+				background-image: url(../images/_illustrations/cloud-01.png);
+				width:67px;
+				height:44px;
+				left:162px;
+				top:505px;
+				background-size:67px;
+			}
+			&.cloud02{
+				background-image: url(../images/_illustrations/cloud-02.png);
+				width:43px;
+				height:30px;
+				left:240px;
+				top:530px;
+				background-size:43px;
+			}
+			&.cloud03{
+				background-image: url(../images/_illustrations/cloud-03.png);
+				width:56px;
+				height:34px;
+				left:314px;
+				top:481px;
+				background-size:56px;
+			}
+
+			&.visionribbon{
+				background-image: url(../images/_ribbons/ribbon-03.png);
+				width:192px;
+				height:53px;
+				left:180px;
+				top:587px;
+				background-size:192px;
+			}
+
+			&.visionyes{
+				left:383px;
+				top:680px;
+				.rotate(-20deg); 
+			}
+
+			&.ascenceur{
+				width:155px;
+				height:245px;
+				left:530px;
+				top:620px;
+				overflow:hidden;
+
+				.illus.aiguille{
+					background-image: url(../images/_ascenceur/aiguille.png);
+					width:35px;
+					height:4px;
+					left:21px;
+					top:22px;
+					background-size:35px;
+				}
+
+				.illus.interior{
+					background-image: url(../images/_ascenceur/interior.png);
+					width:71px;
+					height:114px;
+					left:3px;
+					top:28px;
+					background-size:71px;
+				}
+				.illus.contour{
+					background-image: url(../images/_ascenceur/contour.png);
+					width:77px;
+					height:145px;
+					left:0px;
+					top:0px;
+					background-size:77px;
+				}
+				.illus.doors{
+					width:65px;
+					height:105px;
+					left:8px;
+					top:34px;
+					overflow:hidden;
+					.illus{
+						width:30px;
+						height:103px;
+						background-size:30px;
+					}
+					.illus.dleft{
+						background-image:url(../images/_ascenceur/left-door.png);
+						left:0;
+					}
+					.illus.dright{
+						background-image:url(../images/_ascenceur/right-door.png);
+						left:30px;
+					}
+				}
+				&.asc2{
+					top:1400px;
+					.illus.aiguille{
+						transform: rotate(0.5turn);
+					}
+				}
+			}
+
+			// look .water too
+			&.boat{
+				background-image: url(../images/_illustrations/boat.png);
+				width:161px;
+				height:107px;
+				left:191px;
+				top:690px;
+				background-size:161px;
+				.fil.peche{
+					position:absolute;
+					background-color:#333;
+					width:1px;
+					height:(300 + 213 - 73px);
+					left:160px;
+					top:34px;
+
+				}
+			
+			}
+			// birds
+			&.birds{
+				background-image: url(../images/_illustrations/birds.png);
+				width:37px;
+				height:31px;
+				left:116px;
+				top:661px;
+				background-size:37px;
+			}
+			&.agencyno{
+				left:173px;
+				top:1175px;
+				.rotate(27deg); 
+			}
+
+			// #########################
+			// # path02
+			// c'est reparti
+			&.coffre{
+				background-image: url(../images/_illustrations/coffre.png);
+				width:93px;
+				height:89px;
+				top:1267px;
+				left:57px;
+				z-index:101; // let this object be over the water, not under
+				background-size:93px;
+			}
+			&.bubblecoffre{
+				background-image: url(../images/_illustrations/bubble-small.png);
+				width:21px;
+				height:46px;
+				left:83px;
+				top:1265px;
+				z-index:107; // let this object be over the water, not under
+				background-size:21px;
+			}
+			&.coffreyes{
+				top:1352px;
+				left:105px;
+				.rotate(5deg);
+			}
+			// wait
+			&.usfindoutribbon{
+				background-image: url(../images/_ribbons/ribbon-05.png);
+				width:153px;
+				height:46px;
+				top:1298px;
+				left:207px;
+				z-index:102; // let this object be over the water, not under
+				background-size:153px;
+			}
+			&.hookno{
+				top:1300px;
+				left:321px;
+				.rotate(30deg);
+				z-index:103; // let this object be over the water, not under
+			}
+			&.couldfindoutribbon{
+				background-image: url(../images/_ribbons/ribbon-06.png);
+				width:155px;
+				height:43px;
+				top:1309px;
+				left:375px;
+				z-index:104; // let this object be over the water, not under
+				background-size:155px;
+			}
+			&.couldfindoutyes{
+				top:1365px;
+				left:409px;
+				.rotate(5deg);
+			}
+			&.notebook{
+				background-image: url(../images/_illustrations/notebook.png);
+				width:288px;
+				height:224px;
+				left:60px;
+				top:1410px;
+				z-index:105; // let this object be over the water, not under
+				background-size:288px;
+			}
+			&.paper{
+				background-image: url(../images/_illustrations/paper.png);
+				width:296px;
+				height:244px;
+				left:205px;
+				top:1483px;
+				z-index:106; // let this object be over the water, not under
+				background-size:296px;
+			}
+			&.clock{
+				background-image: url(../images/_clock/bg-clock.png);
+				width:50px;
+				height:51px;
+				left:180px;
+				top:1670px;
+				z-index:100;
+				background-size:50px;
+			}
+			&.clock.hour{
+				background-image: url(../images/_clock/hour.png);
+				z-index:101;
+				background-size:50px;
+			}
+			&.clock.minute{
+				background-image: url(../images/_clock/minute.png);
+				z-index:102;
+				background-size:50px;
+			}
+			&.questionmark{
+				background-image: url(../images/_badges/questionmark.png);
+				width:53px;
+				height:53px;
+				left:372px;
+				top:1604px;
+				z-index:108; // let this object be over the water, not under
+				background-size:53px;
+			}
+			// arrows under cristals
+			//	 white
+			&.arrow07{ 
+				left:342px;
+				top:1369px;
+				.rotate(136deg); 
+			}
+			&.arrow08{ 
+				left:125px;
+				top:1389px;
+				.rotate(94deg); 
+			}
+			&.arrow09{ 
+				left:421px;
+				top:1450px;
+				.rotate(177deg); 
+			}
+			&.arrow10{ 
+				left:123px;
+				top:1605px;
+				.rotate(55deg); 
+			}
+			&.arrow11{ 
+				left:69px;
+				top:1703px;
+				.rotate(269deg); 
+			}
+			&.arrow12{ 
+				left:498px;
+				top:1787px;
+				.rotate(110deg); 
+			}
+			&.arrow13{ 
+				left:225px;
+				top:1965px;
+				.rotate(202deg); 
+			}
+			&.arrow14{ 
+				left:491px;
+				top:2064px;
+				.rotate(46deg); 
+			}
+			&.arrow15{ 
+				left:560px;
+				top:2192px;
+				.rotate(24deg); 
+			}
+			&.arrow16{ 
+				left:438px;
+				top:2514px;
+				.rotate(136deg); 
+			}
+			&.arrow17{ 
+				left:147px;
+				top:3216px;
+				.rotate(59deg); 
+			}
+			//	 black
+			&.arrow18{ 
+				left:53px;
+				top:1678px;
+				.rotate(283deg); 
+			}
+			&.arrow19{ 
+				left:88px;
+				top:1685px;
+				.rotate(253deg); 
+			}
+			&.arrow20{ 
+				left:170px;
+				top:1920px;
+				.rotate(88deg); 
+			}
+			&.arrow21{ 
+				left:38px;
+				top:2056px;
+				.rotate(255deg); 
+			}
+			&.arrow22{ 
+				left:96px;
+				top:2051px;
+				.rotate(97deg); 
+			}
+			&.arrow23{ 
+				left:728px;
+				top:2129px;
+				.rotate(275deg); 
+			}
+			&.arrow24{ 
+				left:689px;
+				top:2267px;
+				.rotate(129deg); 
+			}
+			&.arrow25{ 
+				left:596px;
+				top:2310px;
+				.rotate(257deg); 
+			}
+			&.arrow26{ 
+				left:724px;
+				top:2440px;
+				.rotate(271deg); 
+			}
+			&.arrow27{ 
+				left:434px;
+				top:2482px;
+				.rotate(173deg); 
+			}
+			&.arrow28{ 
+				left:596px;
+				top:2490px;
+				.rotate(-77deg); 
+			}
+			&.arrow29{ 
+				left:694px;
+				top:2933px;
+				.rotate(298deg); 
+			}
+			// "no" under cristals
+			// todo, à placer, paskeu sa flotte
+			&.understandno{
+				top:1643px;
+				left:295px;
+				.rotate(-13deg);
+			}
+			&.understandyes{
+				top:1626px;
+				left:459px;
+				.rotate(-10deg);
+			}
+			&.budgetno{
+				top:1829px;
+				left:165px;
+				.rotate(16deg);
+			}
+			&.bag{
+				background-image: url(../images/_illustrations/bag.png);
+				width:96px;
+				height:141px;
+				top:1797px;
+				left:245px;
+				background-size:96px;
+			}
+			&.money{
+				background-image: url(../images/_illustrations/money.png);
+				width:109px;
+				height:35px;
+				top:1913px;
+				left:206px;
+				background-size:109px;
+			}
+			&.budgetribbon{
+				background-image: url(../images/_ribbons/ribbon-07.png);
+				width:123px;
+				height:64px;
+				top:1852px;
+				left:249px;
+				background-size:123px;
+			}
+			&.budgetyes{
+				top:1914px;
+				left:394px;
+				.rotate(13deg);
+			}
+			&.maybe{
+				background-image: url(../images/_badges/maybe.png);
+				width:67px;
+				height:59px;
+				top:1964px;
+				left:279px;
+				.rotate(-12deg);
+				background-size:67px;
+			}
+			&.futureribbon{
+				background-image: url(../images/_ribbons/ribbon-08.png);
+				width:126px;
+				height:67px;
+				top:1976px;
+				left:146px;
+				background-size:126px;
+			}
+			&.futureno{
+				top:1984px;
+				left:60px;
+				.rotate(16deg);
+			}
+			&.out{
+				background-image: url(../images/_badges/out.png);
+				width:107px;
+				height:107px;
+				top:2077px;
+				left:35px;
+				background-size:107px;
+			}
+			&.coffemaker{
+				background-image: url(../images/_illustrations/coffe-maker.png);
+				width:113px;
+				height:150px;
+				top:1988px;
+				left:559px;
+				background-size:113px;
+			}
+			&.smoke{
+				background-image: url(../images/_illustrations/smoke.png);
+				width:12px;
+				height:57px;
+				top:1949px;
+				left:561px;
+				background-size:12px;
+			}
+			&.morecoffeeribbon{
+				background-image: url(../images/_ribbons/ribbon-10.png);
+				width:113px;
+				height:30px;
+				top:2059px;
+				left:552px;
+				background-size:113px;
+			}
+			&.morecoffeeno{
+				top:2103px;
+				left:648px;
+				.rotate(16deg);
+			}
+			&.morecoffeeyes{
+				top:2104px;
+				left:467px;
+				.rotate(-5deg);
+			}
+			&.radial.chess{ // background
+				background-image: url(../images/howwework/radial-gradient.png);
+				opacity:.5;
+				width:720px;
+				height:360px;
+				top:2000px;
+				left:0px;
+				background-size:720px;
+			}
+			&.coffeesmall{
+				background-image: url(../images/_illustrations/cup-of-coffe-02.png);
+				width:66px;
+				height:70px;
+				top:2183px;
+				left:624px;
+				background-size:66px;
+			}
+			&.blurwhitechess{
+				background-image: url(../images/_illustrations/chess-02.png);
+				width:83px;
+				height:166px;
+				top:2195px;
+				left:528px;
+				background-size:83px;
+			}
+			&.strategyribbon{
+				background-image: url(../images/_ribbons/ribbon-11.png);
+				width:193px;
+				height:58px;
+				top:2238px;
+				left:445px;
+				background-size:193px;
+			}
+			&.whitechess{
+				background-image: url(../images/_illustrations/chess-01.png);
+				width:123px;
+				height:249px;
+				top:2113px;
+				left:371px;
+				background-size:123px;
+			}
+			&.blackchess{
+				background-image: url(../images/_illustrations/chess-03.png);
+				width:86px;
+				height:177px;
+				top:2240px;
+				left:220px;
+				.rotate(-98deg);
+				background-size:86px;
+			}
+			&.exclamation{
+				background-image: url(../images/_illustrations/exclamation.png);
+				width:63px;
+				height:121px;
+				top:2324px;
+				left:265px;
+				background-size:63px;
+			}
+			&.radial.glass{ // background
+				background-image: url(../images/howwework/radial-gradient.png);
+				opacity:.5;
+				width:720px;
+				height:360px;
+				top:2617px;
+				left:0px;
+				background-size:720px;
+			}
+			&.strategyno{
+				top:2448px;
+				left:306px;
+				.rotate(-18deg);
+			}
+			&.strategyes{
+				top:2444px;
+				left:492px;
+				.rotate(-4deg);
+			}
+			&.designo{
+				top:2541px;
+				left:550px;
+				.rotate(13deg);
+			}
+			&.designribbon{
+				background-image: url(../images/_ribbons/ribbon-09.png);
+				width:200px;
+				height:27px;
+				top:2579px;
+				left:278px;
+				background-size:200px;
+			}
+			&.color{
+				background-image: url(../images/_illustrations/all_color.png);
+				width:188px;
+				height:138px;
+				top:2638px;
+				left:284px;
+				background-size:188px;
+			}
+			&.filetcouleurs{
+				background-image: url(../images/_illustrations/filet_couleurs.png);
+				width:78px;
+				height:383px;
+				top:2483px;
+				left:417px;
+				background-size:78px;
+			}
+			&.box{
+				background-image: url(../images/_illustrations/est-box.png);
+				width:283px;
+				height:287px;
+				top:2820px;
+				left:237px;
+				background-size:283px;
+			}
+			&.boxshadow{
+				background-image: url(../images/_illustrations/est-box-shadow.png);
+				width:621px;
+				height:284px;
+				top:2983px;
+				left:79px;
+				background-size:621px;
+			}
+			&.leftglass{
+				background-image: url(../images/_illustrations/verre.png);
+				width:53px;
+				height:183px;
+				top:2792px;
+				left:542px;
+				background-size:53px;
+			}
+			&.rightglass{
+				background-image: url(../images/_illustrations/verre.png);
+				width:53px;
+				height:183px;
+				top:2765px;
+				left:596px;
+				.rotate(-16deg);
+				background-size:53px;
+			}
+			&.readyno{
+				top:3003px;
+				left:615px;
+				.rotate(34deg);
+			}
+			&.readyes{
+				top:3122px;
+				left:135px;
+				.rotate(-7deg);
+			}
+			&.ruler{
+				background-image: url(../images/_illustrations/rulerfull.png);
+				width:476px;
+				height:130px;
+				top:3161px;
+				left:146px;
+				.rotate(1deg);
+				background-size:476px;
+			}
+		}
+		// !!! CHEPAKOMENFAIRE !!!
+		.water{
+//			background-image: url(../images/howwework/water.png),url(../images/howwework/cristal.png); 
+//			background-attachment: scroll,scroll;
+//			background-repeat:repeat-x,no-repeat;
+//			background-position:top left,bottom left;
+//			z-index:100;
+			width:100%;
+			// height:(1020px + 150px);
+			height:(510px + 125px);
+			top:300px; // avant c'était 1700px
+			left:0;
+			position:absolute;
+			.fil.peche{
+				position:absolute;
+				background-color:#333;
+				width:1px;
+				height:240px;
+				left:351px;
+				top:800px;
+			}
+			.illus.hamecon.peche{
+				background-image: url(../images/howwework/hamecon.png);
+				width:7px;
+				height:15px;
+				top:1040px;
+				left:347px;
+				background-size:7px;
+			}
+			.illus{
+				&.doyouknowribbon{
+					background-image: url(../images/_ribbons/ribbon-04.png);
+					width:125px;
+					height:28px;
+					left:339px;
+					top:614px;
+					background-size:125px;
+				}
+				&.bubblebig{
+					background-image: url(../images/_illustrations/bubble-big.png);
+					width:113px;
+					height:231px;
+					left:37px;
+					top:684px;
+					background-size:113px;
+				}
+				&.bubblemed{
+					background-image: url(../images/_illustrations/bubble-med.png);
+					width:31px;
+					height:66px;
+					left:484px;
+					top:959px;
+					background-size:31px;
+				}
+				&.bubblesmall01{
+					background-image: url(../images/_illustrations/bubble-small.png);
+					width:21px;
+					height:45px;
+					left:478px;
+					top:677px;
+					background-size:21px;
+				}
+				&.bubblesmall02{
+					background-image: url(../images/_illustrations/bubble-small.png);
+					width:21px;
+					height:45px;
+					left:324px;
+					top:793px;
+					background-size:21px;
+				}
+				&.bubblesmall03{
+					background-image: url(../images/_illustrations/bubble-small.png);
+					width:21px;
+					height:45px;
+					left:292px;
+					top:997px;
+					background-size:21px;
+				}
+				&.fish01{
+					background-image: url(../images/_fishes/fish-01.png);
+					width:82px;
+					height:53px;
+					left:286px;
+					top:652px;
+					background-size:82px;
+				} 
+				&.fish02{
+					background-image: url(../images/_fishes/fish-02.png);
+					width:112px;
+					height:72px;
+					left:303px;
+					top:728px;
+					background-size:112px;
+				}
+				&.fish03{
+					background-image: url(../images/_fishes/fish-03.png);
+					width:52px;
+					height:35px;
+					left:353px;
+					top:782px;
+					background-size:52px;
+				}
+				&.fish04{
+					background-image: url(../images/_fishes/fish-04.png);
+					width:88px;
+					height:57px;
+					left:380px;
+					top:789px;
+					background-size:88px;
+				}
+				&.fish05{
+					background-image: url(../images/_fishes/fish-05.png);
+					width:100px;
+					height:65px;
+					left:200px;
+					top:782px;
+					background-size:100px;
+				}
+				&.fish06{
+					background-image: url(../images/_fishes/fish-06.png);
+					width:100px;
+					height:65px;
+					left:231px;
+					top:867px;
+					background-size:100px;
+				}
+				&.fish07{
+					background-image: url(../images/_fishes/fish-07.png);
+					width:52px;
+					height:35px;
+					left:228px;
+					top:920px;
+					background-size:52px;
+				}
+				&.fish08{
+					background-image: url(../images/_fishes/fish-08.png);
+					width:88px;
+					height:57px;
+					left:263px;
+					top:932px;
+					background-size:88px;
+				}
+				&.fishred{
+					background-image: url(../images/_fishes/red-fish.png);
+					width:100px;
+					height:65px;
+					left:335px;
+					top:1006px;
+					background-size:100px;
+				}
+				&.fishark{
+					background-image: url(../images/_fishes/shark.png);
+					width:274px;
+					height:98px;
+					left:375px;
+					top:841px;
+					background-size:274px;
+				}
+			}
+		}
+	
+	
+		.path01{
+			height:1333px;
+			background: transparent url(../images/howwework/path01-768.gif) no-repeat scroll top left;
+		}
+		.path02{
+			height:2000px;
+			background: transparent url(../images/howwework/path02-768.gif) no-repeat scroll top left;
+		}
+	}
+}
