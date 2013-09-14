@@ -114,6 +114,11 @@ how.parallax = function(s){
 				css.transform = 'scale('+ d.scale +')';
 			}
 
+			// slide
+			if(typeof d.bgtop !== "undefined"){
+				css['background-position'] = '0 '+d.bgtop+'px';
+			}
+
 			$(how.objects[i].$el).css(css)
 
 /*			console.log('animate',how.objects[i].name,
@@ -174,6 +179,14 @@ how.animate = {
 		return {
 			top:0,left:0,
 			scale: (s-top+app.wh)/app.wh * (delta/100)
+		}
+	},
+	slidedown : function(s, alea, delta, top){
+		// slide to down
+		// alea = since when do we move, which distane between top and animation start
+		return {
+			top:0,left:0,
+			bgtop:  Math.max(delta-top+s, 0)
 		}
 	},
 	lift1 : function(s, alea, delta, top){
