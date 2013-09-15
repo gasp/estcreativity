@@ -125,111 +125,31 @@ http://vimeo.com/estcreativity/likes/rss
 			</div>
 			<div class="une colonne double">&nbsp;</div>
 			
-			
-			<div class="une colonne publi source3">
-				<div class="description">view-from-the-room</div>
-				<div class="image">
-					<img src="http://est.freelancis.net/labo/spip/local/cache-gd2/f1ee361859e46a23585f48faf1e28633.jpg" width='160' height='160' alt='view-from-the-room' align='' />
-				</div>
-				<div class="date">2013-08-14 06:36:37</div>
-			</div>
-			
-			<div class="une colonne une colonne publi source2">
-				<div class="description">@fr32c tiens, ce blog n&#8217;est pas mort&nbsp;?</div>
-				<div class="date">2013-08-14 19:24:23</div>
-			</div>
-			
-			<div class="une colonne publi source3">
-				<div class="description">view-from-the-room</div>
-				<div class="image">
-					<img src="http://est.freelancis.net/labo/spip/local/cache-gd2/f1ee361859e46a23585f48faf1e28633.jpg" width='160' height='160' alt='view-from-the-room' align='' />
-				</div>
-				<div class="date">2013-08-14 06:36:37</div>
-			</div>
-			<div class="une colonne publi source3">
-				<div class="description">view-from-the-room</div>
-				<div class="image">
-					<img src="http://est.freelancis.net/labo/spip/local/cache-gd2/f1ee361859e46a23585f48faf1e28633.jpg" width='160' height='160' alt='view-from-the-room' align='' />
-				</div>
-				<div class="date">2013-08-14 06:36:37</div>
-			</div>
+#SET{syndic_selection,#ARRAY}
+<BOUCLE_syndic_derniers(SYNDIC_ARTICLES){par date}{inverse}{0,60}>
+#SET{syndic_selection, #GET{syndic_selection}|push{#ID_SYNDIC_ARTICLE}}
+</BOUCLE_syndic_derniers>
 
-			<div class="une colonne publi source3">
-				<div class="description">view-from-the-room</div>
-				<div class="image">
-					<img src="http://est.freelancis.net/labo/spip/local/cache-gd2/f1ee361859e46a23585f48faf1e28633.jpg" width='160' height='160' alt='view-from-the-room' align='' />
-				</div>
-				<div class="date">2013-08-14 06:36:37</div>
-			</div>
+<BOUCLE_syndic(SYNDIC_ARTICLES){par hasard}{id_syndic_article IN #GET{syndic_selection}}{0,20}>
 
-			<div class="une colonne publi source3">
-				<div class="description">view-from-the-room</div>
-				<div class="image">
-					<img src="http://est.freelancis.net/labo/spip/local/cache-gd2/f1ee361859e46a23585f48faf1e28633.jpg" width='160' height='160' alt='view-from-the-room' align='' />
-				</div>
-				<div class="date">2013-08-14 06:36:37</div>
-			</div>
+	<div class="une colonne publi source#ID_SYNDIC"
+[		data-url-site="(#URL_SITE)"]
+[		data-url-article="(#URL_ARTICLE)"]>
+		[<div class="description">(#TITRE)</div>]
+		[<div class="image">
+			(#DESCRIPTIF
+			   |extraire_balise{img}
 
-			<div class="une colonne publi source2">
-				<div class="description">@clementthorez si tu veux faire la liste de tous les sites bullshit du net, tu vas remplir tweeter ... Oh wait, twitter, ça sert à ça&nbsp;!</div>
-	
-				<div class="date">2013-08-14 11:57:20</div>
-			</div>
+			   |image_passe_partout{160,160}
+			   |image_recadre{160,160, center}
+			   |inserer_attribut{alt,[(#TITRE|textebrut|couper{60})]}
+			   |inserer_attribut{align,''}
+			)
+		</div>]
+		<div class="date">#DATE</div>
+	</div>
 
-			<div class="une colonne publi source3">
-				<div class="description">view-from-the-room</div>
-				<div class="image">
-					<img src="http://est.freelancis.net/labo/spip/local/cache-gd2/f1ee361859e46a23585f48faf1e28633.jpg" width='160' height='160' alt='view-from-the-room' align='' />
-				</div>
-				<div class="date">2013-08-14 06:36:37</div>
-			</div>
-
-
-
-
-
-			<div class="une colonne publi source2">
-				<div class="description">@Kanae_O let&#8217;s finish this coffee and catch a plane</div>
-	
-				<div class="date">2013-08-14 11:57:20</div>
-			</div>
-
-
-
-
-			<div class="une colonne publi source3">
-				<div class="description">velo_neige2</div>
-				<div class="image">
-					<img src="http://est.freelancis.net/labo/spip/local/cache-gd2/26ce60f00c05ca660ea6fef641fce23f.jpg" width='160' height='160' alt='velo_neige2' align='' />
-				</div>
-				<div class="date">2013-08-14 06:36:36</div>
-			</div>
-
-
-			<div class="une colonne publi source3">
-				<div class="description">velo_Herve</div>
-				<div class="image">
-					<img src="http://est.freelancis.net/labo/spip/local/cache-gd2/d580523547400b5548dd6090d3db39fe.jpg" width='160' height='160' alt='velo_Herve' align='' />
-				</div>
-				<div class="date">2013-08-14 06:36:36</div>
-			</div>
-
-
-			<div class="une colonne publi source3">
-				<div class="description">velo_alexandra</div>
-				<div class="image">
-					<img src="http://est.freelancis.net/labo/spip/local/cache-gd2/e31b6f91e22dd59ac3c7bbdbec0bd226.jpg" width='160' height='160' alt='velo_alexandra' align='' />
-				</div>
-				<div class="date">2013-08-14 06:36:35</div>
-			</div>
-
-			<div class="une colonne publi source3">
-				<div class="description">velo_Herve</div>
-				<div class="image">
-					<img src="http://est.freelancis.net/labo/spip/local/cache-gd2/c062e99c5845a73a7d8f6bbd624f72fa.jpg" width='160' height='160' alt='velo_Herve' align='' />
-				</div>
-				<div class="date">2013-08-14 06:36:36</div>
-			</div>
+</BOUCLE_syndic>
 
 		</div>
 	</section>
