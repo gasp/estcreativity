@@ -16,11 +16,6 @@ how.objects = [
 	{ name : 'coffee' , behavior : 'goup', alea: 100, delta : 70},
 	{ name : 'sugar' , behavior : 'jiggle', alea: 100, delta : 20},
 	
-/*	{ name : 'cloud01' , behavior : 'goup', alea: 100, delta : 20},
-	{ name : 'cloud02' , behavior : 'godown', alea: 100, delta : 30},
-	{ name : 'cloud03' , behavior : 'goup', alea: 100, delta : 50},
-*/	
-
 	{ name : 'cloud01' , behavior : 'goup', alea: 100, delta : 20},
 	{ name : 'cloud02' , behavior : 'jiggle', alea: 70, delta : 10},
 	{ name : 'cloud03' , behavior : 'goup', alea: 100, delta : 50},
