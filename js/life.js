@@ -25,24 +25,25 @@ life.tweets = function(){
 		if($(this).hasClass("double"))
 			return;
 
-		// displays tweets as tweets
+		//display images from flickr
 		if($(this).hasClass("source2")){
+
+			var src = $("img", $(this)).attr('src');
+			$(this).addClass("flickr").empty();
+
+			$(this).css({
+				'background-image': 'url('+src+')'
+			})
+		}
+
+		// displays tweets as tweets
+		else{
 			// wider
 			$(this).removeClass("une").addClass("deux").addClass("tweet");
 			// center
 			var $d = $(".description",$(this));
 			$d.css({
 				'padding-top': life.gridheight/2 - $d.height()/2
-			})
-		}
-		//display images from flickr
-		if($(this).hasClass("source3")){
-			
-			var src = $("img", $(this)).attr('src');
-			$(this).addClass("flickr").empty();
-			
-			$(this).css({
-				'background-image': 'url('+src+')'
 			})
 		}
 
