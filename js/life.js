@@ -29,11 +29,16 @@ life.tweets = function(){
 		if($(this).hasClass("source2")){
 
 			var src = $("img", $(this)).attr('src');
-			$(this).addClass("flickr").empty();
-
-			$(this).css({
-				'background-image': 'url('+src+')'
-			})
+			$(this)
+				.addClass("flickr")
+				.empty()
+				.css({
+					'background-image': 'url('+src+')',
+					'cursor': 'pointer'
+				})
+				.on("click", function(){
+					window.open($(this).data('url-site'), '_blank');
+				})
 		}
 
 		// displays tweets as tweets
