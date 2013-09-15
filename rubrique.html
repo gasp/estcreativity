@@ -116,14 +116,12 @@ http://vimeo.com/estcreativity/likes/rss
 		<div class="grille">
 			<div class="une colonne double">&nbsp;</div>
 			<div class="trois colonnes double">
+			<BOUCLE_article_life(ARTICLES){id_article=1}>
 			<article>
-				<h2>Agency life</h2>
-				<p>Hi! This is life at EST. Where we sit, what we do, what we like and follow,
-					what we listen to, how we celebrate success and what inspires us should 
-					appear here if the magic of Social Media works. It’s a random process, thus 
-					probably representative. For more serious information about us please scroll 
-					on.</p>
+				<h2>#TITRE</h2>
+				<div class="texte">#TEXTE</div>
 			</article>
+			</BOUCLE_article_life>
 			</div>
 			<div class="une colonne double">&nbsp;</div>
 			
@@ -260,16 +258,12 @@ http://vimeo.com/estcreativity/likes/rss
 			<div class="ligne">
 				<div class="une colonne">&nbsp;</div>
 				<div class="quatre colonnes">
+					<BOUCLE_article_how(ARTICLES){id_article=2}>
 					<article>
-						<h2>How we work</h2>
-						<p>We use our skills and capacities to elaborate measure-made solutions to our 
-							clients problems. There are a lot of skills, but the first one is the capacity to 
-							listen. Yes we have ears. And a brain. We always put a creative idea in the 
-							center of the process, but if we do not fully understand our client’s needs, 
-							where could this possibly lead us? Certainly not to success and efficiency! 
-							If we get this deeper understanding of what one wants to achieve, then we 
-							straightly nail it! Often with a sympathetic touch of genius ...</p>
+						<h2>#TITRE</h2>
+						<div class="texte">#TEXTE</div>
 					</article>
+					</BOUCLE_article_how>
 				</div>
 			</div> <!-- /.ligne-->
 		</div><!-- /.grille-->
@@ -475,10 +469,12 @@ http://vimeo.com/estcreativity/likes/rss
 				<div class="ligne shadow clearfix">
 					<div class="trois colonnes">&nbsp;</div>
 					<div class="quatre colonnes">
+						<BOUCLE_article_clients(ARTICLES){id_article=1}>
 						<article>
-							<h2>Some of our clients</h2>
-							<p>Huuu, we have logos of some well-known brands and companies on our website. Cool! But what did we actually do for them? To see our work you will be directed to our page on "Behance", a platform for creative people and teams to showcase and discover creative work. It’s the simplest way to update projects, be found and share.</p>
+							<h2>#TITRE</h2>
+							<div class="texte">#TEXTE</div>
 						</article>
+						</BOUCLE_article_clients>
 					</div>
 				</div>
 			</div>
