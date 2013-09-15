@@ -52,7 +52,7 @@ life.tweets = function(){
 			})
 		}
 
-		$(this).html(life.linkify($(this).text()))
+		$(".description",this).html(life.linkify($(".description",this).text()))
 	});
 
 }
