@@ -3,11 +3,12 @@
 
 # TEAM
 
-    <name> -- <role> -- <twitter>
-    Ralf Porzel -- Redactor -- @RalfPorzel
-    Florian Shum Kwoong -- ??? -- @escaflaus
-    Clément Thorez -- ??? -- @clementthorez
-    Gaspardf Beernaert -- ??? --- @freelancis
+    Clement Thorez -- Art Direction / Illustration -- @clementthorez
+    Gaspardf Beernaert -- Web design / Development --- @freelancis
+    Ralf Porzel -- Editorial content -- @RalfPorzel
+
+    Florian Shum Kwoong -- Design -- @escaflaus
+    Domitille Haffner -- CSS -- @domicrobe
 
 # THANKS
 
@@ -16,5 +17,11 @@
 # TECHNOLOGY COLOPHON
 
     HTML5, CSS3
-    jQuery, Modernizr
-    Bootstrap
+    jQuery, Modernizr, Waypoint
+    Twitter Bootstrap
+    SPIP CMS
+
+# Softwares
+    Adobe Illustrator, Photoshop
+    Macromate Textmate 2
+    Apache
