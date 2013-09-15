@@ -50,14 +50,13 @@ var menu = {
 		this.close(0)
 	},
 	open : function(t){
-		this.$navbar.stop().animate({top:  0},t, function(){
-			this.state = 'opened';
-		});
+		this.$navbar.stop().animate({top:  0},t);
+		this.state = 'opened';
 	},
 	close : function(t){
-		this.$navbar.stop().animate({top:  - this.$navbar.height()},t,function(){
-			this.state = 'closed';
-		});
+		this.$navbar.stop().animate({top:  - this.$navbar.height()},t);
+		this.state = 'closed';
+
 	}
 };
 
