@@ -21,7 +21,7 @@ team.init = function(){
 	team.$mates.each(function(i){
 //		console.log(this,i)
 		$(this).css({
-			'background-image':'url(images/team/'+that.members[i]+'-'+team.height+'.jpg)'
+			'background-image':'url(/squelettes/images/team/'+that.members[i]+'-'+team.height+'.jpg)'
 		})
 	});
 
@@ -107,7 +107,7 @@ eyes.init = function(){
 //		console.log(" eyes: ",team.i,positions[team.i],team.resolutions[team.i])
 
 		$ey.css({
-			'background-image':'url(images/team/'+team.members[j[i]]+'-'+team.height+'.jpg)',
+			'background-image':'url(/squelettes/images/team/'+team.members[j[i]]+'-'+team.height+'.jpg)',
 			'background-position':'center -'+ positions[team.i].bgpos +'px',
 			'width': w,
 			'height': positions[team.i].height,
@@ -133,7 +133,7 @@ eyes.swap = function(){
 	team.$mates.each(function(i){
 		var $ey = $(".eyes",this)
 		$ey.css({
-			'background-image':'url(images/team/'+team.members[j[i]]+'-'+team.height+'.jpg)',
+			'background-image':'url(/squelettes/images/team/'+team.members[j[i]]+'-'+team.height+'.jpg)',
 		})
 	});
 
