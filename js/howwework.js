@@ -9,16 +9,16 @@ how.objects = [
 	{ name : 'ascenceur.asc2' , behavior : 'lift2', alea: null, delta : null}, // stays at 1
 
 	// water is a big container, it contains fish, bubbles...
-	{ name : 'water' , behavior : 'goup', alea : 100, delta : 100},
+	{ name : 'water' , behavior : 'goup', alea : 10, delta : 50},
 
 	{ name : 'welcome' , behavior : 'scaleup', alea : null, delta : 110},
 
-	{ name : 'coffee' , behavior : 'goup', alea: 100, delta : 70},
+	{ name : 'coffee' , behavior : 'goup', alea: -100, delta : 70},
 	{ name : 'sugar' , behavior : 'jiggle', alea: 100, delta : 20},
 	
-	{ name : 'cloud01' , behavior : 'goup', alea: 100, delta : 20},
+	{ name : 'cloud01' , behavior : 'goupdev', alea: 30, delta : 20},
 	{ name : 'cloud02' , behavior : 'jiggle', alea: 70, delta : 10},
-	{ name : 'cloud03' , behavior : 'goup', alea: 100, delta : 50},
+	{ name : 'cloud03' , behavior : 'goup', alea: 0, delta : 50},
 
 	{ name : 'birds' , behavior : 'godown', alea: 100, delta : 150},
 
@@ -32,11 +32,11 @@ how.objects = [
 	{ name : 'fish08' , behavior : 'goleft', alea: null, delta : 100},
 	{ name : 'fishred' , behavior : 'goleft', alea: null, delta : 50},
 
-	{ name : 'bubblesmall01' , behavior : 'goup', alea: null, delta : 300},
-	{ name : 'bubblesmall02' , behavior : 'goup', alea: null, delta : 200},
-	{ name : 'bubblesmall03' , behavior : 'goup', alea: null, delta : 300},
-	{ name : 'bubblemed' , behavior : 'goup', alea: null, delta : 200},
-	{ name : 'bubblecoffre' , behavior : 'goup', alea: null, delta : 100},
+	{ name : 'bubblesmall01' , behavior : 'goup', alea: 10, delta : 300},
+	{ name : 'bubblesmall02' , behavior : 'goup', alea: 0, delta : 600},
+	{ name : 'bubblesmall03' , behavior : 'goup', alea: 0, delta : 300},
+	{ name : 'bubblemed' , behavior : 'goup', alea: 0, delta : 200},
+	{ name : 'bubblecoffre' , behavior : 'goup', alea: 30, delta : 100},
 
 	{ name : 'fishark' , behavior : 'goleft', alea: null, delta : 30},
 
@@ -150,13 +150,13 @@ how.animate = {
 	},
 	godown : function(s, alea, delta, top){
 		return {
-			top: (s-top)/app.wh * delta,
+			top: (0- Math.min(1,Math.max(0,(top-s - alea)/app.wh))) * delta,
 			left:0
 		}
 	},
 	goup : function(s, alea, delta, top){
 		return {
-			top: 1-how.animate.godown(s, alea, delta, top).top,
+			top: Math.min(1,Math.max(0, (top-s -alea)/app.wh)) * delta ,
 			left:0
 		}
 	},
