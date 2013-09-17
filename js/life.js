@@ -11,11 +11,6 @@ life.init = function(){
 	$(".colonne, .colonnes", life.$section).css({"height": life.gridheight});
 	$(".double, .doubles", life.$section).css({"height": life.gridheight*2});
 
-	// center article
-	$("article", life.$section).css({
-		'margin-top': (life.gridheight - $("article", life.$section).height()/2)
-	});
-
 	life.tweets();
 }
 life.tweets = function(){
@@ -38,7 +33,7 @@ life.tweets = function(){
 				})
 				.on("click", function(){
 					window.open($(this).data('url-site'), '_blank');
-				})
+				});
 		}
 
 		// displays tweets as tweets
