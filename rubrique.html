@@ -124,13 +124,33 @@ http://vimeo.com/estcreativity/likes/rss
 			</BOUCLE_article_life>
 			</div>
 			<div class="une colonne double">&nbsp;</div>
-			
+
+<BOUCLE_syndic_images(SYNDIC_ARTICLES){par date}{id_syndic=2}{inverse}{0,6}{doublons flux}>
+	<div class="une colonne publi source#ID_SYNDIC"
+[		data-url-site="(#URL_SITE)"]
+[		data-url-article="(#URL_ARTICLE)"]>
+		[<div class="description">(#TITRE)</div>]
+		[<div class="image">
+			(#DESCRIPTIF
+			   |extraire_balise{img}
+
+			   |image_passe_partout{160,160}
+			   |image_recadre{160,160, center}
+			   |inserer_attribut{alt,[(#TITRE|textebrut|couper{60})]}
+			   |inserer_attribut{align,''}
+			)
+		</div>]
+		<div class="date">#DATE</div>
+	</div>
+
+</BOUCLE_syndic_images>
+
 #SET{syndic_selection,#ARRAY}
-<BOUCLE_syndic_derniers(SYNDIC_ARTICLES){par date}{inverse}{0,60}>
+<BOUCLE_syndic_derniers(SYNDIC_ARTICLES){par date}{inverse}{0,45}{doublons flux}>
 #SET{syndic_selection, #GET{syndic_selection}|push{#ID_SYNDIC_ARTICLE}}
 </BOUCLE_syndic_derniers>
 
-<BOUCLE_syndic(SYNDIC_ARTICLES){par hasard}{id_syndic_article IN #GET{syndic_selection}}{0,20}>
+<BOUCLE_syndic(SYNDIC_ARTICLES){par hasard}{id_syndic_article IN #GET{syndic_selection}}{0,14}>
 
 	<div class="une colonne publi source#ID_SYNDIC"
 [		data-url-site="(#URL_SITE)"]
@@ -530,10 +550,9 @@ http://vimeo.com/estcreativity/likes/rss
 <script type="text/javascript" src="#CHEMIN{js/vendor/jquery.grabscroll.js}"></script>
 
 <!--
-<script type="text/javascript" src="js/vendors.min.js"></script>
-<script type="text/javascript" src="js/est.min.js"></script>
+<script type="text/javascript" src="#CHEMIN{js/vendors.min.js}"></script>
+<script type="text/javascript" src="#CHEMIN{js/est.min.js}"></script>
 -->
-
 <script type="text/javascript" src="#CHEMIN{js/app.js}"></script>
 
 <script type="text/javascript" src="#CHEMIN{js/parallax.js}"></script>
@@ -545,7 +564,6 @@ http://vimeo.com/estcreativity/likes/rss
 <script type="text/javascript" src="#CHEMIN{js/clients.js}"></script>
 <script type="text/javascript" src="#CHEMIN{js/contacts.js}"></script>
 <script type="text/javascript" src="#CHEMIN{js/fil.js}"></script>
-
 
 <!--[if lt IE 7 ]>
 	<script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.2/CFInstall.min.js"></script>
