@@ -146,7 +146,7 @@ http://vimeo.com/estcreativity/likes/rss
 </BOUCLE_syndic_images>
 
 #SET{syndic_selection,#ARRAY}
-<BOUCLE_syndic_derniers(SYNDIC_ARTICLES){par date}{inverse}{0,30}{doublons flux}>
+<BOUCLE_syndic_derniers(SYNDIC_ARTICLES){par date}{inverse}{0,45}{doublons flux}>
 #SET{syndic_selection, #GET{syndic_selection}|push{#ID_SYNDIC_ARTICLE}}
 </BOUCLE_syndic_derniers>
 
