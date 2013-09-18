@@ -146,11 +146,32 @@ http://vimeo.com/estcreativity/likes/rss
 </BOUCLE_syndic_images>
 
 #SET{syndic_selection,#ARRAY}
-<BOUCLE_syndic_derniers(SYNDIC_ARTICLES){par date}{inverse}{0,45}{doublons flux}>
+<BOUCLE_syndic_dernier_tweet(SYNDIC_ARTICLES){id_syndic=1}{par date}{inverse}{0,1}{doublons flux}>
+
+	<div class="une colonne publi source#ID_SYNDIC"
+[		data-url-site="(#URL_SITE)"]
+[		data-url-article="(#URL_ARTICLE)"]>
+		[<div class="description">(#TITRE)</div>]
+		[<div class="image">
+			(#DESCRIPTIF
+			   |extraire_balise{img}
+
+			   |image_passe_partout{160,160}
+			   |image_recadre{160,160, center}
+			   |inserer_attribut{alt,[(#TITRE|textebrut|couper{60})]}
+			   |inserer_attribut{align,''}
+			)
+		</div>]
+		<div class="date">#DATE</div>
+	</div>
+
+</BOUCLE_syndic_dernier_tweet>
+
+<BOUCLE_syndic_derniers(SYNDIC_ARTICLES){par date}{inverse}{0,23}{doublons flux}>
 #SET{syndic_selection, #GET{syndic_selection}|push{#ID_SYNDIC_ARTICLE}}
 </BOUCLE_syndic_derniers>
 
-<BOUCLE_syndic(SYNDIC_ARTICLES){par hasard}{id_syndic_article IN #GET{syndic_selection}}{0,14}>
+<BOUCLE_syndic(SYNDIC_ARTICLES){par hasard}{id_syndic_article IN #GET{syndic_selection}}{0,24}>
 
 	<div class="une colonne publi source#ID_SYNDIC"
 [		data-url-site="(#URL_SITE)"]
