@@ -1,5 +1,3 @@
-document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
-
 var parallax = {};
 parallax.objects = []
 parallax.coords = [];
