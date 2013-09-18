@@ -37,9 +37,8 @@ app = {
 		app.refresh();
 		menu.init();
 
-		if($('html').hasClass('touch')){
-			app.touch = true;
-		}
+		app.touch = Modernizr.touch;
+
 
 		team.init();
 		if(!app.touch){
