@@ -30,6 +30,7 @@
 		<p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
 	<![endif]-->
 
+<div class="log">log</div>
 	<div class="navbar navbar-fixed-top hide">
 		<div class="navbar-inner">
 			<div class="container">
@@ -72,6 +73,8 @@
 	<div class="floating"></div>
 	<div class="filconducteur"></div>
 
+<div id="wrapper">
+<div id="slider">
 	<section class="fullheight sec0 snap"><a name="home"></a>
 		<div class="cover"></div>
 		<div class="intro">
@@ -198,6 +201,7 @@ http://vimeo.com/estcreativity/likes/rss
 	<section class="fullheight sec2 snap"><a name="team"></a>
 <!-- team-->
 		<div class="grille">
+			<div class="ligne">
 			<div class="deux colonnes mate">
 				<div class="top">
 					<h3 class="fname">Stéphane</h3>
@@ -290,6 +294,7 @@ http://vimeo.com/estcreativity/likes/rss
 					</div>
 				</div>
 			</div>
+			</div> <!--/.ligne-->
 		</div>
 		
 	</section>
@@ -565,10 +570,15 @@ http://vimeo.com/estcreativity/likes/rss
 		</div>
 	</section>
 
+</div><!--/#slider-->
+</div><!--/#wrapper-->
+
 <script type="text/javascript" src="#CHEMIN{js/vendor/jquery-1.10.1.js}"></script>
 <script type="text/javascript" src="#CHEMIN{js/vendor/waypoints.js}"></script>
 <script type="text/javascript" src="#CHEMIN{js/vendor/jquery.easing-1.3.js}"></script>
 <script type="text/javascript" src="#CHEMIN{js/vendor/jquery.grabscroll.js}"></script>
+
+<script type="text/javascript" src="#CHEMIN{js/vendor/iscroll-lite.js}"></script>
 
 <!--
 <script type="text/javascript" src="#CHEMIN{js/vendors.min.js}"></script>
@@ -590,13 +600,14 @@ http://vimeo.com/estcreativity/likes/rss
 	<script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.2/CFInstall.min.js"></script>
 	<script>window.attachEvent("onload",function(){CFInstall.check({mode:"overlay"})})</script>
 <![endif]-->
+<!--
 <script type="text/javascript">
 var _gaq=[['_setAccount','UA-19240864-1'],['_trackPageview']];
 	(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.async=1;
 	g.src=('https:'==location.protocol?'https://ssl' : 'http://www')+'.google-analytics.com/ga.js';
 	s.parentNode.insertBefore(g,s)}(document,'script'));
 </script>
-
+-->
 </body>
 </html>
 </BOUCLE_principale>

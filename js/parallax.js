@@ -28,14 +28,43 @@ parallax.init = function(){
 
 
 parallax.listen = function(){
-	$(window).on('scroll',function(){
-		var s = $(this).scrollTop();
-		
-		parallax.update(s)
-	});
+	if(app.touch || 1){
+		$('.log').addClass('touchenabled');
+		parallax.iScroll = new iScroll('wrapper',{
+			hScroll:false,
+			vScroll:true,
+			onScrollStart : function(){
+				$('.log').addClass('animated')
+			},
+			onScrollEnd : function(){
+				$('.log').removeClass('animated');
+			}
+		});
+		var s = window.parallax.iScroll.y
+		console.log('calling parallax.animationLoop')
+
+		parallax.animationLoop(); // this is where i do the update
+
+	}
+//e	else{
+		$(window).on("scroll",function(s){
+//			var s = getScroll(document)
+			var s = $(document).scrollTop();
+			parallax.update(s)
+		})
+//e	}
+
+};
+parallax.animationLoop = function(cb){
+	window.requestAnimationFrame(parallax.animationLoop);
+	var s = window.parallax.iScroll.y;
+	parallax.update(-s); // -s because s is inversed
 };
 
+
+
 parallax.update = function(s){
+	$('.log').text('>'+s)
 	for (var i = 0; i < parallax.coords.length; i++) {
 		if( s > parallax.coords[i].top
 			&& s < parallax.coords[i].bottom){

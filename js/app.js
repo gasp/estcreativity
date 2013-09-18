@@ -43,9 +43,9 @@ app = {
 		team.init();
 		if(!app.touch){
 			eyes.init();
-			how.init();
-		}
 
+		}
+		how.init();
 
 
 
@@ -53,7 +53,7 @@ app = {
 			// parallax for home, how
 			// listeners
 			// requires home, how
-			if(!app.touch)
+//			if(!app.touch)
 				parallax.init();
 
 			// 1 time elements placing (quick dom manipulation)
