@@ -1,6 +1,9 @@
+document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
+
 var parallax = {};
 parallax.objects = []
 parallax.coords = [];
+parallax.iScroll = null;
 parallax.init = function(){
 
 	// setting objects
@@ -20,24 +23,27 @@ parallax.init = function(){
 		parallax.coords[i] = window[parallax.objects[i].name].getCoords();
 	}
 
-	parallax.on();
+	parallax.listen();
 }
 
 
-parallax.on = function(){
+parallax.listen = function(){
 	$(window).on('scroll',function(){
 		var s = $(this).scrollTop();
 		
-		for (var i = 0; i < parallax.coords.length; i++) {
-			if( s > parallax.coords[i].top
-				&& s < parallax.coords[i].bottom){
+		parallax.update(s)
+	});
+};
+
+parallax.update = function(s){
+	for (var i = 0; i < parallax.coords.length; i++) {
+		if( s > parallax.coords[i].top
+			&& s < parallax.coords[i].bottom){
 //	MAXI				console.log('parallaxing',parallax.objects[i].name,'i',i,
 //	DEBUG				't<s<b',parallax.coords[i].top, s, parallax.coords[i].bottom);
-					window[parallax.objects[i].name].parallax(s)
-			}
-
+				window[parallax.objects[i].name].parallax(s)
 		}
-	});
+	}
 }
 
 
