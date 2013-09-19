@@ -20,6 +20,12 @@ life.tweets = function(){
 		if($(this).hasClass("double"))
 			return;
 
+		// i don't want the ones under the fold
+		if(($(this).position().top + life.gridheight) > app.wh){
+			$(this).hide();
+			return;
+		}
+
 		//display images from flickr
 		if($(this).hasClass("source2")){
 
