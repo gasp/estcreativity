@@ -8,19 +8,22 @@ section.sec1{
 	.colonne, .colonnes{
 		background-color:#fff;
 	}
-	
-	.flickr{
-		background-size: cover;
-		background-repeat:no-repeat;
-	}
-	.tweet{
-		text-align:center;
-		background: #fff url(../images/life/twitter_background.gif) no-repeat scroll center center;
-		.description{
-			padding:0 1em;
+	.publi{ // all publications will be displayed by javascript
+		display:none;
+
+		&.flickr{
+			background-size: cover;
+			background-repeat:no-repeat;
 		}
-		.date{
-			display:none;
+		&.tweet{
+			text-align:center;
+			background: #fff url(../images/life/twitter_background.gif) no-repeat scroll center center;
+			.description{
+				padding:0 1em;
+			}
+			.date{
+				display:none;
+			}
 		}
 	}
 	article{

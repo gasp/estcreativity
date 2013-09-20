@@ -21,9 +21,14 @@ life.tweets = function(){
 		if($that.hasClass("double"))
 			return;
 
+		// element should be show to calculate its position 
+		// therefore, i show it briefly
+		// (tiny wtf of the day)
+		$that.show();
+
 		// i don't want the ones under the fold
 		if(($that.position().top + life.gridheight) > app.wh){
-			$that.hide();
+			$that.hide()
 			return;
 		}
 
@@ -54,7 +59,8 @@ life.tweets = function(){
 			})
 		}
 
-		$(".description",$that).html(life.linkify($(".description",$that).text()))
+		$(".description",$that).html(life.linkify($(".description",$that).text()));
+
 	});
 
 }
