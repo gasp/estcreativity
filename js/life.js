@@ -16,21 +16,22 @@ life.init = function(){
 life.tweets = function(){
 	$(".colonne, .colonnes", life.$section).each(function(){
 
+		var $that = $(this);
 		// i don't want headers
-		if($(this).hasClass("double"))
+		if($that.hasClass("double"))
 			return;
 
 		// i don't want the ones under the fold
-		if(($(this).position().top + life.gridheight) > app.wh){
-			$(this).hide();
+		if(($that.position().top + life.gridheight) > app.wh){
+			$that.hide();
 			return;
 		}
 
 		//display images from flickr
-		if($(this).hasClass("source2")){
+		if($that.hasClass("source2")){
 
-			var src = $("img", $(this)).attr('src');
-			$(this)
+			var src = $("img", $that).attr('src');
+			$that
 				.addClass("flickr")
 				.empty()
 				.css({
@@ -45,15 +46,15 @@ life.tweets = function(){
 		// displays tweets as tweets
 		else{
 			// wider
-			$(this).removeClass("une").addClass("deux").addClass("tweet");
+			$that.removeClass("une").addClass("deux").addClass("tweet");
 			// center
-			var $d = $(".description",$(this));
+			var $d = $(".description",$that);
 			$d.css({
 				'padding-top': life.gridheight/2 - $d.height()/2
 			})
 		}
 
-		$(".description",this).html(life.linkify($(".description",this).text()))
+		$(".description",$that).html(life.linkify($(".description",$that).text()))
 	});
 
 }
