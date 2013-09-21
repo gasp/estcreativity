@@ -73,6 +73,10 @@ how.unload = function(){} // nada
 how.init = function(){
 	how.$el = $("#howwework");
 	how.load();
+	if(app.ww < 1440){
+		how.objects[0].behavior = 'lift1small';
+		how.objects[1].behavior = 'lift2small';
+	}
 }
 
 how.getCoords = function(){
@@ -93,7 +97,7 @@ how.parallax = function(s){
 			var d = how.animate[b]( s, how.objects[i].alea, how.objects[i].delta, how.objects[i].offset.top);
 /*
 			if(app.ww < 1440)
-				console.log('please redo animation for ipad');
+				console.log('please redo animation for small screens');
 */
 
 			var css = {
@@ -229,6 +233,47 @@ how.animate = {
 
 		return {top:0,left:0,r:0};
 	},
+	lift1small : function(s, alea, delta, top){
+
+		// dleft & dright close
+		// aiguille rolls
+		// asc1 follows scroll
+		// asc1 fades
+
+		var distance = top-s,
+			closingpoint = 100, // when should the closing point start
+			rollingpoint = 100; // when should the lift should start rolling
+
+		var closing = ((distance-closingpoint)-10);
+		if(closing < 10) closing = 0;
+
+		if(distance > closingpoint && distance < (closingpoint+200)){
+			$('.dleft',how.objects[0].el).css({left:'-'+closing/2+'px'})
+			$('.dright',how.objects[0].el).css({left: 30+closing/2+'px'})
+		}
+		else{
+			if(distance > closingpoint){
+				// open
+				$('.dleft',how.objects[0].el).css({left: '-31px'})
+				$('.dright',how.objects[0].el).css({left: '61px'})
+			}
+			if(distance < (closingpoint+200)){
+				// close
+				$('.dleft',how.objects[0].el).css({left: '0px'})
+				$('.dright',how.objects[0].el).css({left: '30px'})
+			}
+		}
+
+		if(closing==0){
+			$('.aiguille',how.objects[0].$el).css({
+				// making the aiguille roll
+				// /2 because if not it rolls too much
+				transform:'rotate('+(220-distance-closingpoint)/2+'deg)'
+			});
+		}
+
+		return {top:0,left:0,r:0};
+	},
 	lift2 : function(s, alea, delta, top){
 		// dleft & dright open
 
@@ -253,6 +298,34 @@ how.animate = {
 				// open
 				$('.dleft',how.objects[0].el).css({left: '-61px'})
 				$('.dright',how.objects[0].el).css({left: '122px'})
+			}
+		}
+		return {top:0,left:0,r:0};
+	},
+	lift2small : function(s, alea, delta, top){
+		// dleft & dright open
+
+		var distance = top-s,
+			closingpoint = 10; // when should the closing point start
+
+		var closing = ((distance-closingpoint)-10);
+		if(closing < 10) closing = 0;
+
+		if(distance > closingpoint && distance < (closingpoint+200)){
+			$('.dleft',how.objects[0].el).css({left: -(200-closing)/4+'px'})
+			$('.dright',how.objects[0].el).css({left: 30+(200-closing)/4+'px'})
+		}
+		else{
+			// opposite of lift1
+			if(distance > closingpoint){
+				// close
+				$('.dleft',how.objects[0].el).css({left: '0px'})
+				$('.dright',how.objects[0].el).css({left: '30px'})
+			}
+			if(distance < (closingpoint+200)){
+				// open
+				$('.dleft',how.objects[0].el).css({left: '-30px'})
+				$('.dright',how.objects[0].el).css({left: '61px'})
 			}
 		}
 		return {top:0,left:0,r:0};
