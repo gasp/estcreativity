@@ -16,6 +16,11 @@ team.init = function(){
 	}
 	team.i = i-1;
 
+	if(team.i < 0){
+		$('section.sec2').text("Thete is not enough space to display this content, please make this window bigger.")
+		return;
+	}
+
 	team.$mates.css({"height": app.wh});
 
 	team.$mates.each(function(i){
@@ -85,6 +90,10 @@ team.setmail =  function(){
 var eyes = {}
 eyes.init = function(){
 	// team.init must be called before
+	// and it should be enabled
+	if(typeof team.i === "undefined" || team.i < 0)
+		return;
+
 	var w = $(team.$mates.get(0)).width(),
 		d = $("<div />").addClass("eyes");
 	
