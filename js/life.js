@@ -21,6 +21,11 @@ life.tweets = function(){
 		if($that.hasClass("double"))
 			return;
 
+		// element should be show to calculate its position
+		// therefore, i show it briefly
+		// (tiny wtf of the day)
+		$that.show();
+
 		//display images from flickr
 		if($that.hasClass("source2")){
 
@@ -47,11 +52,6 @@ life.tweets = function(){
 				'padding-top': life.gridheight/2 - $d.height()/2
 			})
 		}
-
-		// element should be show to calculate its position
-		// therefore, i show it briefly
-		// (tiny wtf of the day)
-		$that.show();
 
 		// i don't want the ones under the fold
 		if(($that.position().top + life.gridheight) > app.wh){
