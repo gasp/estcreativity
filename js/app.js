@@ -60,6 +60,7 @@ app = {
 			contacts.init();
 			clients.init();
 			life.init();
+			emails.init();
 			if(app.touch)
 				$('.floating, .filconducteur').hide();
 			else

@@ -32,7 +32,6 @@ team.init = function(){
 
 	team.place();
 	team.bind();
-	team.setmail();
 }
 
 team.place = function(){
@@ -78,13 +77,6 @@ team.bind = function(){
 		eyes.freeze();
 	})
 
-}
-
-team.setmail =  function(){
-	$('.reach a.mail').each(function(){
-		var a = 'mailto:' + $(this).attr('href').toString().substring(1) + '@estcreativity.com';
-		$(this).attr({'href': a});
-	})
 }
 
 var eyes = {}
