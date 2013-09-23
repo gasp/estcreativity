@@ -1,4 +1,3 @@
-[(#REM) see partials/redirect]
-<script>
+#CACHE{2592000}[(#REM) see partials/redirect]<script>
 l=navigator.userAgent.indexOf('MSIE');if(!(l&&parseInt(navigator.userAgent.substring(l+5,l+9).split(".")[0])<10))window.location.href= <BOUCLE_principale(RUBRIQUES){id_rubrique=1}>"#URL_RUBRIQUE"</BOUCLE_principale>;
 </script>
