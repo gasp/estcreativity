@@ -20,14 +20,7 @@
 	<!--[if IE]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 </head>
 <body>
-	<!--[if lt IE 10]>
-		<p class="chromeframe">You are using an <b>outdated</b> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
-	<![endif]-->
-
-	<noscript>
-		<p class="noscriptframe">You have not enabled <b>Javascript</b> on your browser. This website relies a lot on Javascript capabilities. Please read the <a href="http://www.enable-javascript.com/" target="_blank">
- instructions how to enable JavaScript in your web browser</a> or <a href="#URL_PAGE{textonly}">switch to the text-only version of this website</a>.</p>
-	</noscript>
+<INCLURE{fond=partials/disabled}>
 
 	<div class="navbar navbar-fixed-top hide">
 		<div class="navbar-inner">
@@ -105,15 +98,6 @@
 	</section>
 
 	<section class="fullheight sec1 snap"><a name="life"></a>
-<!--
-flickr picts
-http://www.flickr.com/services/feeds/photos_public.gne?id=97253013@N07&lang=en-us&format=rss_200
-vimeo vids
-http://vimeo.com/estcreativity/videos/rss
-vimeo likes
-http://vimeo.com/estcreativity/likes/rss
-
--->
 		<div class="grille">
 			<div class="une colonne double">&nbsp;</div>
 			<div class="trois colonnes double">
@@ -127,45 +111,12 @@ http://vimeo.com/estcreativity/likes/rss
 			<div class="une colonne double">&nbsp;</div>
 
 <BOUCLE_syndic_images(SYNDIC_ARTICLES){par date}{id_syndic=2}{inverse}{0,6}{doublons flux}>
-	<div class="une colonne publi source#ID_SYNDIC"
-[		data-url-site="(#URL_SITE)"]
-[		data-url-article="(#URL_ARTICLE)"]>
-		[<div class="description">(#TITRE)</div>]
-		[<div class="image">
-			(#DESCRIPTIF
-			   |extraire_balise{img}
-
-			   |image_passe_partout{160,160}
-			   |image_recadre{160,160, center}
-			   |inserer_attribut{alt,[(#TITRE|textebrut|couper{60})]}
-			   |inserer_attribut{align,''}
-			)
-		</div>]
-		<div class="date">#DATE</div>
-	</div>
-
+	<INCLURE{fond=partials/syndic, id_syndic_article}>
 </BOUCLE_syndic_images>
 
 #SET{syndic_selection,#ARRAY}
 <BOUCLE_syndic_dernier_tweet(SYNDIC_ARTICLES){id_syndic=1}{par date}{inverse}{0,1}{doublons flux}>
-
-	<div class="une colonne publi source#ID_SYNDIC"
-[		data-url-site="(#URL_SITE)"]
-[		data-url-article="(#URL_ARTICLE)"]>
-		[<div class="description">(#TITRE)</div>]
-		[<div class="image">
-			(#DESCRIPTIF
-			   |extraire_balise{img}
-
-			   |image_passe_partout{160,160}
-			   |image_recadre{160,160, center}
-			   |inserer_attribut{alt,[(#TITRE|textebrut|couper{60})]}
-			   |inserer_attribut{align,''}
-			)
-		</div>]
-		<div class="date">#DATE</div>
-	</div>
-
+	<INCLURE{fond=partials/syndic, id_syndic_article}>
 </BOUCLE_syndic_dernier_tweet>
 
 <BOUCLE_syndic_derniers(SYNDIC_ARTICLES){par date}{inverse}{0,23}{doublons flux}>
@@ -173,24 +124,7 @@ http://vimeo.com/estcreativity/likes/rss
 </BOUCLE_syndic_derniers>
 
 <BOUCLE_syndic(SYNDIC_ARTICLES){par hasard}{id_syndic_article IN #GET{syndic_selection}}{0,24}>
-
-	<div class="une colonne publi source#ID_SYNDIC"
-[		data-url-site="(#URL_SITE)"]
-[		data-url-article="(#URL_ARTICLE)"]>
-		[<div class="description">(#TITRE)</div>]
-		[<div class="image">
-			(#DESCRIPTIF
-			   |extraire_balise{img}
-
-			   |image_passe_partout{160,160}
-			   |image_recadre{160,160, center}
-			   |inserer_attribut{alt,[(#TITRE|textebrut|couper{60})]}
-			   |inserer_attribut{align,''}
-			)
-		</div>]
-		<div class="date">#DATE</div>
-	</div>
-
+	<INCLURE{fond=partials/syndic, id_syndic_article}>
 </BOUCLE_syndic>
 
 		</div>
