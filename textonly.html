@@ -1,0 +1,63 @@
+#CACHE{2592000}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title>#SLOGAN_SITE_SPIP</title>
+	<style>
+	body{
+		font: normal normal normal 1em Arial, sans-serif;
+	}
+	.textonly{
+		background-color:#f2f2f2;
+		font-family:monospace;
+		padding:.5em;
+	}
+	</style>
+</head>
+<body>
+	<div class="textonly">Please note that you are viewing the text-only version of our website. For a richer experience, <a href="#URL_RUBRIQUE{1}">please follow this link</a>.</div>
+
+	<h1>#NOM_SITE_SPIP</h1>
+
+<div class="links">
+	<div><a href="http://be.net/est_creativity">See our portfolio on Behance</a></div>
+	<div><a href="http://twitter.com/est_creativity">Follow us on Twitter</a></div>
+	<div><a href="http://pinterest.com/estcreativity">See what inspires us on Pinteres</a></div>
+	<div><a href="http://flickr.com/est_creativity">Look picturs of our daily activities (fascinating!)</a></div>
+</div>
+
+
+<BOUCLE_textonly(ARTICLES){par date}>
+	<div class="article">
+		<h2>#TITRE</h2>
+		<div class="texte">#TEXTE</div>
+	</div>
+</BOUCLE_textonly>
+
+<div class="article">
+	<h2>Contact</h2>
+	<div clas="text">
+		<div class="address">
+			<div>EST Creativity Rising</div>
+			<div>13 rue Greneta</div>
+			<div>75003 Paris</div>
+			
+			<div class="map">(<a href="https://www.google.com/url?sa=D&oi=plus&q=https://maps.google.fr/maps?expflags%3Denable_star_based_justifications:true%26ie%3DUTF8%26cid%3D1419550138364683824%26q%3DEST%2BCREATIVITY%2BRISING%26iwloc%3DA%26gl%3DFR%26hl%3Den" title="View Our location">see on a map</a>)</div>
+		</div>
+
+		<div class="instant">
+			<div>phone: <a href="tel:+33147030333">+33 (0) 1 47 03 03 33</a></div>
+			<div>e-mail: contact (<span>a</span>t) estcreativity • com</div>
+		</div>
+	</div>
+</div>
+
+<hr>
+<div class="copy">
+	Copyright &copy; 2013 - EST Creativity Rising - All right reserved
+</div>
+
+
+</body>
+</html>
