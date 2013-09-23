@@ -17,11 +17,11 @@
 # TECHNOLOGY COLOPHON
 
     HTML5, CSS3
-    jQuery, Modernizr, Waypoint
-    Twitter Bootstrap
+    jQuery, Modernizr, Waypoint,
+    Twitter Bootstrap,
     SPIP CMS
 
 # Softwares
     Adobe Illustrator, Photoshop
     Macromate Textmate 2
-    Apache
+    LAMP
