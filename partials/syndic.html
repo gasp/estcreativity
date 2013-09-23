@@ -1,0 +1,19 @@
+#CACHE{2592000}
+<BOUCLE_syndic(SYNDIC_ARTICLES){id_syndic_article}>
+	<div class="une colonne publi source#ID_SYNDIC"
+[		data-url-site="(#URL_SITE)"]
+[		data-url-article="(#URL_ARTICLE)"]>
+		[<div class="description">(#TITRE)</div>]
+		[<div class="image">
+			(#DESCRIPTIF
+			   |extraire_balise{img}
+
+			   |image_passe_partout{160,160}
+			   |image_recadre{160,160, center}
+			   |inserer_attribut{alt,[(#TITRE|textebrut|couper{60})]}
+			   |inserer_attribut{align,''}
+			)
+		</div>]
+		<div class="date">#DATE</div>
+	</div>
+</BOUCLE_syndic>
