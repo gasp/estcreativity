@@ -11,6 +11,10 @@ life.init = function(){
 	$(".colonne, .colonnes", life.$section).css({"height": life.gridheight});
 	$(".double, .doubles", life.$section).css({"height": life.gridheight*2});
 
+	//if vertical triple
+	if(app.ww/app.wh < 1)
+		$(".double, .doubles", life.$section).css({"height": life.gridheight*3});
+
 	life.tweets();
 }
 life.tweets = function(){
