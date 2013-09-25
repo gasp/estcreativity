@@ -3,13 +3,18 @@
 // detect old msie (<10)
 // returns true if bw is compatible
 $(document).on("ready",function(){
-	b = function(){
+	var app.ww = $(window).width(),
+		loc = null;
+	if(app.ww < 767)
+		loc = "#URL_PAGE{mobile}";
+	var b = function(){
 		var l = navigator.userAgent.indexOf('MSIE')
 		return ! (l
 			&& parseInt(navigator.userAgent.substring(l+5,l+9).split(".")[0]) < 10);
 	}
 	if(b()){
-		window.location.href= <BOUCLE_principale(RUBRIQUES){id_rubrique=1}>"#URL_RUBRIQUE"</BOUCLE_principale>;
+		loc = <BOUCLE_principale(RUBRIQUES){id_rubrique=1}>"#URL_RUBRIQUE"</BOUCLE_principale>;
 	}
+	if(loc) window.location.href = loc;
 });
 </script>
