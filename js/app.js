@@ -70,16 +70,24 @@ app = {
 	},
 	resize: function(){
 		app.refresh();
-		console.log("resize still to be managed");
-//		window.location.reload();
+		// if it has to be mobile 
+		app.mobile();
+		if(!app.touch)
+			window.location.reload();
+	},
+	mobile: function(){
+		if(app.ww < 768){
+			window.stop();
+			window.location.href="/mobile";
+		}
 	}
-	
 }
 
 // on first read : activate home
 
 $(function(){
 	app.refresh();
+	app.mobile(); // is it mobile
 	home.init();
 });
 
