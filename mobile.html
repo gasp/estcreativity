@@ -1,0 +1,136 @@
+#CACHE{86400}
+<BOUCLE_principale(RUBRIQUES){id_rubrique=1}>
+<!DOCTYPE html>
+<!--[if lt IE 7]>	   <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>		   <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>		   <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title>#SLOGAN_SITE_SPIP</title>
+	<meta name="description" content="Est Creativity Rising is a communication agency and a creative graphic studio, which delivers Deutsche Qualität with a French Touch.">
+	<meta name="author" content="Gaspard Beernaert">
+	<meta name="viewport" content="width=device-width, initial-scale = 1.0, user-scalable = no">
+	<link rel="icon" type="image/png" href="/favicon.png">
+	<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+	<link rel="apple-touch-icon" href="/apple-touch-icon-precomposed.png">
+	<link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57-precomposed.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72-precomposed.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114-precomposed.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144-precomposed.png">
+[	<link rel="stylesheet" href="(#CHEMIN{less/est.css})">]
+[	<link rel="stylesheet" href="(#CHEMIN{less/mobile.css})">]
+</head>
+<body>
+<INCLURE{fond=partials/disabled}>
+
+<section class="fullheight sec0 snap"><a name="home"></a>
+	<div class="cover"></div>
+	<div class="intro">
+		<div class="patch">
+			<div class="logo"><h1 class="hide-text">Est Creativity Rising</h1></div>
+		</div>
+		<div class="baseline"><h2 class="hide-text">Deutsche Qualität with French Touch</h2></div>
+		<div class="social">
+			<div class="sbadge" data-link="http://www.behance.net/est_creativity/">
+				<a class="slogo behance" href="http://www.behance.net/est_creativity/">
+					<div class="front side"></div>
+					<div class="back side"></div>
+				</a>
+				<p class="slabel">Portfolio</p>
+			</div>
+			<div class="sbadge" data-link="https://twitter.com/est_creativity">
+				<a class="slogo twitter" href="https://twitter.com/est_creativity">
+					<div class="front side"></div>
+					<div class="back side"></div>
+				</a>
+				<p class="slabel">Thoughts</p>
+			</div>
+			<div class="sbadge" data-link="http://www.pinterest.com/estcreativity/">
+				<a class="slogo pinterest" href="http://www.pinterest.com/estcreativity/">
+					<div class="front side"></div>
+					<div class="back side"></div>
+				</a>
+				<p class="slabel">Inspiration</p>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="fullheight sec4 snap">
+	<div class="grille clearfix">
+		<div class="ligne">
+			<div class="douze colonnes">
+				<article>
+					<h2>Who we are</h2>
+					<div class="text">
+						<p>Est Creativity Rising is a communication agency and a creative graphic studio, which delivers “Deutsche Qualität with a French Touch”.</p>
+
+						<p>This is what we do: We help our clients develop branding, we create images, animation, videos, interactive tools, websites and we fuel our clients projects with creativity. Our clients include Dow, Adecco and Dom Pérignon.</p>
+					</div>
+				</article>
+			</div>
+		</div>
+	</div>
+</section>
+
+
+<section class="fullheight sec5 snap"><a name="contact"></a>
+	<div class="encart grille clearfix">
+		<div class="ligne">
+			<div class="six colonnes">&nbsp;</div>
+			<div class="trois colonnes">
+				<article>
+					<h2>Contact</h2>
+					<div>
+						<div class="address">
+							<div>EST Creativity Rising</div>
+							<div>13 rue Greneta</div>
+							<div>75003 Paris</div>
+						</div>
+
+						<div class="instant">
+							<div><a href="tel:+33147030333">+33 (0) 1 47 03 03 33</a></div>
+							<div><a data-email="contact" class="email wcontent" href="#contact">estcreativity.com</a></div>
+						</div>
+
+						<div class="copy">
+							Copyright &copy; 2013 - EST Creativity Rising - All right reserved
+						</div>
+					</div>
+				</article>
+			</div>
+		</div>
+	</div>
+	<div class="maps">
+		<a href="https://www.google.com/url?sa=D&oi=plus&q=https://maps.google.fr/maps?expflags%3Denable_star_based_justifications:true%26ie%3DUTF8%26cid%3D1419550138364683824%26q%3DEST%2BCREATIVITY%2BRISING%26iwloc%3DA%26gl%3DFR%26hl%3Den" title="View Our location">
+			<div class="map"></div>
+		</a>
+
+	</div>
+</section>
+[<script src="(#CHEMIN{js/vendors.js})" type="text/javascript" charset="utf-8"></script>]
+<script>
+var app = {};
+app.wh = $(window).height();
+app.ww = $(window).width();
+$(function(){
+	if(app.ww > 767)
+	window.location.href="/";
+})
+$(document).ready(function(){
+	$(".sec0").height(app.wh)
+});
+</script>
+
+<script type="text/javascript">
+var _gaq=[['_setAccount','UA-19240864-1'],['_trackPageview']];
+	(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.async=1;
+	g.src=('https:'==location.protocol?'https://ssl' : 'http://www')+'.google-analytics.com/ga.js';
+	s.parentNode.insertBefore(g,s)}(document,'script'));
+</script>
+
+</body>
+</html>
+</BOUCLE_principale>
