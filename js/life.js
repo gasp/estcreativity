@@ -11,8 +11,8 @@ life.init = function(){
 	$(".colonne, .colonnes", life.$section).css({"height": life.gridheight});
 	$(".double, .doubles", life.$section).css({"height": life.gridheight*2});
 
-	//if vertical triple
-	if(app.ww/app.wh < 1)
+	//if very narrow (or) vertical triple
+	if(app.ww/app.wh < 1 || app.ww < 800)
 		$(".double, .doubles", life.$section).css({"height": life.gridheight*3});
 
 	life.tweets();
