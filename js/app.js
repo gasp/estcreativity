@@ -95,7 +95,7 @@ $(function(){
 $(window).on("load", function(){
 	app.init();
 });
-$(window).on("resize", function(){
+$(window).on("resize orientationchange", function(){
 	if(typeof app.t !== "null")
 		window.clearTimeout(app.t);
 	app.t = window.setTimeout(
