@@ -1,6 +1,6 @@
 var team = {};
 team.$mates = $("section.sec2 .mate")
-team.members = ["stephane","ralf","flo","bruno","clement"];
+team.members = ["stephane","ralf","flo","bruno","william"];
 team.resolutions = [400,600,800,1000,1500];
 team.height = 1000;
 
