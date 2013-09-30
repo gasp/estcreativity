@@ -18,8 +18,9 @@
 			sectionsNames: ["First touch","Don't touch this","A touch of", "Let us touch you","Touched","Get in touch"],
 			snapping: true,
 			snapSpeed: 500,
-			snapInterval: 100,
-			snapStickyInterval: 10, // stick immediately
+			snapInterval: 200,
+			snapDistance: 100, // stick immediately
+			snapDistanceSticky: 10, // stick immediately
 			onScroll: function(){},
 			onSnapComplete: function(){},
 			onWindowEnter: function(){},
@@ -193,7 +194,7 @@
 
 				// if I am really close, stick immediately
 				if(
-					Math.abs(s - offset[i].top) < options.snapStickyInterval // reminder: offset is a global
+					Math.abs(s - offset[i].top) < options.snapDistanceSticky // reminder: offset is a global
 					&& !animated // there is no animation running
 				){ 
 					$("html, body").scrollTop(offset[i].top);
@@ -204,7 +205,7 @@
 				}
 
 				// if I am in the vincinity, 
-				if(Math.abs(s-offset[i].top) < options.snapInterval){
+				if(Math.abs(s-offset[i].top) < options.snapDistance){
 					
 					// cache this section
 					var currentSection = this;
