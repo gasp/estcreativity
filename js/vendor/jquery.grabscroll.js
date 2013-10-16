@@ -18,7 +18,7 @@
 			sectionsNames: ["First touch","Don't touch this","A touch of", "Let us touch you","Touched","Get in touch"],
 			snapping: true,
 			snapSpeed: 500,
-			snapInterval: 200,
+			snapInterval: 500,
 			snapDistance: 100, // stick immediately
 			snapDistanceSticky: 10, // stick immediately
 			onScroll: function(){},
