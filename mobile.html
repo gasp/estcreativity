@@ -110,6 +110,17 @@
 
 	</div>
 </section>
+<!--
+	TODO
+			fix a bug before reactivate : 
+			there is an infinite loop on IE10- because it is redirected
+			from sommaire or rubrique
+			by partials/redirect 
+			to mobile
+			and then redirected back to / because more than 767 px width
+
+			add some browser check
+
 [<script src="(#CHEMIN{js/vendors.min.js})" type="text/javascript" charset="utf-8"></script>]
 <script>
 var app = {};
@@ -123,7 +134,7 @@ $(document).ready(function(){
 	$(".sec0").height(app.wh)
 });
 </script>
-
+-->
 <script type="text/javascript">
 var _gaq=[['_setAccount','UA-19240864-1'],['_trackPageview']];
 	(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.async=1;
