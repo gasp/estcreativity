@@ -9,6 +9,7 @@ var app = {
 	ww:null
 };
 
+// bw check : is it a good browser (anything more than MSIE 9)
 var bw = function(){
 	var ua = navigator.userAgent.indexOf('MSIE')
 	return ! (ua
@@ -19,6 +20,7 @@ $(function(){
 	app.wh = $(window).height();
 	app.ww = $(window).width();
 
+	// if too big and a good browser, redirect to standard view
 	if(app.ww > 767){
 		if(bw())
 			window.location.href="/";

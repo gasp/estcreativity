@@ -1,8 +1,18 @@
+//mobile version
+
+
+// Core variables and mixins
+@import "variables.less";
+@import "mixins.less";
+
+// reset font size
 body{
 	font: normal normal normal 1em Helvetica, Arial, sans-serif;
 	line-height:1.5em;
 }
 
+// sections
+// display all of them
 section,section.sec4,section,section.sec5{
 	display:block;
 }
@@ -12,10 +22,12 @@ section.sec0{
 		background-image: url("../images/home/bg-600.jpg");
 	}
 	.intro{
+		background-image: url("../images/home/patch@2x.png");
+		.background-size(225px);
 		top:10px;
 		.baseline{
 			width: 220px;
-			background-size: 220px;
+			.background-size(220px);
 		}
 	}
 }
@@ -36,11 +48,12 @@ section.sec5{
 }
 
 
+
+// generic stuffs
 article{
 	padding:1em;
 	text-align:left;
 }
-
 
 // nogrid
 .grille .un,
