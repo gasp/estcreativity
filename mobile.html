@@ -111,27 +111,7 @@
 	</div>
 </section>
 [<script src="(#CHEMIN{js/vendors.min.js})" type="text/javascript" charset="utf-8"></script>]
-<script>
-var app = {};
-app.wh = $(window).height();
-app.ww = $(window).width();
-$(function(){
-	var bw = function(){
-		var ua = navigator.userAgent.indexOf('MSIE')
-		return ! (ua
-			&& parseInt(navigator.userAgent.substring(l+5,l+9).split(".")[0]) < 10);
-	}
-	
-	if(app.ww > 767){
-		if(bw())
-			window.location.href="/";
-	}
-	
-})
-$(document).ready(function(){
-	$(".sec0").height(app.wh)
-});
-</script>
+[<script src="(#CHEMIN{js/est-mobile.min.js})" type="text/javascript" charset="utf-8"></script>]
 <script type="text/javascript">
 var _gaq=[['_setAccount','UA-19240864-1'],['_trackPageview']];
 	(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.async=1;
