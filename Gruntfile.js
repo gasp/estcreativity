@@ -10,7 +10,7 @@ module.exports = function(grunt) {
 				banner: '/*! <%= pkg.name %> - v<%= pkg.version %> - ' +
 				'<%= grunt.template.today("yyyy-mm-dd") %> */',
 			},
-			dist: {
+			desktop: {
 				src: [
 					'js/app.js',
 					'js/parallax.js',
@@ -26,6 +26,13 @@ module.exports = function(grunt) {
 				],
 				dest: 'js/est.js',
 			},
+			mobile: {
+				src: [
+					'js/app-mobile.js',
+					'js/emails.js'
+				],
+				dest: 'js/est-mobile.js',
+			},
 			vendors: {
 				src: [
 					'js/vendor/jquery-1.10.1.js',
@@ -40,9 +47,13 @@ module.exports = function(grunt) {
 			options: {
 				banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n'
 			},
-			dist: {
+			desktop: {
 				src: 'js/est.js',
 				dest: 'js/est.min.js'
+			},
+			mobile: {
+				src: 'js/est-mobile.js',
+				dest: 'js/est-mobile.min.js'
 			},
 			vendors: {
 				src: 'js/vendors.js',
@@ -51,8 +62,8 @@ module.exports = function(grunt) {
 		},
 		watch: {
 			custom : {
-				files: ['js/*', '!js/vendo/**','!js/est.**'],
-				tasks: ['concat:dist','uglify:dist']
+				files: ['js/*', '!js/vendo/**','!js/est**'],
+				tasks: ['concat:desktop','uglify:desktop','concat:mobile','uglify:mobile']
 			},
 		}
 	}); // /initConfig
@@ -64,7 +75,7 @@ module.exports = function(grunt) {
 
 	grunt.registerTask('vendors', ['concat:vendors','uglify:vendors']);
 
-	grunt.registerTask('dry', ['concat:dist','uglify:dist']);
+	grunt.registerTask('dry', ['concat:desktop','uglify:desktop','concat:mobile','uglify:mobile']);
 
 	grunt.registerTask('default', ['dry','watch:custom']);
 
