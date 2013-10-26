@@ -1,5 +1,5 @@
 // 
-//  mobile.js
+//  app-mobile.js
 //  est
 
 
@@ -29,5 +29,5 @@ $(function(){
 })
 $(document).ready(function(){
 	$(".sec0").height(app.wh);
-	
+	emails.init();
 });

@@ -1,3 +1,9 @@
+//
+//  emails.js
+//  est
+//  in included in the desktiop version (est.js) and the mobile one (est-mobile.js)
+//
+
 var emails = {};
 emails.init = function(){
 	var that = this,
