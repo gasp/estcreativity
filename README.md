@@ -9,11 +9,11 @@ install modules :
 `npm install`
 
 
-generate js/est.js and js/est.min.js
+generate javascript files
 
 `grunt dry`
 
-generate those scripts when modifying them
+generate automatically those scripts when modifying them
 
 `grunt`
 
