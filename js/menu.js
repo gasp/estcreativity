@@ -12,7 +12,16 @@ var menu = {
 			else m.open('fast');
 			e.preventDefault()
 		});
+
+		var title = document.title;
+		console.log(title);
+		console.log($('body'));
 		
+		$('#nav').on('est:page', function (ev,options) {
+			document.title = options.text + ' | ' + title;
+			ev.stopPropagation();
+		});
+
 		// hiding or displaying menu
 		$("body>section.sec1").waypoint(function(direction){
 			if(direction == "down") menu.$navbar.stop().fadeIn()
@@ -21,7 +30,7 @@ var menu = {
 
 		// activating the menu element
 		$('body>section').each(function(i){
-			if(!i) return; // would disactivate first section
+//			if(!i) return; // would disactivate first section, but we need this for analytics
 			$(this).waypoint(function (direction) {
 				$('.sep',menu.$navbar).removeClass('active');
 				var $sep,
@@ -30,7 +39,9 @@ var menu = {
 				if(direction == "down") $sep = $($('.sep',menu.$navbar)[i]);
 				else $sep = $($('.sep',menu.$navbar)[prev]);
 //				console.log('waypoint %d called %s : %s', i, direction, $sep.text());
-				$sep.addClass('active')
+				$sep.addClass('active');
+
+				$('#nav').trigger('est:page', [{text: $sep.text(), id: i}]);
 			});
 		});
 	},
