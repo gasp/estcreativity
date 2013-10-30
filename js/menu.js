@@ -13,31 +13,26 @@ var menu = {
 			e.preventDefault()
 		});
 		
-		$(".sec1").waypoint(function(direction){
+		// hiding or displaying menu
+		$("body>section.sec1").waypoint(function(direction){
 			if(direction == "down") menu.$navbar.stop().fadeIn()
 			else menu.$navbar.stop().fadeOut();
 		});
-		$(".sec2").waypoint(function(direction){
-			$('.sep',menu.$navbar).removeClass('active')
-			if(direction == "down") $($('.sep',menu.$navbar)[1]).addClass('active')
-			else $($('.sep',menu.$navbar)[0]).addClass('active')
-		});
-		$(".sec3").waypoint(function(direction){
-			$('.sep',menu.$navbar).removeClass('active')
-			if(direction == "down") $($('.sep',menu.$navbar)[2]).addClass('active')
-			else $($('.sep',menu.$navbar)[1]).addClass('active')
-		});
-		$(".sec4").waypoint(function(direction){
-			$('.sep',menu.$navbar).removeClass('active')
-			if(direction == "down") $($('.sep',menu.$navbar)[3]).addClass('active')
-			else $($('.sep',menu.$navbar)[2]).addClass('active')
-		});
-		$(".sec5").waypoint(function(direction){
-			$('.sep',menu.$navbar).removeClass('active')
-			if(direction == "down") $($('.sep',menu.$navbar)[4]).addClass('active')
-			else $($('.sep',menu.$navbar)[3]).addClass('active')
-		});
 
+		// activating the menu element
+		$('body>section').each(function(i){
+			if(!i) return; // would disactivate first section
+			$(this).waypoint(function (direction) {
+				$('.sep',menu.$navbar).removeClass('active');
+				var $sep,
+					prev = Math.max(i-1,0);
+
+				if(direction == "down") $sep = $($('.sep',menu.$navbar)[i]);
+				else $sep = $($('.sep',menu.$navbar)[prev]);
+//				console.log('waypoint %d called %s : %s', i, direction, $sep.text());
+				$sep.addClass('active')
+			});
+		});
 	},
 	place : function(){
 		this.$brand = $(".brand",this.$navnar);
