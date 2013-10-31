@@ -18,6 +18,11 @@ module.exports = function(grunt) {
 					'js/est-mobile.js',
 					'js/vendors.js',
 				]
+			},
+			css: {
+				src: [
+					'css/*.css'
+				]
 			}
 		},
 		concat: {
@@ -102,17 +107,48 @@ module.exports = function(grunt) {
 				dest: 'js/vendors.min.js'
 			}
 		},
+		less: {
+			dev: {
+				files: {
+					"css/404.css": "less/404.less",
+					"css/est.css": "less/est.less",
+					"css/bootstrap.css": "less/bootstrap.less",
+					"css/mobile.css": "less/mobile.less",
+					"css/responsive.css": "less/responsive.less"
+					
+				}
+			},
+			prod: {
+				options: {
+					cleancss: true,
+					compress: true,
+					report: 'min'
+				},
+				files: {
+					"css/404.css": "less/404.less",
+					"css/est.css": "less/est.less",
+					"css/bootstrap.css": "less/bootstrap.less",
+					"css/mobile.css": "less/mobile.less",
+					"css/responsive.css": "less/responsive.less"
+				}
+			}
+		},
 		watch: {
-			custom : {
+			scripts : {
 				files: ['js/*', '!js/vendo/**','!js/est**'],
 				tasks: ['concat:desktop','uglify:desktop','concat:mobile','uglify:mobile']
 			},
+			less : {
+				files: ['less/**'],
+				tasks: ['less:development']
+			}
 		}
 	}); // /initConfig
 
 	grunt.loadNpmTasks('grunt-contrib-clean');
 	grunt.loadNpmTasks('grunt-contrib-concat');
 	grunt.loadNpmTasks('grunt-contrib-uglify');
+	grunt.loadNpmTasks('grunt-contrib-less');
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-contrib-copy');
 	grunt.loadNpmTasks('grunt-contrib-imagemin');
@@ -120,11 +156,11 @@ module.exports = function(grunt) {
 	grunt.registerTask('vendors', ['concat:vendors','uglify:vendors', 'clean:concats']);
 	grunt.registerTask('scripts', ['concat:desktop','uglify:desktop','concat:mobile','uglify:mobile','clean:concats']);
 
-	grunt.registerTask('dry', ['scripts']);
+	grunt.registerTask('dry', ['scripts','less:dev']);
 
 	grunt.registerTask('images', ['clean:images','copy:images','imagemin']);
 
-	grunt.registerTask('default', ['dry','watch:custom']);
+	grunt.registerTask('default', ['dry','watch']);
 	grunt.registerTask('fullpatate', ['clean:builds','clean:concats','scripts','vendors','images']);
 
 };
