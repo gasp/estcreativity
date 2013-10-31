@@ -31,6 +31,7 @@ var menu = {
 		// activating the menu element
 		$('body>section').each(function(i){
 //			if(!i) return; // would disactivate first section, but we need this for analytics
+			var that = this
 			$(this).waypoint(function (direction) {
 				$('.sep',menu.$navbar).removeClass('active');
 				var $sep,
@@ -41,7 +42,11 @@ var menu = {
 //				console.log('waypoint %d called %s : %s', i, direction, $sep.text());
 				$sep.addClass('active');
 
-				$('#nav').trigger('est:page', [{text: $sep.text(), id: i}]);
+//				location.hash = $(that)
+				var hash = $(that).find('>a').attr('name');
+				location.hash = hash;
+
+				$('#nav').trigger('est:page', [{text: $sep.text(), id: i, hash: hash}]);
 			});
 		});
 	},
