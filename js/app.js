@@ -65,6 +65,7 @@ app = {
 				$('.floating, .filconducteur').hide();
 			else
 				fil.init()
+			analytics.init();
 
 		},120)
 	},
