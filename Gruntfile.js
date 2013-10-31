@@ -3,6 +3,23 @@ module.exports = function(grunt) {
 	// Project configuration.
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
+		clean: {
+			images: ['images/*'],
+			builds: {
+				src: [
+					'js/est.min.js',
+					'js/est-mobile.min.js',
+					'js/vendors.min.js'
+				]
+			},
+			concats: {
+				src: [
+					'js/est.js',
+					'js/est-mobile.js',
+					'js/vendors.js',
+				]
+			}
+		},
 		concat: {
 			options: {
 				separator: ';',
@@ -44,6 +61,30 @@ module.exports = function(grunt) {
 				dest: 'js/vendors.js'
 			}
 		},
+		// copying svg files from original images to optimizes images
+		copy: {
+			images: {
+				files: [
+					{ // includes files within path
+						expand: true, 
+						cwd: 'images_raw/',
+						src: ['**/*.svg'], 
+						dest: 'images/', 
+						filter: 'isFile'
+					}
+				]
+			}
+		},
+		imagemin: {
+			main: {
+				files: [{
+					expand: true, // Enable dynamic expansion
+					cwd: 'images_raw/',
+					src: ['**/*.{png,jpg,gif}'],
+					dest: 'images/'
+				}]
+			}
+		},
 		uglify: {
 			options: {
 				banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n'
@@ -69,17 +110,21 @@ module.exports = function(grunt) {
 		}
 	}); // /initConfig
 
-
+	grunt.loadNpmTasks('grunt-contrib-clean');
 	grunt.loadNpmTasks('grunt-contrib-concat');
 	grunt.loadNpmTasks('grunt-contrib-uglify');
 	grunt.loadNpmTasks('grunt-contrib-watch');
+	grunt.loadNpmTasks('grunt-contrib-copy');
+	grunt.loadNpmTasks('grunt-contrib-imagemin');
 
-	grunt.registerTask('vendors', ['concat:vendors','uglify:vendors']);
+	grunt.registerTask('vendors', ['concat:vendors','uglify:vendors', 'clean:concats']);
+	grunt.registerTask('scripts', ['concat:desktop','uglify:desktop','concat:mobile','uglify:mobile','clean:concats']);
 
-	grunt.registerTask('dry', ['concat:desktop','uglify:desktop','concat:mobile','uglify:mobile']);
+	grunt.registerTask('dry', ['scripts']);
+
+	grunt.registerTask('images', ['clean:images','copy:images','imagemin']);
 
 	grunt.registerTask('default', ['dry','watch:custom']);
+	grunt.registerTask('fullpatate', ['clean:builds','clean:concats','scripts','vendors','images']);
 
 };
-
-
