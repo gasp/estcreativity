@@ -23,6 +23,7 @@ module.exports = function(grunt) {
 					'js/contacts.js',
 					'js/fil.js',
 					'js/emails.js',
+					'js/analytics.js',
 				],
 				dest: 'js/est.js',
 			},
