@@ -11,9 +11,9 @@ var app = {
 
 // bw check : is it a good browser (anything more than MSIE 9)
 var bw = function(){
-	var ua = navigator.userAgent.indexOf('MSIE')
+	var ua = navigator.userAgent.indexOf('MSIE');
 	return ! (ua
-		&& parseInt(navigator.userAgent.substring(l+5,l+9).split(".")[0]) < 10);
+		&& parseInt(navigator.userAgent.substring(ua+5,ua+9).split(".")[0]) < 10);
 }
 
 $(function(){

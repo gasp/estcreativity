@@ -8,9 +8,9 @@ $(document).on("ready",function(){
 	if(app.ww < 767)
 		loc = "#URL_PAGE{mobile}";
 	var bw = function(){
-		var ua = navigator.userAgent.indexOf('MSIE')
+		var ua = navigator.userAgent.indexOf('MSIE');
 		return ! (ua
-			&& parseInt(navigator.userAgent.substring(l+5,l+9).split(".")[0]) < 10);
+			&& parseInt(navigator.userAgent.substring(ua+5,ua+9).split(".")[0]) < 10);
 	}
 	if(bw()){
 		loc = <BOUCLE_principale(RUBRIQUES){id_rubrique=1}>"#URL_RUBRIQUE"</BOUCLE_principale>;
