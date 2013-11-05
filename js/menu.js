@@ -28,6 +28,11 @@ var menu = {
 			else menu.$navbar.stop().fadeOut();
 		});
 
+		//if there is a hash, go for it
+		if( window.location.hash.length
+			&& window.location.hash.substring(0,2) == "#!/")
+			window.location.href= "#"+ window.location.hash.substring(3)
+
 		// activating the menu element
 		$('body>section').each(function(i){
 //			if(!i) return; // would disactivate first section, but we need this for analytics
@@ -42,11 +47,11 @@ var menu = {
 //				console.log('waypoint %d called %s : %s', i, direction, $sep.text());
 				$sep.addClass('active');
 
+				$('#nav').trigger('est:page', [{text: $sep.text(), id: i, hash: hash}]);
+
 //				location.hash = $(that)
 				var hash = $(that).find('>a').attr('name');
-				location.hash = hash;
-
-				$('#nav').trigger('est:page', [{text: $sep.text(), id: i, hash: hash}]);
+				location.hash = "!/"+hash;
 			});
 		});
 	},
