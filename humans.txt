@@ -1,12 +1,11 @@
-# humanstxt.org/
+# estcreativity.com/
 # The humans responsible & technology colophon
 
 # TEAM
 
     Clement Thorez -- Art Direction / Illustration -- @clementthorez
-    Gaspardf Beernaert -- Web design / Development --- @freelancis
+    Gaspard Beernaert -- Web design / Development --- @freelancis
     Ralf Porzel -- Editorial content -- @RalfPorzel
-
     Florian Shum Kwoong -- Design -- @escaflaus
     Domitille Haffner -- CSS -- @domicrobe
 
@@ -20,6 +19,7 @@
     jQuery, Modernizr, Waypoint,
     Twitter Bootstrap,
     SPIP CMS
+    All sources at available at github.com/gasp/estcreativity
 
 # Softwares
     Adobe Illustrator, Photoshop
