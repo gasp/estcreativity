@@ -2,25 +2,29 @@ estcreativity
 =============
 
 
-javascript
-----------
-install modules :
+installation
+------------
 
+This requires grunt, so you should use nodejs and npm.
+
+install modules :
 `npm install`
 
+generate optimized images
 
-generate javascript files
+`grunt images`
+
+generate javascript and less files
 
 `grunt dry`
 
-generate automatically those scripts when modifying them
+generate automatically those files when modifying them
 
 `grunt`
 
+deployment
+----------
 
-css
----
+build production files
 
-- est.less +  est-*.less -> est.css
-- responsive.less + responsive-*.less -> responsive.css
-- bootstrap.less + others.less -> bootstrap.css
+`grunt fullpatate`
