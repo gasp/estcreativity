@@ -161,6 +161,6 @@ module.exports = function(grunt) {
 	grunt.registerTask('images', ['clean:images','copy:images','imagemin']);
 
 	grunt.registerTask('default', ['dry','watch']);
-	grunt.registerTask('fullpatate', ['clean:builds','clean:concats','scripts','vendors','images']);
+	grunt.registerTask('fullpatate', ['clean:builds','clean:concats','clean:css','scripts','vendors','less:prod','images']);
 
 };
