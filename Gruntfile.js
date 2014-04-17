@@ -140,7 +140,7 @@ module.exports = function(grunt) {
 			},
 			less : {
 				files: ['less/**'],
-				tasks: ['less:development']
+				tasks: ['less:dev']
 			}
 		}
 	}); // /initConfig
