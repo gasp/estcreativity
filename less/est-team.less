@@ -1,6 +1,22 @@
 section.sec2{
 	background-color:#dadada;
 	background: #dadada url(../images/team/bgdadada.jpg) repeat scroll top left;
+
+	// navigation.left and navigation.right
+	.navigation > a{
+		position:absolute;
+		display:none;
+		top:100px;
+		z-index:30000000;
+
+		&.left{
+			left:0;
+		}
+		&.right{
+			right:0;
+		}
+	}
+
 	.mate{
 		text-align:center;
 		background-color:#dadada;

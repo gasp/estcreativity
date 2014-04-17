@@ -1,8 +1,18 @@
 var team = {};
-team.$mates = $("section.sec2 .mate")
-team.members = ["stephane","ralf","flo","bruno","william"];
+team.$mates = $("section.sec2 .mate");
+team.$nav = $("section.sec2 .navigation");
+
 team.resolutions = [400,600,800,1000,1500];
 team.height = 1000;
+
+team.members = ["stephane","ralf","flo","bruno","william","clement","gaspard"];
+team.mi = []; // members iterator, basically [0,1,2,3,4,5...] for shuffle purpose
+$(team.members).each(function(i) {
+	team.mi.push(i);
+});
+
+team.max = 5; // maximum of mates to display
+team.start = 0; // I am currently starting with mate 0 (...to mate 4)
 
 
 
@@ -24,10 +34,16 @@ team.init = function(){
 	team.$mates.css({"height": app.wh});
 
 	team.$mates.each(function(i){
-//		console.log(this,i)
 		$(this).css({
 			'background-image':'url(/squelettes/images/team/'+that.members[i]+'-'+team.height+'.jpg)'
-		})
+		});
+
+		// I can display only 5 elements so when i == 4 I am at the maximu
+		if(i > (team.max -1)) {
+			$(".right",team.$nav).show();
+			$(this).hide();
+
+		}
 	});
 
 	team.place();
@@ -62,7 +78,7 @@ team.place = function(){
 		'height': spacers[team.i].bottom,
 		'width' : w
 	});
-}
+};
 
 team.bind = function(){
 
@@ -75,8 +91,42 @@ team.bind = function(){
 		$(".top, .bottom",this).stop().hide();
 		$(".eyes",this).stop().show();
 		eyes.freeze();
-	})
+	});
 
+	$(".right",team.$nav).on("click", function(e){
+		Math.min(team.start ++, team.members.length - team.max);
+		team.navigate(team.start);
+		e.preventDefault();
+	});
+
+	$(".left",team.$nav).on("click", function(e){
+		Math.max(team.start --, 0);
+		team.navigate(team.start);
+		e.preventDefault();
+	});
+
+};
+
+team.navigate = function(start){
+	
+	console.log("starting at teammate %d : %s", start, team.members[start]);
+	
+	if((start + team.max) >= team.members.length)
+		$(".right",team.$nav).hide();
+	else
+		$(".right",team.$nav).show();
+	
+	if(start == 0)
+		$(".left",team.$nav).hide();
+	else
+		$(".left",team.$nav).show();
+
+	team.$mates.each(function(i){
+		if(i < start || i > (start+team.max))
+			$(this).hide();
+		else
+			$(this).show();
+	});
 }
 
 var eyes = {}
@@ -100,7 +150,7 @@ eyes.init = function(){
 		{top:1100, bottom:500} // 1500
 	];
 
-	var j = eyes.shuffle([0,1,2,3,4]);
+	var j = eyes.shuffle(team.mi);
 
 	team.$mates.each(function(i){
 		var $ey = $(d).clone();
@@ -129,12 +179,13 @@ eyes.init = function(){
 }
 
 eyes.swap = function(){
-	var j = eyes.shuffle([0,1,2,3,4]);
+	var shuffled = eyes.shuffle(team.mi);
 
 	team.$mates.each(function(i){
+		console.log(i,team.members[shuffled[i]]);
 		var $ey = $(".eyes",this)
 		$ey.css({
-			'background-image':'url(/squelettes/images/team/'+team.members[j[i]]+'-'+team.height+'.jpg)',
+			'background-image':'url(/squelettes/images/team/'+team.members[shuffled[i]]+'-'+team.height+'.jpg)',
 		})
 	});
 
