@@ -135,7 +135,7 @@ module.exports = function(grunt) {
 		},
 		watch: {
 			scripts : {
-				files: ['js/*', '!js/vendo/**','!js/est**'],
+				files: ['js/*', '!js/vendor/**','!js/est**'],
 				tasks: ['concat:desktop','uglify:desktop','concat:mobile','uglify:mobile']
 			},
 			less : {
