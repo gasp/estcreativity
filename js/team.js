@@ -5,7 +5,7 @@ team.$nav = $("section.sec2 .navigation");
 team.resolutions = [400,600,800,1000,1500];
 team.height = 1000;
 
-team.members = ["stephane","ralf","flo","bruno","william","clement","gaspard"];
+team.members = ["stephane","ralf","flo","bruno","william","ke","daniel","gaspard"];
 team.mi = []; // members iterator, basically [0,1,2,3,4,5...] for shuffle purpose
 $(team.members).each(function(i) {
 	team.mi.push(i);
@@ -78,6 +78,9 @@ team.place = function(){
 		'height': spacers[team.i].bottom,
 		'width' : w
 	});
+	var navtop = Math.max(app.wh / 3 - 100, 100);
+	$("section.sec2 .navigation > a").css({top: navtop});
+
 };
 
 team.bind = function(){
