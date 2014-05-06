@@ -48,7 +48,6 @@ app = {
 
 
 
-
 		window.setTimeout(function(){
 			// parallax for home, how
 			// listeners

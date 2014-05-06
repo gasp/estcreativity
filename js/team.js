@@ -18,7 +18,8 @@ team.start = 0; // I am currently starting with mate 0 (...to mate 4)
 
 team.init = function(){
 	var that = this,
-		i = 0;
+		i = 0,
+		w = $(team.$mates.get(0)).width();
 
 	while (team.resolutions[i]<app.wh && i < team.resolutions.length) {
 		team.height = team.resolutions[i];
@@ -32,17 +33,24 @@ team.init = function(){
 	}
 
 	team.$mates.css({"height": app.wh});
+	$("section.sec2").css({overflow:"hidden", width: app.ww, position:"relative"});
 
 	team.$mates.each(function(i){
 		$(this).css({
 			'background-image':'url(/squelettes/images/team/'+that.members[i]+'-'+team.height+'.jpg)'
 		});
+		// $(this).show();
 
-		// I can display only 5 elements so when i == 4 I am at the maximu
+		$(this).css({
+			position:"absolute",
+			"z-index":100,
+			left: (i * w),
+			top: 0,
+			visibility: "visible"
+		});
+
 		if(i > (team.max -1)) {
 			$(".right",team.$nav).show();
-			$(this).hide();
-
 		}
 	});
 
@@ -113,7 +121,8 @@ team.bind = function(){
 team.navigate = function(start){
 	
 	console.log("starting at teammate %d : %s", start, team.members[start]);
-	
+	var w = $(team.$mates.get(0)).width()
+
 	if((start + team.max) >= team.members.length)
 		$(".right",team.$nav).hide();
 	else
@@ -124,11 +133,11 @@ team.navigate = function(start){
 	else
 		$(".left",team.$nav).show();
 
-	team.$mates.each(function(i){
-		if(i < start || i > (start+team.max))
-			$(this).hide();
-		else
-			$(this).show();
+	team.$mates.each(function(i) {
+		console.log(this,i,start);
+		$(this).css({
+			left: ((i - start) * w),
+		}).show();
 	});
 }
 
@@ -185,7 +194,7 @@ eyes.swap = function(){
 	var shuffled = eyes.shuffle(team.mi);
 
 	team.$mates.each(function(i){
-		console.log(i,team.members[shuffled[i]]);
+		// console.log(i,team.members[shuffled[i]]);
 		var $ey = $(".eyes",this)
 		$ey.css({
 			'background-image':'url(/squelettes/images/team/'+team.members[shuffled[i]]+'-'+team.height+'.jpg)',

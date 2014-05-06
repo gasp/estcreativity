@@ -7,7 +7,7 @@ section.sec2{
 		position:absolute;
 		display:none;
 		top:100px;
-		z-index:30000000;
+		z-index:300;
 		width:45px;
 		height:80px;
 		background-attachment: scroll;
@@ -26,12 +26,13 @@ section.sec2{
 	}
 
 	.mate{
+		visibility:hidden;
 		text-align:center;
 		background-color:#dadada;
 		background-attachment:scroll;
 		background-repeat:no-repeat;
 		background-position:center bottom;
-		
+		.transition(all 150ms ease);
 		.top, .bottom{
 			position:absolute;
 			background-color:rgba(0,0,0,0.75);
