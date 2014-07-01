@@ -34,6 +34,7 @@ module.exports = function(grunt) {
 			},
 			desktop: {
 				src: [
+					'js/utils.js',
 					'js/app.js',
 					'js/parallax.js',
 					'js/home.js',
@@ -51,6 +52,7 @@ module.exports = function(grunt) {
 			},
 			mobile: {
 				src: [
+					'js/utils.js',
 					'js/app-mobile.js',
 					'js/emails.js'
 				],
