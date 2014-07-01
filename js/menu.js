@@ -30,8 +30,8 @@ var menu = {
 
 		//if there is a hash, go for it
 		if( window.location.hash.length
-			&& window.location.hash.substring(0,2) == "#!/")
-			window.location.href= "#"+ window.location.hash.substring(3)
+			&& window.location.hash.substring(0,3) == "#!/")
+			window.location.href= "#"+ window.location.hash.substring(3);
 
 		// activating the menu element
 		$('body>section').each(function(i){
