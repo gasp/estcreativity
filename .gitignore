@@ -3,4 +3,5 @@
 js/vendors.js
 js/vendors.min.js
 css/*.css
+less/*.css
 /images/
