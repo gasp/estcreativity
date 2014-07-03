@@ -42,7 +42,9 @@ life.tweets = function(){
 					'cursor': 'pointer'
 				})
 				.on("click", function(){
-					window.open($(this).data('url-site'), '_blank');
+					window.open("http://www.flickr.com/photos/est_creativity", '_blank');
+					// deep linking to image
+					// window.open($(this).data('url-artice'), '_blank');
 				});
 		}
 
