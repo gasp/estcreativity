@@ -26,9 +26,21 @@ parallax.init = function(){
 
 parallax.listen = function(){
 	$(window).on('scroll',function(){
+
 		var s = $(this).scrollTop();
-		
-		parallax.update(s)
+		parallax.update(s);
+
+		// cler any timer left behind
+		window.clearTimeout(parallax.timer);
+
+		// freeze mouse interaction
+		parallax.freeze();
+
+		// release shortly after
+		parallax.timer = setTimeout(function(){
+			parallax.unfreeze();
+		},200);
+
 	});
 };
 
@@ -38,7 +50,21 @@ parallax.update = function(s){
 			&& s < parallax.coords[i].bottom){
 //	MAXI				console.log('parallaxing',parallax.objects[i].name,'i',i,
 //	DEBUG				't<s<b',parallax.coords[i].top, s, parallax.coords[i].bottom);
-				window[parallax.objects[i].name].parallax(s)
+				window[parallax.objects[i].name].parallax(s);
 		}
 	}
-}
+};
+
+// freezing ui while scrolling improves performances
+// http://www.thecssninja.com/javascript/pointer-events-60fps
+// http://davidwalsh.name/pointer-events
+
+parallax.timer = null;
+
+parallax.freeze = function () {
+	$('body').addClass('disable-hover');
+};
+
+parallax.unfreeze = function () {
+	$('body').removeClass('disable-hover');
+};
