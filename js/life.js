@@ -30,8 +30,8 @@ life.tweets = function(){
 		// (tiny wtf of the day)
 		$that.show();
 
-		//display images from flickr
-		if($that.hasClass("source2")){
+		//display images from flickr and instagram
+		if($that.hasClass("source2") || $that.hasClass("source8")){
 
 			var src = $("img", $that).attr('src');
 			$that
@@ -42,9 +42,11 @@ life.tweets = function(){
 					'cursor': 'pointer'
 				})
 				.on("click", function(){
-					window.open("http://www.flickr.com/photos/est_creativity", '_blank');
+					if (that.hasClass("source2"))
+						window.open("http://www.flickr.com/photos/est_creativity", '_blank');
 					// deep linking to image
-					// window.open($(this).data('url-artice'), '_blank');
+					else
+						  window.open($(this).data('url-artice'), '_blank');
 				});
 		}
 
